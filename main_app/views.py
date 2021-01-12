@@ -14,6 +14,6 @@ def api(request):
 def bios(request):
     return render(request, 'bios.html')
 
-def episode_detail(request, episode_id):
-    episode = Episode.objects.get(id=episode_id)
-    return render(request, 'episode.html', episode)
+# def episode_detail(request, episode_id):
+#     episode = Episode.objects.get(id=episode_id)
+#     return render(request, 'episode.html', episode)
