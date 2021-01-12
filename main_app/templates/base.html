@@ -11,6 +11,23 @@
     <title>A Garden of Terrible Blooms</title>
 </head>
 <body>
+    <header class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}">Episodes</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'bios' %}">Actor Bios</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <main>
         {% block content %}
         {% endblock %}
