@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{% static 'styles/main.css' %}" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>A Garden of Terrible Blooms</title>
 </head>
 <body>
     <header class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <ul>
+                <a href="{% url 'home' %}" class="brand-logo">A Garden of Terrible Blooms</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
                     <li>
                         <a href="{% url 'home' %}">Episodes</a>
                     </li>
@@ -27,6 +32,20 @@
                 </ul>
             </div>
         </nav>
+
+        {% comment %} Hamburger nav menu {% endcomment %}
+        {% comment %} NOTE needs a plugin for the menu to open up {% endcomment %}
+        <ul class="sidenav" id="mobile-demo">
+            <li>
+                <a href="{% url 'home' %}">Episodes</a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}">About</a>
+            </li>
+            <li>
+                <a href="{% url 'bios' %}">Actor Bios</a>
+            </li>
+        </ul>
     </header>
     <main>
         {% block content %}
