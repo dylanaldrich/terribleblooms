@@ -8,7 +8,7 @@ urlpatterns = [
     path('api/', views.api, name='api'),
     
     # EPISODES
-    # path('episode/<int:episode_id>/', views.episode_detail, name='episode_detail'),
+    path('episode/<int:episode_id>/', views.episode_detail, name='episode_detail'),
     
     # may not need these:
     # path('episode/create/', views.episode_create, name='episode_create'),
@@ -16,7 +16,7 @@ urlpatterns = [
     # path('episode/<int:episode_id>/delete', views.episode_delete, name='episode_delete'),
 
     # ACTOR BIOS
-    path('bios/', views.bios_index, name='bios_index'),
+    path('bios/', views.bios, name='bios'),
     
     # may not need these:
     # path('bios/create/', views.bio_create, name='bio_create'),

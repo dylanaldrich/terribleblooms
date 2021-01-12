@@ -1,15 +1,5 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/main.css' %}" >
-    <title>A Garden of Terrible Blooms</title>
-</head>
-<body>
-    <h1>Hello world</h1>
-</body>
-</html>
-
+{% block content %}
+    <h1>Poopedy scoop</h1>
+{% endblock %}
