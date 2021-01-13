@@ -5,52 +5,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{% static 'styles/main.css' %}" >
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <title>A Garden of Terrible Blooms</title>
 </head>
 <body>
-    <header class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="{% url 'home' %}" class="brand-logo">A Garden of Terrible Blooms</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul class="right hide-on-med-and-down">
-                    <li>
-                        <a href="{% url 'home' %}">Episodes</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'about' %}">About</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'bios' %}">Actor Bios</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        {% comment %} Hamburger nav menu {% endcomment %}
-        {% comment %} NOTE needs a plugin for the menu to open up {% endcomment %}
-        <ul class="sidenav" id="mobile-demo">
-            <li>
-                <a href="{% url 'home' %}">Episodes</a>
-            </li>
-            <li>
-                <a href="{% url 'about' %}">About</a>
-            </li>
-            <li>
-                <a href="{% url 'bios' %}">Actor Bios</a>
-            </li>
-        </ul>
-    </header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="{% url 'home' %}" class="brand-logo">A Garden of Terrible Blooms</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li class="navlink default"><a href="{% url 'home' %}">Episodes</a></li>
+                <li class="navlink"><a href="{% url 'about' %}">About</a></li>
+                <li class="navlink"><a href="{% url 'bios' %}">Actor Bios</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="{% url 'home' %}">Episodes</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'bios' %}">Actor Bios</a></li>
+            </ul>
+        </div>
+    </nav>
     <main>
         {% block content %}
         {% endblock %}
     </main>
+
+    {% comment %} Hamburger Menu {% endcomment %}
+    <script>
+        $(".button-collapse").sideNav();
+    </script>
+
+    {% comment %} Active Class Toggle for Navbar {% endcomment %}
+    <script type="text/javascript">
+        const currentPage = $(location).attr('pathname').replace(/^\/|\/$/g, '');
+        
+        $('.navlink').each(function(){
+            const linkText = $(this).text().toLowerCase().replace(/\s+/g, '');
+            
+            if(currentPage === '') {
+                $('li').removeClass('active');
+                return $('li.default').addClass('active');
+            }
+
+            if(linkText.includes(currentPage)) {
+                $(this).addClass('active');
+            }
+        });
+    </script>
 </body>
 </html>
 
