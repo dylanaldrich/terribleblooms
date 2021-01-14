@@ -13,26 +13,43 @@
     <title>A Garden of Terrible Blooms</title>
 </head>
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="{% url 'home' %}" class="brand-logo">A Garden of Terrible Blooms</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li class="navlink default"><a href="{% url 'home' %}">Episodes</a></li>
-                <li class="navlink"><a href="{% url 'about' %}">About</a></li>
-                <li class="navlink"><a href="{% url 'bios' %}">Actor Bios</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="{% url 'home' %}">Episodes</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'bios' %}">Actor Bios</a></li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{% url 'home' %}" class="brand-logo">A Garden of Terrible Blooms</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="navlink default"><a href="{% url 'home' %}">Episodes</a></li>
+                    <li class="navlink"><a href="{% url 'about' %}">About</a></li>
+                    <li class="navlink"><a href="{% url 'bios' %}">Actor Bios</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="{% url 'home' %}">Episodes</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'bios' %}">Actor Bios</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <main>
         {% block content %}
         {% endblock %}
     </main>
+
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; <span id='year'></span> Sharon Yablon
+                <a class="grey-text text-lighten-4 right" href="{% url 'admin:index' %}">Admin</a>
+            </div>
+        </div>
+    </footer>
+
+    {% comment %} Current year {% endcomment %}
+    <script type="text/javascript">
+        $("#year").text(new Date().getFullYear());
+    </script>
 
     {% comment %} Hamburger Menu {% endcomment %}
     <script>
@@ -52,7 +69,7 @@
             }
 
             if(linkText.includes(currentPage)) {
-                $(this).addClass('active');
+                return $(this).addClass('active');
             }
         });
     </script>
