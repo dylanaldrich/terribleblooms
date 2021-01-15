@@ -19,6 +19,7 @@ class Actor(models.Model):
 class Episode(models.Model):
     name = models.CharField(max_length=150)
     description = models.CharField(max_length=1000)
+    audioFile = models.FileField(upload_to='audio/')
     image = models.ImageField(upload_to='images/', default='static/assets/artwork/thereordering_cassietaggart.jpg')
     external_Link = models.URLField(max_length=1000)
     actors = models.ManyToManyField(Actor)
