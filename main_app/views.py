@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
+from .models import Episode, Actor
 
 # Create your views here.
 def home(request):
     # use for now:
-    return render(request, 'home.html')
-    # episodes = Episode.objects.get()
-    # return render(request, 'home.html', episodes)
+    # return render(request, 'home.html')
+    episodes = Episode.objects.all()
+    context = {
+        "episodes" : episodes
+    }
+    print("Episodes", episodes)
+    return render(request, 'home.html', context)
 
 def about(request):
     return render(request, 'about.html')

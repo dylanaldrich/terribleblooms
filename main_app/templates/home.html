@@ -9,5 +9,23 @@
     </header>
     <section class="container">
         Episodes will go here
+        {% for episode in episodes %}
+            <div class="col s12 m7">
+                <h2 class="header">{{ episode.name }}</h2>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="media/{{ episode.image }}" alt="episode image">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>{{ episode.description }}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="{{ episode.external_Link }}">Stream Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </section>
 {% endblock %}
