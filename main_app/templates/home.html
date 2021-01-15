@@ -11,16 +11,20 @@
         Episodes will go here
         {% for episode in episodes %}
             <div class="col s12 m7">
-                <h2 class="header">{{ episode.name }}</h2>
                 <div class="card horizontal">
                     <div class="card-image">
                         <img src="media/{{ episode.image }}" alt="episode image">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
+                            <span class="card-title">{{ episode.name }}</span>
                             <p>{{ episode.description }}</p>
                         </div>
                         <div class="card-action">
+                        <audio controls>
+                            <source src="media/{{ episode.audioFile }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
                             <a href="{{ episode.external_Link }}">Stream Link</a>
                         </div>
                     </div>
