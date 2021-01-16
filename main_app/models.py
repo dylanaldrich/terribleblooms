@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 # Create your models here.
 
@@ -23,6 +24,11 @@ class Episode(models.Model):
     image = models.ImageField(upload_to='images/', default='static/assets/artwork/thereordering_cassietaggart.jpg')
     external_Link = models.URLField(max_length=1000)
     actors = models.ManyToManyField(Actor)
+    date_Added = datetime.datetime.now()
+
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['-date_Added']
