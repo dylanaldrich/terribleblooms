@@ -4,16 +4,16 @@
     <section id="home-header"></section>
     <div class="outer-box">
         <div class="inner-box">
-            <img src="../static/assets/artwork/sunflower.png" alt="sunflower" id="sunflower" />
             <div class="headline">
                 <h1>A Theatre Podcast</h1>
                 <h4>Based on the works of Sharon Yablon</h2>
             </div>
+            <i class="material-icons dp48" id="expand_more">expand_more</i>
         </div>
     </div>
     
     <section class="container">
-        Episodes will go here
+        <h4 id="episode-heading">Latest Episode</h4>
         {% for episode in episodes %}
             <div class="col s12 m7">
                 <div class="card horizontal">

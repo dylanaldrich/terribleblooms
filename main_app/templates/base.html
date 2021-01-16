@@ -16,7 +16,11 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="{% url 'home' %}" class="brand-logo">A Garden of Terrible Blooms</a>
+                <div class="brand-logo">
+                    <img src="../static/assets/artwork/sunflower.png" alt="sunflower" class="sunflower" />
+                    <a href="{% url 'home' %}" id="title">A Garden of Terrible Blooms</a>
+                    <img src="../static/assets/artwork/sunflower.png" alt="sunflower" class="sunflower" />
+                </div>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li class="navlink default"><a href="{% url 'home' %}">Episodes</a></li>

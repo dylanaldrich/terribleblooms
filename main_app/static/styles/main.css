@@ -26,6 +26,22 @@ nav {
 
 nav .brand-logo {
     padding: 0 15px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+#title {
+    padding: 0 10px;
+}
+
+.sunflower {
+    height: 40px;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    to{ transform: rotate(360deg); }
 }
 
 .page-footer {
@@ -66,14 +82,21 @@ nav .brand-logo {
     text-align: center;
 }
 
-#sunflower {
-    height: 80%;
-    margin-right: 30px;
-    animation: rotate 20s linear infinite;
+
+
+#expand_more {
+    animation: bounce 2s infinite;
+    font-size: 80px;
+    margin-left: 100px;
 }
 
-@keyframes rotate {
-    to{ transform: rotate(360deg); }
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
 }
 
 h1 {
