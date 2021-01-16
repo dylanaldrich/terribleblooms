@@ -5,6 +5,7 @@ from .models import Episode, Actor
 # Create your views here.
 def home(request):
     context = {"episodes" : Episode.objects.all()}
+    print(len(context["episodes"]))
     return render(request, 'home.html', context)
 
 def about(request):

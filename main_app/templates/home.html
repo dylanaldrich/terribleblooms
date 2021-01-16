@@ -14,32 +14,34 @@
     
     <section class="container">
         <h4 id="episode-heading">Latest Episode</h4>
-        
-        
-        {% for episode in episodes %}
-            <div class="col s12 m7">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="media/{{ episode.image }}" alt="episode image" />
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                        <a href="{% url 'episode_detail' episode.id %}" class="card-title">{{ episode.name }}</a>
-                            <p>{{ episode.description }}</p>
+        {% if episodes.count > 0 %}
+            {% for episode in episodes %}
+                <div class="col s12 m7">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img src="media/{{ episode.image }}" alt="episode image" />
                         </div>
-                        <div class="card-action">
-                            <audio controls>
-                                <source src="media/{{ episode.audioFile }}" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                            {% comment %} TODO Add external streaming link(s) here: {% endcomment %}
-                            <p>
-                                <a href="{{ episode.external_Link }}">Stream Link</a>
-                            </p>  
+                        <div class="card-stacked">
+                            <div class="card-content">
+                            <a href="{% url 'episode_detail' episode.id %}" class="card-title">{{ episode.name }}</a>
+                                <p>{{ episode.description }}</p>
+                            </div>
+                            <div class="card-action">
+                                <audio controls>
+                                    <source src="media/{{ episode.audioFile }}" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                {% comment %} TODO Add external streaming link(s) here: {% endcomment %}
+                                <p>
+                                    <a href="{{ episode.external_Link }}">Stream Link</a>
+                                </p>  
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% else %}
+            <p>No episodes to show yet!</p>
+        {% endif %}
     </section>
 {% endblock %}
