@@ -42,8 +42,9 @@ nav .brand-logo {
 #home-header {
     height: 700px;
     background-image: url('../assets/artwork/sweetnectar_cassietaggart.jpg');
-    background-size: 100%;
+    background-size: cover;
     background-position-y: 50%;
+    background-repeat: no-repeat;
 }
 
 .home-title {

@@ -4,13 +4,7 @@ from .models import Episode, Actor
 
 # Create your views here.
 def home(request):
-    # use for now:
-    # return render(request, 'home.html')
-    episodes = Episode.objects.all()
-    context = {
-        "episodes" : episodes
-    }
-    print("Episodes", episodes)
+    context = {"episodes" : Episode.objects.all()}
     return render(request, 'home.html', context)
 
 def about(request):
@@ -26,6 +20,5 @@ def bios(request):
     # return render(request, 'bios.html', bios)
 
 def episode_detail(request, episode_id):
-    # episode = Episode.objects.get(id=episode_id)
-    context = {'episode': episode_id}
+    context = {'episode': Episode.objects.get(id=episode_id)}
     return render(request, 'episode.html', context)

@@ -17,7 +17,7 @@
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <span class="card-title">{{ episode.name }}</span>
+                        <a href="{% url 'episode_detail' episode.id %}" class="card-title">{{ episode.name }}</a>
                             <p>{{ episode.description }}</p>
                         </div>
                         <div class="card-action">
