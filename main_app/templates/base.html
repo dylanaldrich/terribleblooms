@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{% static 'assets/artwork/sunflower.png' %}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
@@ -17,9 +18,9 @@
         <nav>
             <div class="nav-wrapper">
                 <div class="brand-logo">
-                    <img src="../static/assets/artwork/sunflower.png" alt="sunflower" class="sunflower" />
+                    <img src="{% static 'assets/artwork/sunflower.png' %}" alt="sunflower" class="sunflower" />
                     <a href="{% url 'home' %}" id="title">A Garden of Terrible Blooms</a>
-                    <img src="../static/assets/artwork/sunflower.png" alt="sunflower" class="sunflower" />
+                    <img src="{% static 'assets/artwork/sunflower.png' %}" alt="sunflower" class="sunflower" />
                 </div>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">

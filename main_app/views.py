@@ -4,8 +4,9 @@ from .models import Episode, Actor
 
 # Create your views here.
 def home(request):
-    context = {"episodes" : Episode.objects.all()}
-    print(len(context["episodes"]))
+    episodes = list(Episode.objects.values())
+    latest_Episode = episodes.pop(0)
+    context = {"episodes" : episodes, "latest_Episode" : latest_Episode}
     return render(request, 'home.html', context)
 
 def about(request):

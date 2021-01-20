@@ -32,7 +32,7 @@ nav .brand-logo {
 }
 
 .navlink a {
-    font-size: 23px;
+    font-size: 18px;
 }
 
 nav ul li.active {
@@ -49,6 +49,7 @@ nav ul li:hover {
 
 #title {
     padding: 0 10px;
+    font-size: 25px;
 }
 
 .sunflower {
@@ -126,5 +127,32 @@ h4 {
 }
 
 audio {
-    width: 100%;
+    width: 90%;
+}
+
+audio:focus {
+    outline: none;
+}
+
+#episodes-box {
+    margin-top: -45px;
+    margin-left: 10%;
+    padding-bottom: 15px;
+}
+
+/* .episode-heading {
+    margin-top: -20px;
+} */
+
+#latest-episode {
+    display: flex;
+}
+
+#latest-episode-image {
+    max-height: 500px;
+}
+
+#latest-episode-info {
+    width: 50%;
+    margin-left: 10px;
 }
