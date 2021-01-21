@@ -30,17 +30,16 @@
                     </div>
                 </section>
                 <h5>Actor credits:</h5>
-                {% for actor in episode.actors.all %}
-                    <div class="actor-avatar">
-                        <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot">
-                        <p>
-                            <a href="{% url 'bios' %}">{{ actor.name }}</a>
-                        </p>
-                    </div>
-                    <p>
-                        
-                    </p>
-                {% endfor %}
+                <section id="actor-avatar-container">
+                    {% for actor in episode.actors.all %}
+                        <a href="{% url 'bios' %}">
+                            <div class="actor-avatar">
+                                <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot">
+                                <p>{{ actor.name }}</p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </section>
             </div>
         </div>
     </section>
