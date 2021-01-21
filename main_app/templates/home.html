@@ -15,11 +15,11 @@
     <section id="episodes-box">
         <h3 class="episode-heading">Latest Episode</h3>
         {% if latest_Episode %}
-            <div id="latest-episode">
-                <a href="{% url 'episode_detail' latest_Episode.id %}">
-                    <img src="media/{{ latest_Episode.image }}" alt="episode image" id="latest-episode-image" />
+            <div id="latest-episode" class="row">
+                <a href="{% url 'episode_detail' latest_Episode.id %}" class="col s6">
+                    <img src="media/{{ latest_Episode.image }}" alt="episode image" id="latest-episode-image" class="col s12" />
                 </a>
-                <div id="latest-episode-info">
+                <div id="latest-episode-info" class="col s6">
                     <h4>
                         <a href="{% url 'episode_detail' latest_Episode.id %}">{{ latest_Episode.name }}</a>
                     </h4>
@@ -36,9 +36,19 @@
             </div>
             {% if episodes|length >= 1 %}
                 <h3 class="episode-heading">Past Episodes</h3>
-                <div class="past-episodes-grid">
+                <div id="past-episodes-box">
                     {% for episode in episodes %}
-                        <p>{{ episode.name }}</p>
+                            <div class="card hoverable">
+                                <div class="card-image">
+                                    <a href="{% url 'episode_detail' episode.id %}">
+                                        <img src="media/{{ episode.image }}" />
+                                    </a>
+                                    <a href="{% url 'episode_detail' episode.id %}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">play_arrow</i></a>
+                                </div>
+                                <div class="card-content">
+                                    <a href="{% url 'episode_detail' episode.id %}">{{ episode.name }}</a>
+                                </div>
+                            </div>
                     {% endfor %}
                 </div>
             {% endif %}

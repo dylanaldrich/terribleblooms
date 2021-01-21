@@ -137,6 +137,7 @@ audio:focus {
 #episodes-box {
     margin-top: -45px;
     margin-left: 10%;
+    margin-right: 10%;
     padding-bottom: 15px;
 }
 
@@ -148,11 +149,50 @@ audio:focus {
     display: flex;
 }
 
-#latest-episode-image {
-    max-height: 500px;
-}
+/* #latest-episode-image {
+    width: 100%;
+} */
 
 #latest-episode-info {
-    width: 50%;
-    margin-left: 10px;
+    margin-left: 15px;
+}
+
+.row .col {
+    padding: 0;
+}
+
+.row  {
+    display: flex;
+}
+
+#past-episodes-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 10px;
+}
+
+.card {
+    height: 50vh;
+    display: inline-block;
+    background-color: rgb(46, 44, 45);
+}
+
+.card-image img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+}
+
+.card-content a {
+    color: white;
+}
+
+.card-content a:hover {
+    color: goldenrod;
 }
