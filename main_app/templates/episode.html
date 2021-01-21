@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Episode {{ episode.name }} detail page</h1>
+    <section class="row">
+        <img src="{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}" alt="the reordering by cassie taggart" class="col s6" />
+        <div class="col s6">
+            <div class="container">
+                <h2>{{ episode.name }}</h2>
+                <p>{{ episode.description }}</p>
+                <audio controls>
+                    <source src="../../media/{{ episode.audioFile }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p>Stream using your favorite podcast service:</p>
+                <div class="logos"><i class="fas fa-podcast"></i><i class="fab fa-google-play"></i> <i class="fab fa-spotify"></i></div>
+                <p></p>
+            </div>
+        </div>
+    </section>
 {% endblock %}

@@ -7,7 +7,7 @@
 
 body {
     display: flex;
-    min-height: 100vh;
+    height: max-content;
     flex-direction: column;
     font-family: 'Fraunces', serif;
 }
@@ -65,12 +65,16 @@ nav ul li:hover {
     background-color: rgb(46, 44, 45);
 }
 
-#home-header {
+.page-header {
     height: 600px;
-    background-image: url('../assets/artwork/sweetnectar_cassietaggart.jpg');
-    background-size: cover;
-    background-position-y: 50%;
-    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+}
+
+.page-header img {
+    width: 100%;
+    object-fit: cover;
 }
 
 .outer-box {
@@ -122,12 +126,20 @@ h4 {
     margin-top: 0;
 }
 
+h4 a {
+    color: black;
+}
+
+h4 a:hover {
+    color: goldenrod;
+}
+
 .horizontal, .horizontal img {
     max-height: 300px;
 }
 
 audio {
-    width: 90%;
+    width: 100%;
 }
 
 audio:focus {
@@ -141,20 +153,16 @@ audio:focus {
     padding-bottom: 15px;
 }
 
-/* .episode-heading {
-    margin-top: -20px;
-} */
-
 #latest-episode {
     display: flex;
 }
 
-/* #latest-episode-image {
-    width: 100%;
-} */
-
 #latest-episode-info {
     margin-left: 15px;
+}
+
+#latest-episode-description {
+    min-height: 200px;
 }
 
 .row .col {
@@ -163,6 +171,7 @@ audio:focus {
 
 .row  {
     display: flex;
+    margin-bottom: 0;
 }
 
 #past-episodes-box {
@@ -195,4 +204,12 @@ audio:focus {
 
 .card-content a:hover {
     color: goldenrod;
+}
+
+.logos {
+    font-size: 28px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 8px;
 }

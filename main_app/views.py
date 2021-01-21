@@ -22,5 +22,6 @@ def bios(request):
     # return render(request, 'bios.html', bios)
 
 def episode_detail(request, episode_id):
-    context = {'episode': Episode.objects.get(id=episode_id)}
+    episode = Episode.objects.get(id=episode_id)
+    context = {'episode': episode}
     return render(request, 'episode.html', context)

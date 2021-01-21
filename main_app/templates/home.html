@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-    <section id="home-header"></section>
+    <section class="page-header">
+        <img src="{% static 'assets/artwork/sweetnectar_cassietaggart.jpg' %}" alt="sweet nectar by cassie taggart" />
+    </section>
     <div class="outer-box">
         <div class="inner-box">
             <div class="headline">
@@ -23,7 +26,7 @@
                     <h4>
                         <a href="{% url 'episode_detail' latest_Episode.id %}">{{ latest_Episode.name }}</a>
                     </h4>
-                    <p>{{ latest_Episode.description }}</p>
+                    <p id="latest-episode-description">{{ latest_Episode.description }}</p>
                     <audio controls="true">
                         <source src="media/{{ latest_Episode.audioFile }}" type="audio/mpeg">
                         Your browser does not support the audio element.
