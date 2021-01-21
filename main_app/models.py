@@ -15,6 +15,9 @@ class Actor(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 # Episodes
 class Episode(models.Model):
     name = models.CharField(max_length=150)
@@ -24,7 +27,6 @@ class Episode(models.Model):
     external_Link = models.URLField(max_length=1000)
     actors = models.ManyToManyField(Actor, related_name='actors')
     date_Added = models.DateTimeField(auto_now_add=True)
-
 
     def __str__(self):
         return self.name

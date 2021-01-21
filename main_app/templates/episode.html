@@ -8,13 +8,39 @@
             <div class="container">
                 <h2>{{ episode.name }}</h2>
                 <p>{{ episode.description }}</p>
-                <audio controls>
-                    <source src="../../media/{{ episode.audioFile }}" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <p>Stream using your favorite podcast service:</p>
-                <div class="logos"><i class="fas fa-podcast"></i><i class="fab fa-google-play"></i> <i class="fab fa-spotify"></i></div>
-                <p></p>
+                <section class="audio">
+                    <audio controls>
+                        <source src="../../media/{{ episode.audioFile }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="logos">
+                        <section id="logo-cover">
+                            <i class="fas fa-hand-point-right"></i>
+                            <span>Podcast Apps</span>
+                        </section>
+                        <a href="#" id="apple-podcast-logo">
+                            <i class="fas fa-podcast"></i>
+                        </a>
+                        <a href="#" id="google-podcast-logo">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                        <a href="#" id="spotify-podcast-logo">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                    </div>
+                </section>
+                <h5>Actor credits:</h5>
+                {% for actor in episode.actors.all %}
+                    <div class="actor-avatar">
+                        <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot">
+                        <p>
+                            <a href="{% url 'bios' %}">{{ actor.name }}</a>
+                        </p>
+                    </div>
+                    <p>
+                        
+                    </p>
+                {% endfor %}
             </div>
         </div>
     </section>
