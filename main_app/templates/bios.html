@@ -1,5 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Bios page</h1>
+    <section class="page-header">
+        <img src="{% static 'assets/artwork/flycatcher_cassietaggart.jpg' %}" alt="sweet nectar by cassie taggart" />
+    </section>
+    <div class="outer-box">
+        <div class="inner-box">
+            <div class="headline">
+                <h1>Meet The Cast</h1>
+            </div>
+            <i class="material-icons dp48" id="expand_more">expand_more</i>
+        </div>
+    </div>
+
+    <section id="actors-container">
+        {% for actor in actors %}
+            <p>{{ actor.name }}</p>
+            {% for episode in actor.episode_set.all %}
+                <p>{{ episode.name }}</p>
+            {% endfor %}
+        {% endfor %}
+    </section>
 {% endblock %}

@@ -6,7 +6,10 @@ from .models import Episode, Actor
 def home(request):
     episodes = list(Episode.objects.values())
     latest_Episode = episodes.pop(0)
-    context = {"episodes" : episodes, "latest_Episode" : latest_Episode}
+    context = {
+        "episodes" : episodes, 
+        "latest_Episode" : latest_Episode,
+    }
     return render(request, 'home.html', context)
 
 def about(request):
@@ -16,12 +19,9 @@ def api(request):
     return JsonResponse({"status": 200})
 
 def bios(request):
-    # use for now:
-    return render(request, 'bios.html')
-    # bios = Bio.objects.get()
-    # return render(request, 'bios.html', bios)
+    context = {"actors" : Actor.objects.all()}
+    return render(request, 'bios.html', context)
 
 def episode_detail(request, episode_id):
-    episode = Episode.objects.get(id=episode_id)
-    context = {'episode': episode}
+    context = {'episode': Episode.objects.get(id=episode_id)}
     return render(request, 'episode.html', context)
