@@ -33,7 +33,7 @@
                 <h5>Actor credits:</h5>
                 <section id="actor-avatar-container">
                     {% for actor in episode.actors.all %}
-                        <a href="{% url 'bios' %}">
+                        <a href="{% url 'bios' %}#{{ actor.name }}">
                             <div class="actor-avatar">
                                 <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot">
                                 <p class="actor-link">{{ actor.name }}</p>
