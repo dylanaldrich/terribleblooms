@@ -27,14 +27,27 @@
                         <a href="{% url 'episode_detail' latest_Episode.id %}">{{ latest_Episode.name }}</a>
                     </h4>
                     <p id="latest-episode-description">{{ latest_Episode.description }}</p>
-                    <audio controls="true">
-                        <source src="media/{{ latest_Episode.audioFile }}" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    {% comment %} TODO Add external streaming link icons here: {% endcomment %}
-                    <p>
-                        <a href="{{ latest_Episode.external_Link }}">Stream Link</a>
-                    </p>
+                    <section class="audio">
+                        <audio controls>
+                            <source src="media/{{ latest_Episode.audioFile }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="logos">
+                            <section id="logo-cover">
+                                <i class="fas fa-hand-point-right"></i>
+                                <span>Podcast Apps</span>
+                            </section>
+                            <a href="#" id="apple-podcast-logo">
+                                <i class="fas fa-podcast"></i>
+                            </a>
+                            <a href="#" id="google-podcast-logo">
+                                <i class="fab fa-google-play"></i>
+                            </a>
+                            <a href="#" id="spotify-podcast-logo">
+                                <i class="fab fa-spotify"></i>
+                            </a>
+                        </div>
+                    </section>
                 </div>
             </div>
             {% if episodes|length >= 1 %}

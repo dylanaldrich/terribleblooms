@@ -142,6 +142,10 @@ audio {
     width: 100%;
 }
 
+audio::-webkit-media-controls-panel {
+    background-color: #dfe6e9;
+}
+
 audio:focus {
     outline: none;
 }
@@ -158,11 +162,12 @@ audio:focus {
 }
 
 #latest-episode-info {
-    margin-left: 15px;
+    margin-left: 25px;
+    text-align: center;
 }
 
 #latest-episode-description {
-    min-height: 200px;
+    min-height: 30%;
 }
 
 .row .col {
@@ -214,6 +219,15 @@ audio:focus {
     align-items: center;
 }
 
+.episode {
+    text-align: center;
+}
+
+hr {
+    border: black solid 1px;
+    margin-top: 14px;
+}
+
 .logos {
     font-size: 25px;
     margin-top: 10px;
@@ -233,9 +247,9 @@ audio:focus {
 }
 
 .logos a {
-    width: 33.33%;
+    width: calc(100% / 3);
     height: 100%;
-    background-color: #f1f1f1;
+    background-color: #dfe6e9;
     color:#1f1f1f;
     display: flex;
     align-items: center;
@@ -244,6 +258,7 @@ audio:focus {
     opacity: 0;
     transition: .3s linear;
     overflow: hidden;
+    outline: hidden;
 }
 
 .logos:hover a {
@@ -310,4 +325,12 @@ audio:focus {
     height: 20vh;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.actor-link {
+    color: black;
+}
+
+.actor-link:hover {
+    color: goldenrod;
 }

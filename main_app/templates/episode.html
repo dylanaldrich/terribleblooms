@@ -5,7 +5,7 @@
     <section class="row">
         <img src="{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}" alt="the reordering by cassie taggart" class="col s6" />
         <div class="col s6">
-            <div class="container">
+            <div class="container episode">
                 <h2>{{ episode.name }}</h2>
                 <p>{{ episode.description }}</p>
                 <section class="audio">
@@ -29,13 +29,14 @@
                         </a>
                     </div>
                 </section>
+                <hr>
                 <h5>Actor credits:</h5>
                 <section id="actor-avatar-container">
                     {% for actor in episode.actors.all %}
                         <a href="{% url 'bios' %}">
                             <div class="actor-avatar">
                                 <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot">
-                                <p>{{ actor.name }}</p>
+                                <p class="actor-link">{{ actor.name }}</p>
                             </div>
                         </a>
                     {% endfor %}
