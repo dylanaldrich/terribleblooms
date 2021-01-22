@@ -17,7 +17,7 @@
     <section id="actors-container">
         {% for actor in actors %}
             <p>{{ actor.name }}</p>
-            {% for episode in actor.episode_set.all %}
+            {% for episode in actor.episodes.all %}
                 <p>{{ episode.name }}</p>
             {% endfor %}
         {% endfor %}
