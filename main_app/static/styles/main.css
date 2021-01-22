@@ -159,6 +159,7 @@ audio:focus {
 
 #latest-episode {
     display: flex;
+    align-items: center;
 }
 
 #latest-episode-info {
@@ -189,6 +190,10 @@ audio:focus {
     height: 50vh;
     display: inline-block;
     background-color: rgb(46, 44, 45);
+}
+
+.card .card-action {
+    padding: 16px;
 }
 
 .card-image img {
@@ -247,8 +252,7 @@ hr {
 }
 
 .logos a {
-    width: calc(100% / 3);
-    height: 100%;
+    flex: 1;
     background-color: #dfe6e9;
     color:#1f1f1f;
     display: flex;
@@ -332,5 +336,39 @@ hr {
 }
 
 .actor-link:hover {
+    filter: brightness(150%);
+}
+
+#bios-container {
+    margin: 0 10%;
+}
+
+#actor-socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.6em;
+    width: 5%;
+}
+
+.horizontal a {
     color: goldenrod;
+}
+
+.horizontal a:hover {
+    color: lightgoldenrodyellow;
+}
+
+#featured-episodes span {
+    color: white;
+    padding-right: 10px;
+}
+
+.horizontal .card-image {
+    width: 35%;
+}
+
+.card.horizontal .card-image img {
+    width: 100%;
 }

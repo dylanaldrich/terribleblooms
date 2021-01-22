@@ -14,12 +14,43 @@
         </div>
     </div>
 
-    <section id="actors-container">
+    <section id="bios-container">
         {% for actor in actors %}
-            <p>{{ actor.name }}</p>
-            {% for episode in actor.episodes.all %}
-                <p>{{ episode.name }}</p>
-            {% endfor %}
+            <div class="col s12 m7" id="{{ actor.name }}">
+                <h4 class="header">{{ actor.name }}</h4>
+                <div class="card horizontal">
+                    <div class="card-image bio-image">
+                        <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>{{ actor.bio }}</p>
+                        </div>
+                        <div class="card-action">
+                            <div id="featured-episodes">
+                                <span>Featured in:</span>
+                                {% for episode in actor.episodes.all %}
+                                    <a href="{% url 'episode_detail' episode.id %}">{{ episode.name }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="horizontal" id="actor-socials">
+                        <a href="{{ actor.website }}">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <a href="{{ actor.facebook }}">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="{{ actor.twitter }}">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="{{ actor.instagram }}">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
     </section>
 {% endblock %}
