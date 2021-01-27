@@ -159,7 +159,14 @@ audio:focus {
 
 #latest-episode {
     display: flex;
-    align-items: center;
+}
+
+#latest-episode h3 {
+    margin-top: 0;
+}
+
+#latest-episode h4 {
+    margin-top: 9px;
 }
 
 #latest-episode-info {
