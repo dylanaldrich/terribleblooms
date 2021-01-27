@@ -228,6 +228,10 @@ audio:focus {
     text-align: center;
 }
 
+.episode p {
+    margin-bottom: .6rem;
+}
+
 hr {
     border: black solid 1px;
     margin-top: 14px;
@@ -311,24 +315,32 @@ hr {
     padding-left: 10px;
 }
 
+.the-reordering {
+    max-width: 50%;
+    height: auto;
+}
+
 #actor-avatar-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.actor-avatar {
-    text-align: center;
-    display: inline;
-    height: 30vh;
-    width: 30vh;
+#actor-avatar-container a  {
+    height: fit-content;
+    width: 33%;
 }
 
-.actor-avatar img {
-    width: 20vh;
+#actor-avatar-container a .card  {
+    height: 100%;
+}
+
+.card img.actor-avatar-img {
     height: 20vh;
-    border-radius: 50%;
     object-fit: cover;
+}
+
+.card .card-content.actor-avatar-info {
+    padding: 8px;
 }
 
 .actor-link {

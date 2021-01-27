@@ -3,8 +3,8 @@
 
 {% block content %}
     <section class="row">
-        <img src="{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}" alt="the reordering by cassie taggart" class="col s6" />
-        <div class="col s6">
+        <img src="{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}" alt="the reordering by cassie taggart" class="col the-reordering"  />
+        <div class="col">
             <div class="container episode">
                 <h2>{{ episode.name }}</h2>
                 <p>{{ episode.description }}</p>
@@ -31,16 +31,20 @@
                 </section>
                 <hr>
                 <h5>Actor credits:</h5>
-                <section id="actor-avatar-container">
+                <div id="actor-avatar-container">
                     {% for actor in episode.actors.all %}
                         <a href="{% url 'bios' %}#{{ actor.name }}">
-                            <div class="actor-avatar">
-                                <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot">
-                                <p class="actor-link">{{ actor.name }}</p>
+                            <div class="card hoverable">
+                                <div class="card-image">
+                                    <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot" class="actor-avatar-img">
+                                </div>
+                                <div class="card-content actor-avatar-info">
+                                    <p class="actor-link">{{ actor.name }}</p>
+                                </div>
                             </div>
                         </a>
                     {% endfor %}
-                </section>
+                </div>
             </div>
         </div>
     </section>
