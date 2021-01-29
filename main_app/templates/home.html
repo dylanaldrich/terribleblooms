@@ -28,6 +28,7 @@
                     <h4>
                         <a href="{% url 'episode_detail' latest_Episode.id %}">{{ latest_Episode.name }}</a>
                     </h4>
+                    {% comment %} TODO add in a "read more" link if the description gets too long {% endcomment %}
                     <p id="latest-episode-description">{{ latest_Episode.description }}</p>
                     <section class="audio">
                         <audio controls>
@@ -63,7 +64,7 @@
                                     </a>
                                     <a href="{% url 'episode_detail' episode.id %}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">play_arrow</i></a>
                                 </div>
-                                <div class="card-content">
+                                <div class="card-content episode-title">
                                     <a href="{% url 'episode_detail' episode.id %}">{{ episode.name }}</a>
                                 </div>
                             </div>

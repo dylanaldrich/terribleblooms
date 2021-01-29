@@ -350,6 +350,10 @@ hr {
     padding: 8px;
 }
 
+.card .card-content.episode-title {
+    padding: 10px;
+}
+
 .actor-link {
     color: black;
 }
