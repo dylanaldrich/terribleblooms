@@ -37,6 +37,7 @@ class Episode(models.Model):
 # Creators
 class Creator(models.Model):
     name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, default='Creator')
     bio = models.CharField(max_length=1000, blank=True)
     photo = models.ImageField(upload_to='images/', default='static/assets/icons/user-solid.svg')
     email = models.EmailField(max_length=100)

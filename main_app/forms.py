@@ -14,4 +14,4 @@ class Episode_Form(ModelForm):
 class Creator_Form(ModelForm):
     class Meta:
         model = Creator
-        fields = ['name', 'bio', 'photo', 'email', 'website', 'facebook', 'twitter', 'instagram']
+        fields = ['name', 'title', 'bio', 'photo', 'email', 'website', 'facebook', 'twitter', 'instagram']
