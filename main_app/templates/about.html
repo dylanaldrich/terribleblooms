@@ -23,9 +23,30 @@
             <img src="{% static 'assets/artwork/sunflower.png' %}" alt="sunflower" class="sunflower" />
         </div>
         
-        <section class="creators-container">
+        <section id="creator-container">
             {% for creator in creators %}
-                <div class="creator-square">{{ creator.name }}</div>
+                <div class="creator-square">
+                    <h4>{{ creator.name }}</h4>
+                    <h5>{{ creator.title }}</h5>
+                    <img src="../../media/{{ creator.photo }}" alt="{{actor.name}} headshot" id="creator-photo">
+                    <div class="socials creator-contacts">
+                        <a href="{{ creator.email }}">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                        <a href="{{ creator.website }}">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <a href="{{ creator.facebook }}">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="{{ creator.twitter }}">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="{{ creator.instagram }}">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
             {% endfor %}
         </section>
     </div>

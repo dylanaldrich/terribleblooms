@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <section id="bios-container">
+    <section class="bios-container">
         {% for actor in actors %}
             <div class="col s12 m7" id="{{ actor.name }}">
                 <h4 class="header">{{ actor.name }}</h4>
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="horizontal" id="actor-socials">
+                    <div class="horizontal socials">
                         <a href="{{ actor.website }}">
                             <i class="fas fa-user"></i>
                         </a>
