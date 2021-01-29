@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
-from .models import Episode, Actor
+from .models import Episode, Actor, Creator
 
 # Create your views here.
 def home(request):
     episodes = list(Episode.objects.values())
-    latest_Episode = episodes.pop(0)
+    latest_Episode = {}
+
+    if len(episodes) > 0:
+        latest_Episode = episodes.pop(0)
+
     context = {
         "episodes" : episodes, 
         "latest_Episode" : latest_Episode,
@@ -13,7 +17,8 @@ def home(request):
     return render(request, 'home.html', context)
 
 def about(request):
-    return render(request, 'about.html')
+    context = {"creators" : Creator.objects.all()}
+    return render(request, 'about.html', context)
 
 def api(request):
     return JsonResponse({"status": 200})

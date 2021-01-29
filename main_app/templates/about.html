@@ -24,7 +24,9 @@
         </div>
         
         <section class="creators-container">
-            <div class="creator-square"></div>
+            {% for creator in creators %}
+                <div class="creator-square">{{ creator.name }}</div>
+            {% endfor %}
         </section>
     </div>
 {% endblock %}

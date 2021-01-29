@@ -212,7 +212,7 @@ audio:focus {
 }
 
 .card-image img {
-    height: 300px;
+    height: 39.5vh;
     object-fit: cover;
 }
 
