@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 # Actors
 class Actor(models.Model):
     name = models.CharField(max_length=100)
@@ -18,6 +16,7 @@ class Actor(models.Model):
     class Meta:
         ordering = ['name']
 
+
 # Episodes
 class Episode(models.Model):
     name = models.CharField(max_length=150)
@@ -33,3 +32,18 @@ class Episode(models.Model):
 
     class Meta:
         ordering = ['-date_Added']
+
+
+# Creators
+class Creator(models.Model):
+    name = models.CharField(max_length=100)
+    bio = models.CharField(max_length=1000, blank=True)
+    photo = models.ImageField(upload_to='images/', default='static/assets/icons/user-solid.svg')
+    email = models.EmailField(max_length=100)
+    website = models.URLField(max_length=1000, blank=True)
+    facebook = models.URLField(max_length=1000, blank=True)
+    twitter = models.URLField(max_length=1000, blank=True)
+    instagram = models.URLField(max_length=1000, blank=True)
+
+    def __str__(self):
+        return self.name
