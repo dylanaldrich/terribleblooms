@@ -66,7 +66,7 @@ nav ul li:hover {
 }
 
 .page-header {
-    height: 65vh;
+    height: 77vh;
     overflow: hidden;
     display: flex;
     align-content: center;
@@ -75,6 +75,14 @@ nav ul li:hover {
 .page-header img {
     width: 100%;
     object-fit: cover;
+}
+
+#bios-header {
+    object-position: bottom;
+}
+
+#about-header {
+    object-position: calc(1321/2560 * 100%) calc(812/2612 * 100%);
 }
 
 .outer-box {
@@ -394,4 +402,24 @@ hr {
 
 .card.horizontal .card-image img {
     width: 100%;
+}
+
+/* ABOUT PAGE */
+
+#about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: -6vh 10% 6vh;
+}
+
+#about-content h4 {
+    text-align: center;
+    margin: 0 8px;
+}
+
+#creators-headline {
+    display: flex;
+    align-items: center;
+    margin: 5vh;
 }

@@ -1,5 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>About page</h1>
+    <section class="page-header">
+        <img src="{% static 'assets/artwork/flycatcher_cassietaggart.jpg' %}" alt="sweet nectar by cassie taggart" id="about-header" />
+    </section>
+    <div class="outer-box">
+        <div class="inner-box">
+            <div class="headline">
+                <h1>About The Podcast</h1>
+            </div>
+            <i class="material-icons dp48" id="expand_more">expand_more</i>
+        </div>
+    </div>
+
+    <div id="about-content">
+        <p id="about-paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum odio esse totam reprehenderit quaerat accusamus eum distinctio fugiat commodi, aperiam vitae dolore. Velit fuga quos, exercitationem excepturi delectus libero provident? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente odio doloremque sunt commodi ut aliquam. Harum maiores necessitatibus eum nulla odio expedita, tenetur, accusantium repudiandae consequuntur, quibusdam voluptatum dolor rerum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis officiis repellat vero odio sint, facere quo ipsum suscipit quae totam assumenda laudantium ullam. Illum, alias sunt quae ipsam molestiae vitae!</p>
+    
+        <div id="creators-headline">
+            <img src="{% static 'assets/artwork/sunflower.png' %}" alt="sunflower" class="sunflower" />
+            <h4>The Creators</h4>
+            <img src="{% static 'assets/artwork/sunflower.png' %}" alt="sunflower" class="sunflower" />
+        </div>
+        
+        <section class="creators-container">
+            <div class="creator-square"></div>
+        </section>
+    </div>
 {% endblock %}
