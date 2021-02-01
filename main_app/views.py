@@ -17,6 +17,8 @@ def home(request):
     return render(request, 'home.html', context)
 
 def about(request):
+    creator = Creator.objects.values()
+    print(creator[0]["bio"])
     context = {"creators" : Creator.objects.all()}
     return render(request, 'about.html', context)
 

@@ -413,6 +413,23 @@ hr {
     margin: -6vh 10% 6vh;
 }
 
+.poem-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#poem, #backstory {
+    width: 48%;
+}
+
+#poem, #tagline {
+    font-style: italic;
+}
+
+#backstory h5 {
+    margin-top: 0;
+}
+
 #about-content h4 {
     text-align: center;
     margin: 0 8px;
@@ -434,6 +451,7 @@ hr {
 .creator-square {
     background-color: rgb(46, 44, 45);
     width: 48%;
+    height: fit-content;
     color: white;
     display: flex;
     flex-direction: column;
@@ -447,6 +465,10 @@ hr {
 h5 {
     text-align: center;
     font-size: 1.5rem;
+}
+
+.creator-bio {
+    padding: 15px;
 }
 
 .creator-contacts {

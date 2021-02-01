@@ -1,9 +1,11 @@
 from django.db import models
+from django_quill.fields import QuillField
+
 
 # Actors
 class Actor(models.Model):
     name = models.CharField(max_length=100)
-    bio = models.CharField(max_length=1000, blank=True)
+    bio = QuillField(blank=True, default="Who needs a bio? I prefer to remain mysterious.")
     photo = models.ImageField(upload_to='images/', default='static/assets/icons/user-solid.svg')
     website = models.URLField(max_length=1000, blank=True)
     facebook = models.URLField(max_length=1000, blank=True)
@@ -20,7 +22,7 @@ class Actor(models.Model):
 # Episodes
 class Episode(models.Model):
     name = models.CharField(max_length=150)
-    description = models.CharField(max_length=1000)
+    description = models.TextField(max_length=1000)
     audioFile = models.FileField(upload_to='audio/')
     image = models.ImageField(upload_to='images/', default='static/assets/artwork/thereordering_cassietaggart.jpg')
     external_Link = models.URLField(max_length=1000)
@@ -38,7 +40,7 @@ class Episode(models.Model):
 class Creator(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100, default='Creator')
-    bio = models.CharField(max_length=1000, blank=True)
+    bio = QuillField()
     photo = models.ImageField(upload_to='images/', default='static/assets/icons/user-solid.svg')
     email = models.EmailField(max_length=100)
     website = models.URLField(max_length=1000, blank=True)

@@ -15,7 +15,28 @@
     </div>
 
     <div id="about-content">
-        <p id="about-paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum odio esse totam reprehenderit quaerat accusamus eum distinctio fugiat commodi, aperiam vitae dolore. Velit fuga quos, exercitationem excepturi delectus libero provident? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente odio doloremque sunt commodi ut aliquam. Harum maiores necessitatibus eum nulla odio expedita, tenetur, accusantium repudiandae consequuntur, quibusdam voluptatum dolor rerum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis officiis repellat vero odio sint, facere quo ipsum suscipit quae totam assumenda laudantium ullam. Illum, alias sunt quae ipsam molestiae vitae!</p>
+        <div class="poem-container">
+            <p id="poem">
+                Tear open the warm belly of earth, plant a few seeds, or lay a bulb<br>
+                and let’s see what human nature spews into the day,<br>
+                or births sobbing into evening.<br><br>
+
+                All it takes is a few minutes, and<br>
+                seeds deprived of air and light,<br>
+                then drowned and left below ground.<br><br>
+
+                Only faintest warmth for comfort<br>
+                in the cold hopeful bed<br>
+                Ah Life, your garden reveals some awful secrets<br>
+                and yields some Terrible Blooms.
+            </p>
+            <div id="backstory">
+                <h5>A Friendship Garden</h5>
+                <p>
+                    <span id="tagline">A Garden of Terrible Blooms</span> is a passion project, born of two friends' love for theater: Sharon Yablon and Thomas Chan. Thomas has provided sound design and live music for two of Sharon’s themed, one-act productions: “Stomach Contents” (Zombie Joe’s Underground Theater, 2018) which was set in the desert, and “24 Hours On Sunset” (indoor and outdoor locations, 2011) which was an evening of one-acts centered around the iconic Sunset Boulevard. They have also worked together on individual plays and performances over the years in a variety of locations.
+                </p>
+            </div>
+        </div>
     
         <div id="creators-headline">
             <img src="{% static 'assets/artwork/sunflower.png' %}" alt="sunflower" class="sunflower" />
@@ -29,6 +50,7 @@
                     <h4>{{ creator.name }}</h4>
                     <h5>{{ creator.title }}</h5>
                     <img src="../../media/{{ creator.photo }}" alt="{{actor.name}} headshot" id="creator-photo">
+                    <p class="creator-bio">{{ creator.bio.delta }}</p>
                     <div class="socials creator-contacts">
                         <a href="{{ creator.email }}">
                             <i class="far fa-envelope"></i>
