@@ -78,11 +78,8 @@ QUILL_CONFIGS = {
             'syntax': True,
             'toolbar': [
                 [
-                    {'header': []},
-                    {'align': []},
                     'bold', 'italic', 'underline', 'strike', 'blockquote',
                     {'color': []},
-                    {'background': []},
                 ],
                 ['code-block', 'link'],
                 ['clean'],

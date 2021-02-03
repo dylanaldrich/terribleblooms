@@ -430,6 +430,10 @@ hr {
     margin-top: 0;
 }
 
+.play-title {
+    font-style: italic;
+}
+
 #about-content h4 {
     text-align: center;
     margin: 0 8px;
@@ -458,6 +462,11 @@ hr {
     align-items: center;
 }
 
+.creator-square p {
+    padding: 15px;
+    text-align: justify;
+}
+
 #creator-container h4 {
     margin-top: 2.5vh;
 }
@@ -467,8 +476,9 @@ h5 {
     font-size: 1.5rem;
 }
 
-.creator-bio {
+p.creator-bio p {
     padding: 15px;
+    color: white;
 }
 
 .creator-contacts {
