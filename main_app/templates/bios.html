@@ -15,42 +15,46 @@
     </div>
 
     <section class="bios-container">
-        {% for actor in actors %}
-            <div class="col s12 m7" id="{{ actor.name }}">
-                <h4 class="header">{{ actor.name }}</h4>
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>{{ actor.bio }}</p>
-                        </div>
-                        <div class="card-action">
-                            <div id="featured-episodes">
-                                <span>Featured in:</span>
-                                {% for episode in actor.episodes.all %}
-                                    <a href="{% url 'episode_detail' episode.id %}">{{ episode.name }}</a>
-                                {% endfor %}
+        {% if actors.count > 0 %}
+            {% for actor in actors %}
+                <div class="col s12 m7" id="{{ actor.name }}">
+                    <h4 class="header">{{ actor.name }}</h4>
+                    <div class="card horizontal">
+                        {% comment %} <div class="card-image">
+                            <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot">
+                        </div> {% endcomment %}
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <p>{{ actor.bio }}</p>
+                            </div>
+                            <div class="card-action">
+                                <div id="featured-episodes">
+                                    <span>Featured in:</span>
+                                    {% for episode in actor.episodes.all %}
+                                        <a href="{% url 'episode_detail' episode.id %}">{{ episode.name }}</a>
+                                    {% endfor %}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="horizontal socials">
-                        <a href="{{ actor.website }}">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <a href="{{ actor.facebook }}">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="{{ actor.twitter }}">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="{{ actor.instagram }}">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                        <div class="horizontal socials">
+                            <a href="{{ actor.website }}">
+                                <i class="fas fa-user"></i>
+                            </a>
+                            <a href="{{ actor.facebook }}">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="{{ actor.twitter }}">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="{{ actor.instagram }}">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% else %}
+            <h5 id="nothing-actor">Nothing to see here! Actor bios coming soon.</h5>
+        {% endif %}
     </section>
 {% endblock %}

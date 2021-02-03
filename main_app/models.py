@@ -6,11 +6,12 @@ from django_quill.fields import QuillField
 class Actor(models.Model):
     name = models.CharField(max_length=100)
     bio = QuillField(blank=True, default="Who needs a bio? I prefer to remain mysterious.")
-    photo = models.ImageField(upload_to='images/', default='static/assets/icons/user-solid.svg')
+    # photo = models.ImageField(upload_to='images/', default='static/assets/icons/user-solid.svg')
     website = models.URLField(max_length=1000, blank=True)
     facebook = models.URLField(max_length=1000, blank=True)
     twitter = models.URLField(max_length=1000, blank=True)
     instagram = models.URLField(max_length=1000, blank=True)
+    imdb = models.URLField(max_length=1000, blank=True)
 
     def __str__(self):
         return self.name
@@ -41,7 +42,6 @@ class Creator(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100, default='Creator')
     bio = QuillField()
-    photo = models.ImageField(upload_to='images/', default='static/assets/icons/user-solid.svg')
     email = models.EmailField(max_length=100)
     website = models.URLField(max_length=1000, blank=True)
     facebook = models.URLField(max_length=1000, blank=True)
