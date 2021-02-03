@@ -49,8 +49,7 @@
                 <div class="creator-square">
                     <h4>{{ creator.name }}</h4>
                     <h5>{{ creator.title }}</h5>
-                    <img src="../../media/{{ creator.photo }}" alt="{{actor.name}} headshot" id="creator-photo">
-                    <p class="creator-bio">{{ creator.bio.delta }}</p>
+                    <p class="creator-bio">{{ creator.bio.html|safe }}</p>
                     <div class="socials creator-contacts">
                         <a href="{{ creator.email }}">
                             <i class="far fa-envelope"></i>
