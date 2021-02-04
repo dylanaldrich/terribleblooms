@@ -3,6 +3,7 @@
 :root {
     --main-bg-color: rgb(46, 44, 45);
     --link-color: goldenrod;
+    --nav-height: 45px;
 }
 
 * {
@@ -15,10 +16,12 @@ body {
     height: max-content;
     flex-direction: column;
     font-family: 'Fraunces', serif;
+    align-items: center;
 }
 
 main {
     flex: 1 0 auto;
+    max-width: 1270px;
 }
 
 .page-footer {
@@ -26,12 +29,20 @@ main {
 }
 
 header {
-    height: 45px;
+    height: var(--nav-height);
 }
 
+header, footer {
+    width: 100%;
+}
 nav {
     background-color: var(--main-bg-color);
     height: 100%;
+}
+
+nav a.button-collapse, nav a.button-collapse i {
+    height: var(--nav-height);
+    line-height: var(--nav-height);
 }
 
 .nav-wrapper {
@@ -48,7 +59,7 @@ nav .brand-logo {
 
 .navlink a {
     font-size: 16px;
-    height: 45px;
+    height: var(--nav-height);
     display: flex;
     align-items: center;
 }
@@ -88,6 +99,7 @@ nav ul li:hover {
     overflow: hidden;
     display: flex;
     align-content: center;
+    width: 100%;
 }
 
 .page-header img {
