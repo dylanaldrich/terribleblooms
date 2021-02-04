@@ -25,7 +25,7 @@
                         </div> {% endcomment %}
                         <div class="card-stacked">
                             <div class="card-content">
-                                <p>{{ actor.bio }}</p>
+                                <p>{{ actor.bio.html|safe }}</p>
                             </div>
                             <div class="card-action">
                                 <div id="featured-episodes">

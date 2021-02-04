@@ -8,8 +8,7 @@
     <div class="outer-box">
         <div class="inner-box">
             <div class="headline">
-                <h1>A Theatre Podcast</h1>
-                <h4>Based on the works of Sharon Yablon</h4>
+                <h3>Audio Tales for a Long and Sleepless <br>Night in Los Angeles</h3>
             </div>
             <i class="material-icons dp48" id="expand_more">expand_more</i>
         </div>
@@ -49,11 +48,14 @@
                             <a href="#" id="spotify-podcast-logo">
                                 <i class="fab fa-spotify"></i>
                             </a>
+                            <a href="#" id="stitcher-podcast-logo" target="_blank" title="Stitcher Podcasts">
+                                <img src="{% static 'assets/icons/stitcher_icon.svg' %}" alt="stitcher icon" />
+                            </a>
                         </div>
                     </section>
                 </div>
             </div>
-            {% if episodes|length >= 1 %}
+            {% if episodes|length > 0 %}
                 <h3 class="episode-heading">Past Episodes</h3>
                 <div id="past-episodes-box">
                     {% for episode in episodes %}
