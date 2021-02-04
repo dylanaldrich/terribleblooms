@@ -42,7 +42,7 @@ class Creator(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100, default='Creator')
     bio = QuillField()
-    email = models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100, blank=True)
     website = models.URLField(max_length=1000, blank=True)
     facebook = models.URLField(max_length=1000, blank=True)
     twitter = models.URLField(max_length=1000, blank=True)

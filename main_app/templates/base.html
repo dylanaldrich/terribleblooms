@@ -79,6 +79,18 @@
             }
         });
     </script>
+
+    {% comment %} Toggle Stitcher Icon {% endcomment %}
+    <script>
+        $('#stitcher-podcast-logo').hover(
+            function() {
+                $('#stitcher-podcast-logo').html('<img src="{% static 'assets/icons/stitcher_icon_white.svg' %}" alt="stitcher icon" />');
+            },
+            function() {
+                $('#stitcher-podcast-logo').html('<img src="{% static 'assets/icons/stitcher_icon.svg' %}" alt="stitcher icon" />');
+            }
+        );
+    </script>
 </body>
 </html>
 

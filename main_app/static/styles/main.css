@@ -308,6 +308,15 @@ hr {
     background-color: rgb(66,133,244);
 }
 
+#stitcher-podcast-logo img {
+    width: 35px;
+}
+
+#stitcher-podcast-logo:hover {
+    background-color: rgb(66,133,244);
+    color: white;
+}
+
 #logo-cover {
     position: absolute;
     z-index: 2;
@@ -337,29 +346,9 @@ hr {
     height: auto;
 }
 
-/* SECTION ACTOR BIOS PAGE */
-
 #actor-avatar-container {
     display: flex;
     justify-content: space-around;
-}
-
-#actor-avatar-container a  {
-    height: fit-content;
-    width: 33%;
-}
-
-#actor-avatar-container a .card  {
-    height: 100%;
-}
-
-/* .card img.actor-avatar-img {
-    height: 20vh;
-    object-fit: cover;
-} */
-
-.card .card-content.actor-avatar-info {
-    padding: 8px;
 }
 
 .card .card-content.episode-title {
@@ -367,12 +356,17 @@ hr {
 }
 
 .actor-link {
-    color: black;
+    background-color: rgb(46, 44, 45);
+    color: white;
+    border-radius: 25px;
+    padding: 10px;
 }
 
 .actor-link:hover {
-    filter: brightness(150%);
+    color: goldenrod;
 }
+
+/* SECTION ACTOR BIOS PAGE */
 
 .bios-container {
     margin: 0 10%;

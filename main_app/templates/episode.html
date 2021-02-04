@@ -18,34 +18,25 @@
                             <i class="fas fa-hand-point-right"></i>
                             <span>Subscribe</span>
                         </section>
-                        <a href="#" id="apple-podcast-logo" target="_blank">
+                        <a href="#" id="apple-podcast-logo" target="_blank" title="Apple Podcasts">
                             <i class="fas fa-podcast"></i>
                         </a>
-                        <a href="#" id="google-podcast-logo" target="_blank">
+                        <a href="#" id="google-podcast-logo" target="_blank" title="Google Podcasts">
                             <i class="fab fa-google-play"></i>
                         </a>
-                        <a href="#" id="spotify-podcast-logo" target="_blank">
+                        <a href="#" id="spotify-podcast-logo" target="_blank" title="Spotify Podcasts">
                             <i class="fab fa-spotify"></i>
                         </a>
-                        <a href="#" id="spotify-podcast-logo" target="_blank">
-                            <i class="fab fa-spotify"></i>
+                        <a href="#" id="stitcher-podcast-logo" target="_blank" title="Stitcher Podcasts">
+                            <img src="{% static 'assets/icons/stitcher_icon.svg' %}" alt="stitcher icon" />
                         </a>
                     </div>
                 </section>
                 <hr>
-                <h5>Actor credits:</h5>
+                <h5>Meet The Cast:</h5>
                 <div id="actor-avatar-container">
                     {% for actor in episode.actors.all %}
-                        <a href="{% url 'bios' %}#{{ actor.name }}">
-                            <div class="card hoverable">
-                                <div class="card-image">
-                                    <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot" class="actor-avatar-img">
-                                </div>
-                                <div class="card-content actor-avatar-info">
-                                    <p class="actor-link">{{ actor.name }}</p>
-                                </div>
-                            </div>
-                        </a>
+                        <a href="{% url 'bios' %}#{{ actor.name }}" class="actor-link hoverable">{{ actor.name }}</a>
                     {% endfor %}
                 </div>
             </div>
