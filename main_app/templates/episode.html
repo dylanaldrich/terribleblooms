@@ -4,9 +4,10 @@
 {% block content %}
     <section class="row">
         <img src="{% static 'assets/artwork/thereordering_cassietaggart_lores.jpg' %}" alt="the reordering by cassie taggart" class="col the-reordering"  />
-        <div class="col">
+        <div class="col s6">
             <div class="container episode">
                 <h2>{{ episode.name }}</h2>
+                <p>Released: {{episode.date_Added|date:"F j, Y"}}</p>
                 <p>{{ episode.description }}</p>
                 <section class="audio">
                     <audio controls>

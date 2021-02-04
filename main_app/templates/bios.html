@@ -20,9 +20,6 @@
                 <div class="col s12 m7" id="{{ actor.name }}">
                     <h4 class="header">{{ actor.name }}</h4>
                     <div class="card horizontal">
-                        {% comment %} <div class="card-image">
-                            <img src="../../media/{{ actor.photo }}" alt="{{actor.name}} headshot">
-                        </div> {% endcomment %}
                         <div class="card-stacked">
                             <div class="card-content">
                                 <p>{{ actor.bio.html|safe }}</p>

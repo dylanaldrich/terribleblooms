@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces&display=swap');
 
+:root {
+    --main-bg-color: rgb(46, 44, 45);
+    --link-color: goldenrod;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -25,7 +30,7 @@ header {
 }
 
 nav {
-    background-color: rgb(46, 44, 45);
+    background-color: var(--main-bg-color);
     height: 100%;
 }
 
@@ -53,7 +58,7 @@ nav ul li.active {
 }
 
 nav ul li.active a {
-    color: goldenrod;
+    color: var(--link-color);
 }
 
 nav ul li:hover {
@@ -75,7 +80,7 @@ nav ul li:hover {
 }
 
 .page-footer {
-    background-color: rgb(46, 44, 45);
+    background-color: var(--main-bg-color);
 }
 
 .page-header {
@@ -101,14 +106,14 @@ nav ul li:hover {
 .outer-box {
     display: block;
     background-color: none;
-    height: 130px;
+    height: 110px;
     width: 100%;
     transform: translateY(-50%);
     z-index: 10;
 }
 
 .inner-box {
-    background-color: rgb(46, 44, 45);
+    background-color: var(--main-bg-color);
     color: white;
     position: absolute;
     bottom: 0;
@@ -122,6 +127,8 @@ nav ul li:hover {
 
 .headline {
     text-align: center;
+    font-size: 35px;
+    line-height: 1.5;
 }
 
 #expand_more {
@@ -152,7 +159,7 @@ h4 a {
 }
 
 h4 a:hover {
-    color: goldenrod;
+    color: var(--link-color);
 }
 
 .horizontal, .horizontal img {
@@ -217,7 +224,7 @@ audio:focus {
 .card {
     height: 47vh;
     display: inline-block;
-    background-color: rgb(46, 44, 45);
+    background-color: var(--main-bg-color);
 }
 
 .card .card-action {
@@ -241,7 +248,7 @@ audio:focus {
 }
 
 .card-content a:hover {
-    color: goldenrod;
+    color: var(--link-color);
 }
 
 .audio {
@@ -332,7 +339,7 @@ hr {
 #logo-cover {
     position: absolute;
     z-index: 2;
-    background-color: rgb(46, 44, 45);
+    background-color: var(--main-bg-color);
     height: 100%;
     width: 100%;
     color: white;
@@ -368,17 +375,17 @@ hr {
 }
 
 .actor-link {
-    background-color: rgb(46, 44, 45);
+    background-color: var(--main-bg-color);
     color: white;
     border-radius: 25px;
     padding: 10px;
 }
 
 .actor-link:hover {
-    color: goldenrod;
+    color: var(--link-color);
 }
 
-/* SECTION ACTOR BIOS PAGE */
+/* SECTION PERFORMER BIOS PAGE */
 
 .bios-container {
     margin: 0 10%;
@@ -394,7 +401,7 @@ hr {
 }
 
 .horizontal a, .creator-contacts a {
-    color: goldenrod;
+    color: var(--link-color);
 }
 
 .horizontal a:hover, .creator-contacts a:hover {
@@ -403,20 +410,17 @@ hr {
 
 #featured-episodes span {
     color: white;
-    padding-right: 10px;
+    margin-right: 10px;;
 }
-
-/* .horizontal .card-image {
-    width: 35%;
-} */
-
-/* .card.horizontal .card-image img {
-    width: 100%;
-} */
 
 #nothing-actor, #nothing-episode {
     text-align: center;
     margin-bottom: 10vh;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    text-transform: none;
+    margin: 0 10px;
 }
 
 /* SECTION ABOUT PAGE */
@@ -425,7 +429,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: -6vh 10% 6vh;
+    margin: 6vh 10%;
 }
 
 .poem-container {
@@ -468,7 +472,7 @@ hr {
 }
 
 .creator-square {
-    background-color: rgb(46, 44, 45);
+    background-color: var(--main-bg-color);
     width: 48%;
     height: fit-content;
     color: white;
