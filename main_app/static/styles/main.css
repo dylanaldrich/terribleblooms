@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Lemonada&display=swap');
 
@@ -14,7 +14,7 @@
         url('../assets/fonts/continental/continental_railway-webfont.svg#continental_railwayregular') format('svg');
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 :root {
     --main-bg-color: rgb(46, 44, 45);
@@ -31,7 +31,8 @@ body {
     display: flex;
     height: max-content;
     flex-direction: column;
-    font-family: 'Lemonada', Helvetica, serif;
+    font-family: 'Fraunces', Helvetica, serif;
+    /* font-family: 'Lemonada', Helvetica, serif; */
     /* font-family: 'Sriracha', Helvetica, serif; */
     align-items: center;
 }
@@ -94,7 +95,7 @@ nav ul li:hover {
 }
 
 #title {
-    font-family: 'continental_railway', Arial, serif;
+    /* font-family: 'continental_railway', Arial, serif; */
     padding: 0 10px;
     font-size: 22px;
 }
