@@ -12,24 +12,24 @@
         </div>
     </div>
     
-    <section id="episodes-box">
-        {% if latest_Episode %}
-            <div id="latest-episode" class="row">
+    <section id="tales-box">
+        {% if latest_Tale %}
+            <div id="latest-tale" class="row">
                 <div class="col s6">
-                    <h3>Latest Episode</h3>
-                    <a href="{% url 'episode_detail' latest_Episode.id %}" class="hoverable">
-                        <img src="media/{{ latest_Episode.image }}" alt="episode image" id="latest-episode-image" class="col s12" />
+                    <h3>Latest Tale</h3>
+                    <a href="{% url 'tale_detail' latest_Tale.id %}" class="hoverable">
+                        <img src="media/{{ latest_Tale.image }}" alt="tale image" id="latest-tale-image" class="col s12" />
                     </a>
                 </div>
-                <div id="latest-episode-info" class="col s6">
+                <div id="latest-tale-info" class="col s6">
                     <h4>
-                        <a href="{% url 'episode_detail' latest_Episode.id %}">{{ latest_Episode.name }}</a>
+                        <a href="{% url 'tale_detail' latest_Tale.id %}">{{ latest_Tale.name }}</a>
                     </h4>
                     {% comment %} TODO add in a "read more" link if the description gets too long {% endcomment %}
-                    <p id="latest-episode-description">{{ latest_Episode.description }}</p>
+                    <p id="latest-tale-description">{{ latest_Tale.description }}</p>
                     <section class="audio">
                         <audio controls>
-                            <source src="media/{{ latest_Episode.audioFile }}" type="audio/mpeg">
+                            <source src="media/{{ latest_Tale.audioFile }}" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                         <div class="logos">
@@ -53,26 +53,26 @@
                     </section>
                 </div>
             </div>
-            {% if episodes|length > 0 %}
-                <h3 class="episode-heading">Past Episodes</h3>
-                <div id="past-episodes-box">
-                    {% for episode in episodes %}
+            {% if tales|length > 0 %}
+                <h3 class="tale-heading">Past Tales</h3>
+                <div id="past-tales-box">
+                    {% for tale in tales %}
                             <div class="card hoverable">
                                 <div class="card-image">
-                                    <a href="{% url 'episode_detail' episode.id %}">
-                                        <img src="media/{{ episode.image }}" />
+                                    <a href="{% url 'tale_detail' tale.id %}">
+                                        <img src="media/{{ tale.image }}" />
                                     </a>
-                                    <a href="{% url 'episode_detail' episode.id %}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">play_arrow</i></a>
+                                    <a href="{% url 'tale_detail' tale.id %}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">play_arrow</i></a>
                                 </div>
-                                <div class="card-content episode-title">
-                                    <a href="{% url 'episode_detail' episode.id %}">{{ episode.name }}</a>
+                                <div class="card-content tale-title">
+                                    <a href="{% url 'tale_detail' tale.id %}">{{ tale.name }}</a>
                                 </div>
                             </div>
                     {% endfor %}
                 </div>
             {% endif %}
         {% else %}
-            <h5 id="nothing-episode">No episodes to show yet!</h5>
+            <h5 id="nothing-tale">No tales to show yet!</h5>
         {% endif %}
     </section>
 {% endblock %}

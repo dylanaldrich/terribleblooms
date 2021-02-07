@@ -2,8 +2,8 @@ from django.db import models
 from django_quill.fields import QuillField
 
 
-# Actors
-class Actor(models.Model):
+# Performers
+class Performer(models.Model):
     name = models.CharField(max_length=100)
     bio = QuillField(blank=True, default="Who needs a bio? I prefer to remain mysterious.")
     # photo = models.ImageField(upload_to='images/', default='static/assets/icons/user-solid.svg')
@@ -20,14 +20,14 @@ class Actor(models.Model):
         ordering = ['name']
 
 
-# Episodes
-class Episode(models.Model):
+# Tales
+class Tale(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField(max_length=1000)
     audioFile = models.FileField(upload_to='audio/')
     image = models.ImageField(upload_to='images/', default='static/assets/artwork/thereordering_cassietaggart.jpg')
     external_Link = models.URLField(max_length=1000)
-    actors = models.ManyToManyField(Actor, related_name='episodes')
+    performers = models.ManyToManyField(Performer, related_name='tales')
     date_Added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

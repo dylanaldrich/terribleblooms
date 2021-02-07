@@ -1,14 +1,14 @@
 from django.forms import ModelForm
-from .models import Actor, Episode, Creator
+from .models import Performer, Tale, Creator
 
-class Actor_Form(ModelForm):
+class Performer_Form(ModelForm):
     class Meta:
-        model = Actor
+        model = Performer
         fields = ['name', 'bio', 'photo', 'website', 'facebook', 'twitter', 'instagram']
 
-class Episode_Form(ModelForm):
+class Tale_Form(ModelForm):
     class Meta:
-        model = Episode
+        model = Tale
         fields = ['name', 'description', 'image', 'external_link']
 
 class Creator_Form(ModelForm):

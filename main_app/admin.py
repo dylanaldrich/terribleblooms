@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Actor, Episode, Creator
+from .models import Performer, Tale, Creator
 
 # Register your models here.
-admin.site.register(Actor)
-admin.site.register(Episode)
+admin.site.register(Performer)
+admin.site.register(Tale)
 admin.site.register(Creator)

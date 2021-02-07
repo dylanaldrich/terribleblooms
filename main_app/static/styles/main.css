@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lemonada&display=swap');
+
+@font-face {
+    font-family: 'continental_railway';
+    src: url('../assets/fonts/continental/continental_railway-webfont.eot');
+    src: 
+        url('../assets/fonts/continental/continental_railway-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/continental/continental_railway-webfont.woff') format('woff'),
+        url('../assets/fonts/continental/continental_railway-webfont.ttf') format('truetype'),
+        url('../assets/fonts/continental/continental_railway-webfont.svg#continental_railwayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --main-bg-color: rgb(46, 44, 45);
     --link-color: goldenrod;
@@ -15,7 +31,8 @@ body {
     display: flex;
     height: max-content;
     flex-direction: column;
-    font-family: 'Fraunces', serif;
+    font-family: 'Lemonada', Helvetica, serif;
+    /* font-family: 'Sriracha', Helvetica, serif; */
     align-items: center;
 }
 
@@ -77,6 +94,7 @@ nav ul li:hover {
 }
 
 #title {
+    font-family: 'continental_railway', Arial, serif;
     padding: 0 10px;
     font-size: 22px;
 }
@@ -107,7 +125,7 @@ nav ul li:hover {
     object-fit: cover;
 }
 
-#bios-header {
+#performers-header {
     object-position: bottom;
 }
 
@@ -190,31 +208,31 @@ audio:focus {
     outline: none;
 }
 
-#episodes-box {
+#tales-box {
     margin-top: -45px;
     margin-left: 10%;
     margin-right: 10%;
     padding-bottom: 15px;
 }
 
-#latest-episode {
+#latest-tale {
     display: flex;
 }
 
-#latest-episode h3 {
+#latest-tale h3 {
     margin-top: 0;
 }
 
-#latest-episode h4 {
+#latest-tale h4 {
     margin-top: 9px;
 }
 
-#latest-episode-info {
+#latest-tale-info {
     margin-left: 25px;
     text-align: center;
 }
 
-#latest-episode-description {
+#latest-tale-description {
     min-height: 30%;
 }
 
@@ -227,7 +245,7 @@ audio:focus {
     margin-bottom: 0;
 }
 
-#past-episodes-box {
+#past-tales-box {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 10px;
@@ -273,11 +291,11 @@ audio:focus {
 
 /* SECTION EPISODE DETAIL PAGE */
 
-.episode {
+.tale {
     text-align: center;
 }
 
-.episode p {
+.tale p {
     margin-bottom: .6rem;
 }
 
@@ -377,29 +395,29 @@ hr {
     height: auto;
 }
 
-#actor-avatar-container {
+#performer-avatar-container {
     display: flex;
     justify-content: space-around;
 }
 
-.card .card-content.episode-title {
+.card .card-content.tale-title {
     padding: 2.5vh;
 }
 
-.actor-link {
+.performer-link {
     background-color: var(--main-bg-color);
     color: white;
     border-radius: 25px;
     padding: 10px;
 }
 
-.actor-link:hover {
+.performer-link:hover {
     color: var(--link-color);
 }
 
 /* SECTION PERFORMER BIOS PAGE */
 
-.bios-container {
+.performers-container {
     margin: 0 10%;
 }
 
@@ -420,12 +438,12 @@ hr {
     color: lightgoldenrodyellow;
 }
 
-#featured-episodes span {
+#featured-tales span {
     color: white;
     margin-right: 10px;;
 }
 
-#nothing-actor, #nothing-episode {
+#nothing-performer, #nothing-tale {
     text-align: center;
     margin-bottom: 10vh;
 }
@@ -441,7 +459,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 6vh 10%;
+    margin: 6vh;
 }
 
 .poem-container {
@@ -449,8 +467,17 @@ hr {
     justify-content: space-between;
 }
 
-#poem, #backstory {
-    width: 48%;
+#poem {
+    width: 50%;
+}
+
+#byline {
+    font-size: 12px;
+    line-height: 2.5;
+}
+
+#backstory {
+    width: 45%;
 }
 
 #poem, #tagline {

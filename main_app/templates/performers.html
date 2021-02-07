@@ -3,7 +3,7 @@
 
 {% block content %}
     <section class="page-header">
-        <img src="{% static 'assets/artwork/babyhouse_cassietaggart.jpg' %}" alt="sweet nectar by cassie taggart" id="bios-header" />
+        <img src="{% static 'assets/artwork/babyhouse_cassietaggart.jpg' %}" alt="sweet nectar by cassie taggart" id="performers-header" />
     </section>
     <div class="outer-box">
         <div class="inner-box">
@@ -14,36 +14,36 @@
         </div>
     </div>
 
-    <section class="bios-container">
-        {% if actors.count > 0 %}
-            {% for actor in actors %}
-                <div class="col s12 m7" id="{{ actor.name }}">
-                    <h4 class="header">{{ actor.name }}</h4>
+    <section class="performers-container">
+        {% if performers.count > 0 %}
+            {% for performer in performers %}
+                <div class="col s12 m7" id="{{ performer.name }}">
+                    <h4 class="header">{{ performer.name }}</h4>
                     <div class="card horizontal">
                         <div class="card-stacked">
                             <div class="card-content">
-                                <p>{{ actor.bio.html|safe }}</p>
+                                <p>{{ performer.bio.html|safe }}</p>
                             </div>
                             <div class="card-action">
-                                <div id="featured-episodes">
+                                <div id="featured-tales">
                                     <span>Featured in:</span>
-                                    {% for episode in actor.episodes.all %}
-                                        <a href="{% url 'episode_detail' episode.id %}">{{ episode.name }}</a>
+                                    {% for tale in performer.tales.all %}
+                                        <a href="{% url 'tale_detail' tale.id %}">{{ tale.name }}</a>
                                     {% endfor %}
                                 </div>
                             </div>
                         </div>
                         <div class="horizontal socials">
-                            <a href="{{ actor.website }}">
+                            <a href="{{ performer.website }}">
                                 <i class="fas fa-user"></i>
                             </a>
-                            <a href="{{ actor.facebook }}">
+                            <a href="{{ performer.facebook }}">
                                 <i class="fab fa-facebook"></i>
                             </a>
-                            <a href="{{ actor.twitter }}">
+                            <a href="{{ performer.twitter }}">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="{{ actor.instagram }}">
+                            <a href="{{ performer.instagram }}">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
@@ -51,7 +51,7 @@
                 </div>
             {% endfor %}
         {% else %}
-            <h5 id="nothing-actor">Nothing to see here! Actor bios coming soon.</h5>
+            <h5 id="nothing-performer">Nothing to see here! Performer information coming soon.</h5>
         {% endif %}
     </section>
 {% endblock %}

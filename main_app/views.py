@@ -1,18 +1,18 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
-from .models import Episode, Actor, Creator
+from .models import Tale, Performer, Creator
 
 # Create your views here.
 def home(request):
-    episodes = list(Episode.objects.values())
-    latest_Episode = {}
+    tales = list(Tale.objects.values())
+    latest_Tale = {}
 
-    if len(episodes) > 0:
-        latest_Episode = episodes.pop(0)
+    if len(tales) > 0:
+        latest_Tale = tales.pop(0)
 
     context = {
-        "episodes" : episodes, 
-        "latest_Episode" : latest_Episode,
+        "tales" : tales, 
+        "latest_Tale" : latest_Tale,
     }
     return render(request, 'home.html', context)
 
@@ -20,10 +20,10 @@ def about(request):
     context = {"creators" : Creator.objects.all()}
     return render(request, 'about.html', context)
 
-def bios(request):
-    context = {"actors" : Actor.objects.all()}
-    return render(request, 'bios.html', context)
+def performers(request):
+    context = {"performers" : Performer.objects.all()}
+    return render(request, 'performers.html', context)
 
-def episode_detail(request, episode_id):
-    context = {'episode': Episode.objects.get(id=episode_id)}
-    return render(request, 'episode.html', context)
+def tale_detail(request, tale_id):
+    context = {'tale': Tale.objects.get(id=tale_id)}
+    return render(request, 'tale.html', context)
