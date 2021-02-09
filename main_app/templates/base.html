@@ -19,15 +19,21 @@
         <nav>
             <div class="nav-wrapper">
                 <div class="brand-logo">
-                    <img src="{% static 'assets/artwork/gargoyle.png' %}" alt="gargoyle" class="gargoyle" />
+                    <img src="{% static 'assets/artwork/purpleflower.png' %}" alt="flower" class="flower" />
                     <a href="{% url 'home' %}" id="title">A Garden of Terrible Blooms</a>
-                    <img src="{% static 'assets/artwork/bluedahlia.png' %}" alt="dahlia" class="dahlia" />
+                    <img src="{% static 'assets/artwork/purpleflower.png' %}" alt="flower" class="flower" />
                 </div>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li class="navlink default"><a href="{% url 'home' %}">Plays</a></li>
-                    <li class="navlink"><a href="{% url 'performers' %}">Performers</a></li>
-                    <li class="navlink"><a href="{% url 'about' %}">About</a></li>
+                    <li class="navlink default">
+                        <a href="{% url 'home' %}">Plays</a>
+                    </li>
+                    <li class="navlink">
+                        <a href="{% url 'performers' %}">Performers</a>
+                    </li>
+                    <li class="navlink">
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li><a href="{% url 'home' %}">Plays</a></li>

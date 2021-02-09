@@ -1,11 +1,9 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Fraunces&display=swap'); */
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
 
 
 :root {
     --main-bg-color: rgb(46, 44, 45);
-    --link-color: goldenrod;
+    --link-color: rgb(159,86,166);
     --nav-height: 45px;
 }
 
@@ -18,8 +16,7 @@ body {
     display: flex;
     height: max-content;
     flex-direction: column;
-    /* font-family: 'Fraunces', Helvetica, serif; */
-    font-family: 'Sriracha', Helvetica, serif;
+    font-family: 'Raleway', sans-serif;
     align-items: center;
 }
 
@@ -39,6 +36,7 @@ header {
 header, footer {
     width: 100%;
 }
+
 nav {
     background-color: var(--main-bg-color);
     height: 100%;
@@ -63,13 +61,19 @@ nav .brand-logo {
 
 .navlink a {
     font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
     height: var(--nav-height);
     display: flex;
     align-items: center;
 }
 
 nav ul li.active {
-    background-color: rgba(250,250,250,0.2);
+    background-color: transparent;
+    text-decoration: underline;
+    font-weight: 600;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
 }
 
 nav ul li.active a {
@@ -83,15 +87,15 @@ nav ul li:hover {
 #title {
     font-family: 'Raleway', sans-serif;
     padding: 0 10px;
-    font-size: 22px;
+    font-size: 27px;
 }
 
-.gargoyle {
-    height: 40px;
+.flower {
+    height: 38px;
 }
 
 .dahlia {
-    height: 38px;
+    height: 45px;
     animation: rotate 20s linear infinite;
 }
 
@@ -104,7 +108,7 @@ nav ul li:hover {
 }
 
 .page-header {
-    height: 77vh;
+    height: 86vh;
     overflow: hidden;
     display: flex;
     align-content: center;
@@ -127,7 +131,7 @@ nav ul li:hover {
 .outer-box {
     display: block;
     background-color: none;
-    height: 110px;
+    height: 120px;
     width: 100%;
     transform: translateY(-50%);
     z-index: 10;
@@ -148,13 +152,25 @@ nav ul li:hover {
 
 .headline {
     text-align: center;
-    font-size: 35px;
-    line-height: 1.5;
+    font-size: 30px;
+    line-height: 1.3;
     letter-spacing: 1.5px;
+}
+
+h3.headline {
+    margin: 0 0 5px 0;
 }
 
 .headline span {
     font-style: italic;
+    font-weight: bolder;
+}
+
+#created-by {
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
 }
 
 #expand_more {
@@ -383,7 +399,7 @@ hr {
     padding-left: 10px;
 }
 
-.the-reordering {
+.side-image {
     max-width: 50%;
     height: auto;
 }
@@ -442,26 +458,30 @@ hr {
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    color: var(--link-color);
     text-transform: none;
     margin: 0 10px;
 }
 
+.performers-outer-box {
+    height: 78px;
+}
+
+h1#performer-headline {
+    font-size: 33px;
+}
+
 /* SECTION ABOUT PAGE */
 
-#about-content {
+#creator-content, .about-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 6vh;
 }
 
-.poem-container {
-    display: flex;
-    justify-content: space-between;
-}
-
 #poem {
-    width: 50%;
+    text-align: center;
 }
 
 #byline {
@@ -470,7 +490,7 @@ hr {
 }
 
 #backstory {
-    width: 45%;
+    margin: 3vh 6vh 15px;
 }
 
 #poem, #tagline {
@@ -479,6 +499,12 @@ hr {
 
 #backstory h5 {
     margin-top: 0;
+}
+
+#art-credits {
+    font-size: 18px;
+    text-align: center;
+    display: flex;
 }
 
 .play-title {
@@ -493,7 +519,7 @@ hr {
 #creators-headline {
     display: flex;
     align-items: center;
-    margin: 5vh;
+    margin-bottom: 5vh;
 }
 
 #creator-container {

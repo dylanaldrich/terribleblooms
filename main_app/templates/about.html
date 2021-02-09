@@ -2,12 +2,9 @@
 {% load static %}
 
 {% block content %}
-    <section class="page-header">
-        <img src="{% static 'assets/artwork/flycatcher_cassietaggart.jpg' %}" alt="sweet nectar by cassie taggart" id="about-header" />
-    </section>
-
-    <div id="about-content">
-        <div class="poem-container">
+    <section class="row">
+        <img src="{% static 'assets/artwork/flycatcher_cassietaggart.jpg' %}" alt="fly catcher by cassie taggart" class="col side-image" />
+        <div class="col s6 about-content">
             <p id="poem">
                 Tear open the warm belly of earth, plant a few seeds, or lay a bulb<br>
                 and let’s see what human nature spews into the day,<br>
@@ -20,21 +17,27 @@
                 Only faintest warmth for comfort<br>
                 in the cold hopeful bed<br>
                 Ah Life, your garden reveals some awful secrets<br>
-                and yields some Terrible Blooms.<br>
-                <span id="byline">By Thomas Chan</span>
+                and yields some Terrible Blooms.
             </p>
             <div id="backstory">
-                <h5>A Friendship Garden</h5>
                 <p>
-                    <span id="tagline">A Garden of Terrible Blooms</span> is a passion project, born of two friends' love for theater: Sharon Yablon and Thomas Chan. Thomas has provided sound design and live music for two of Sharon’s themed, one-act productions: <span class="play-title">Stomach Contents</span> (Zombie Joe’s Underground Theater, 2018), which was set in the desert, and <span class="play-title">24 Hours On Sunset</span> (indoor and outdoor locations, 2011), which was an evening of one-acts centered around the iconic Sunset Boulevard. They have also worked together on individual plays and performances over the years in a variety of locations.
+                    <span id="tagline">A Garden of Terrible Blooms</span> is a passion project created by Sharon Yablon and Thomas Chan. Thomas has provided sound design and live music for two of Sharon’s themed, one-act productions: <span class="play-title">Stomach Contents</span> (Zombie Joe’s Underground Theater, 2018), which was set in the desert, and <span class="play-title">24 Hours On Sunset</span> (indoor and outdoor locations, 2011), which was an evening of one-acts centered around the iconic Sunset Boulevard. They have also worked together on individual plays and performances over the years in a variety of locations.
                 </p>
             </div>
+            <div id="art-credits">
+                <img src="{% static 'assets/artwork/bluedahlia.png' %}" alt="dahlia" class="dahlia" />
+                <div>
+                    <p>Paintings by <a href="http://www.cassieart.com" target="_blank">Cassie Taggart</a></p>
+                    <p>Photos by Kevin O'Sullivan</p>
+                </div>
+                <img src="{% static 'assets/artwork/bluedahlia.png' %}" alt="dahlia" class="dahlia" />
+            </div>
         </div>
-    
+    </section>
+
+    <div id="creator-content">
         <div id="creators-headline">
-            <img src="{% static 'assets/artwork/bluedahlia.png' %}" alt="dahlia" class="dahlia" />
             <h4>The Creators</h4>
-            <img src="{% static 'assets/artwork/bluedahlia.png' %}" alt="dahlia" class="dahlia" />
         </div>
         
         <section id="creator-container">

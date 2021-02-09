@@ -3,7 +3,7 @@
 
 {% block content %}
     <section class="row">
-        <img src="{% static 'assets/artwork/thereordering_cassietaggart_lores.jpg' %}" alt="the reordering by cassie taggart" class="col the-reordering"  />
+        <img src="{% static 'assets/artwork/thereordering_cassietaggart_lores.jpg' %}" alt="the reordering by cassie taggart" class="col side-image"  />
         <div class="col s6">
             <div class="container play">
                 <h2>{{ play.name }}</h2>
@@ -34,7 +34,7 @@
                     </div>
                 </section>
                 <hr>
-                <h5>Meet The Cast:</h5>
+                <h5>Meet The Performers:</h5>
                 <div id="performer-avatar-container">
                     {% for performer in play.performers.all %}
                         <a href="{% url 'performers' %}#{{ performer.name }}" class="performer-link hoverable">{{ performer.name }}</a>
