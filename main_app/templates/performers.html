@@ -8,7 +8,7 @@
     <div class="outer-box">
         <div class="inner-box">
             <div class="headline">
-                <h1>Meet The Cast</h1>
+                <h1>Meet The Performers</h1>
             </div>
             <i class="material-icons dp48" id="expand_more">expand_more</i>
         </div>
@@ -25,10 +25,10 @@
                                 <p>{{ performer.bio.html|safe }}</p>
                             </div>
                             <div class="card-action">
-                                <div id="featured-tales">
+                                <div id="featured-plays">
                                     <span>Featured in:</span>
-                                    {% for tale in performer.tales.all %}
-                                        <a href="{% url 'tale_detail' tale.id %}">{{ tale.name }}</a>
+                                    {% for play in performer.plays.all %}
+                                        <a href="{% url 'play_detail' play.id %}">{{ play.name }}</a>
                                     {% endfor %}
                                 </div>
                             </div>

@@ -1,20 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fraunces&display=swap'); */
 
-/* @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Sriracha&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Lemonada&display=swap');
-
-@font-face {
-    font-family: 'continental_railway';
-    src: url('../assets/fonts/continental/continental_railway-webfont.eot');
-    src: 
-        url('../assets/fonts/continental/continental_railway-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../assets/fonts/continental/continental_railway-webfont.woff') format('woff'),
-        url('../assets/fonts/continental/continental_railway-webfont.ttf') format('truetype'),
-        url('../assets/fonts/continental/continental_railway-webfont.svg#continental_railwayregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-} */
 
 :root {
     --main-bg-color: rgb(46, 44, 45);
@@ -31,9 +18,8 @@ body {
     display: flex;
     height: max-content;
     flex-direction: column;
-    font-family: 'Fraunces', Helvetica, serif;
-    /* font-family: 'Lemonada', Helvetica, serif; */
-    /* font-family: 'Sriracha', Helvetica, serif; */
+    /* font-family: 'Fraunces', Helvetica, serif; */
+    font-family: 'Sriracha', Helvetica, serif;
     align-items: center;
 }
 
@@ -95,13 +81,17 @@ nav ul li:hover {
 }
 
 #title {
-    /* font-family: 'continental_railway', Arial, serif; */
+    font-family: 'Raleway', sans-serif;
     padding: 0 10px;
     font-size: 22px;
 }
 
-.sunflower {
-    height: 30px;
+.gargoyle {
+    height: 40px;
+}
+
+.dahlia {
+    height: 38px;
     animation: rotate 20s linear infinite;
 }
 
@@ -160,6 +150,11 @@ nav ul li:hover {
     text-align: center;
     font-size: 35px;
     line-height: 1.5;
+    letter-spacing: 1.5px;
+}
+
+.headline span {
+    font-style: italic;
 }
 
 #expand_more {
@@ -209,31 +204,28 @@ audio:focus {
     outline: none;
 }
 
-#tales-box {
+#plays-box {
     margin-top: -45px;
     margin-left: 10%;
     margin-right: 10%;
     padding-bottom: 15px;
 }
 
-#latest-tale {
+#latest-play {
     display: flex;
+    align-items: center;
 }
 
-#latest-tale h3 {
+#latest-play h3 {
     margin-top: 0;
 }
 
-#latest-tale h4 {
-    margin-top: 9px;
-}
-
-#latest-tale-info {
+#latest-play-info {
     margin-left: 25px;
     text-align: center;
 }
 
-#latest-tale-description {
+#latest-play-description {
     min-height: 30%;
 }
 
@@ -246,7 +238,7 @@ audio:focus {
     margin-bottom: 0;
 }
 
-#past-tales-box {
+#past-plays-box {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 10px;
@@ -292,11 +284,11 @@ audio:focus {
 
 /* SECTION EPISODE DETAIL PAGE */
 
-.tale {
+.play {
     text-align: center;
 }
 
-.tale p {
+.play p {
     margin-bottom: .6rem;
 }
 
@@ -401,7 +393,7 @@ hr {
     justify-content: space-around;
 }
 
-.card .card-content.tale-title {
+.card .card-content.play-title {
     padding: 2.5vh;
 }
 
@@ -439,12 +431,12 @@ hr {
     color: lightgoldenrodyellow;
 }
 
-#featured-tales span {
+#featured-plays span {
     color: white;
     margin-right: 10px;;
 }
 
-#nothing-performer, #nothing-tale {
+#nothing-performer, #nothing-play {
     text-align: center;
     margin-bottom: 10vh;
 }

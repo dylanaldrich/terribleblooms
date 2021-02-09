@@ -5,13 +5,13 @@
     <section class="row">
         <img src="{% static 'assets/artwork/thereordering_cassietaggart_lores.jpg' %}" alt="the reordering by cassie taggart" class="col the-reordering"  />
         <div class="col s6">
-            <div class="container tale">
-                <h2>{{ tale.name }}</h2>
-                <p>Released: {{tale.date_Added|date:"F j, Y"}}</p>
-                <p>{{ tale.description }}</p>
+            <div class="container play">
+                <h2>{{ play.name }}</h2>
+                <p>Released: {{play.date_Added|date:"F j, Y"}}</p>
+                <p>{{ play.description }}</p>
                 <section class="audio">
                     <audio controls>
-                        <source src="../../media/{{ tale.audioFile }}" type="audio/mpeg">
+                        <source src="../../media/{{ play.audioFile }}" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                     <div class="logos">
@@ -36,7 +36,7 @@
                 <hr>
                 <h5>Meet The Cast:</h5>
                 <div id="performer-avatar-container">
-                    {% for performer in tale.performers.all %}
+                    {% for performer in play.performers.all %}
                         <a href="{% url 'performers' %}#{{ performer.name }}" class="performer-link hoverable">{{ performer.name }}</a>
                     {% endfor %}
                 </div>

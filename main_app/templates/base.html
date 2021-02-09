@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="{% static 'assets/artwork/sunflower.png' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'assets/artwork/bluedahlia.png' %}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
@@ -19,18 +19,18 @@
         <nav>
             <div class="nav-wrapper">
                 <div class="brand-logo">
-                    <img src="{% static 'assets/artwork/sunflower.png' %}" alt="sunflower" class="sunflower" />
+                    <img src="{% static 'assets/artwork/gargoyle.png' %}" alt="gargoyle" class="gargoyle" />
                     <a href="{% url 'home' %}" id="title">A Garden of Terrible Blooms</a>
-                    <img src="{% static 'assets/artwork/sunflower.png' %}" alt="sunflower" class="sunflower" />
+                    <img src="{% static 'assets/artwork/bluedahlia.png' %}" alt="dahlia" class="dahlia" />
                 </div>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li class="navlink default"><a href="{% url 'home' %}">Tales</a></li>
+                    <li class="navlink default"><a href="{% url 'home' %}">Plays</a></li>
                     <li class="navlink"><a href="{% url 'performers' %}">Performers</a></li>
                     <li class="navlink"><a href="{% url 'about' %}">About</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{% url 'home' %}">Tales</a></li>
+                    <li><a href="{% url 'home' %}">Plays</a></li>
                     <li><a href="{% url 'performers' %}">Performers</a></li>
                     <li><a href="{% url 'about' %}">About</a></li>
                 </ul>

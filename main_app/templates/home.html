@@ -7,29 +7,32 @@
     </section>
     <div class="outer-box">
         <div class="inner-box">
-            <h3 class="headline">Audio Tales for a Long and Sleepless <br>Night in Los Angeles</h3>
+            <h3 class="headline">
+                <span>We Are Just Passing Through...</span><br>
+                Weird Plays Set in Los Angeles
+            </h3>
             <i class="material-icons dp48" id="expand_more">expand_more</i>
         </div>
     </div>
     
-    <section id="tales-box">
-        {% if latest_Tale %}
-            <div id="latest-tale" class="row">
+    <section id="plays-box">
+        {% if latest_Play %}
+            <h3>Latest Play</h3>
+            <div id="latest-play" class="row">
                 <div class="col s6">
-                    <h3>Latest Tale</h3>
-                    <a href="{% url 'tale_detail' latest_Tale.id %}" class="hoverable">
-                        <img src="media/{{ latest_Tale.image }}" alt="tale image" id="latest-tale-image" class="col s12" />
+                    <a href="{% url 'play_detail' latest_Play.id %}" class="hoverable">
+                        <img src="media/{{ latest_Play.image }}" alt="play image" id="latest-play-image" class="col s12" />
                     </a>
                 </div>
-                <div id="latest-tale-info" class="col s6">
+                <div id="latest-play-info" class="col s6">
                     <h4>
-                        <a href="{% url 'tale_detail' latest_Tale.id %}">{{ latest_Tale.name }}</a>
+                        <a href="{% url 'play_detail' latest_Play.id %}">{{ latest_Play.name }}</a>
                     </h4>
                     {% comment %} TODO add in a "read more" link if the description gets too long {% endcomment %}
-                    <p id="latest-tale-description">{{ latest_Tale.description }}</p>
+                    <p id="latest-play-description">{{ latest_Play.description }}</p>
                     <section class="audio">
                         <audio controls>
-                            <source src="media/{{ latest_Tale.audioFile }}" type="audio/mpeg">
+                            <source src="media/{{ latest_Play.audioFile }}" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                         <div class="logos">
@@ -53,26 +56,26 @@
                     </section>
                 </div>
             </div>
-            {% if tales|length > 0 %}
-                <h3 class="tale-heading">Past Tales</h3>
-                <div id="past-tales-box">
-                    {% for tale in tales %}
+            {% if plays|length > 0 %}
+                <h3 class="play-heading">Past Plays</h3>
+                <div id="past-plays-box">
+                    {% for play in plays %}
                             <div class="card hoverable">
                                 <div class="card-image">
-                                    <a href="{% url 'tale_detail' tale.id %}">
-                                        <img src="media/{{ tale.image }}" />
+                                    <a href="{% url 'play_detail' play.id %}">
+                                        <img src="media/{{ play.image }}" />
                                     </a>
-                                    <a href="{% url 'tale_detail' tale.id %}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">play_arrow</i></a>
+                                    <a href="{% url 'play_detail' play.id %}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">play_arrow</i></a>
                                 </div>
-                                <div class="card-content tale-title">
-                                    <a href="{% url 'tale_detail' tale.id %}">{{ tale.name }}</a>
+                                <div class="card-content play-title">
+                                    <a href="{% url 'play_detail' play.id %}">{{ play.name }}</a>
                                 </div>
                             </div>
                     {% endfor %}
                 </div>
             {% endif %}
         {% else %}
-            <h5 id="nothing-tale">No tales to show yet!</h5>
+            <h5 id="nothing-play">No plays to show yet!</h5>
         {% endif %}
     </section>
 {% endblock %}
