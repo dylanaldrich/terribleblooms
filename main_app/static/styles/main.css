@@ -107,6 +107,17 @@ nav ul li:hover {
     background-color: var(--main-bg-color);
 }
 
+.footer-copyright {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+
+.footer-copyright span a {
+    color: var(--link-color);
+    font-weight: bold;
+}
+
 .page-header {
     height: 86vh;
     overflow: hidden;
@@ -130,7 +141,6 @@ nav ul li:hover {
 
 .outer-box {
     display: block;
-    background-color: none;
     height: 120px;
     width: 100%;
     transform: translateY(-50%);
@@ -171,12 +181,13 @@ h3.headline {
     font-size: 18px;
     line-height: 1;
     text-align: center;
+    padding-bottom: 5px;
 }
 
 #expand_more {
     animation: bounce 2s infinite;
     font-size: 80px;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 
 @keyframes bounce {
