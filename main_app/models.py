@@ -5,11 +5,7 @@ from django_quill.fields import QuillField
 # Performers
 class Performer(models.Model):
     name = models.CharField(max_length=100)
-    bio = QuillField(blank=True, default="Biography forthcoming...")
-    website = models.URLField(max_length=1000, blank=True)
-    facebook = models.URLField(max_length=1000, blank=True)
-    twitter = models.URLField(max_length=1000, blank=True)
-    instagram = models.URLField(max_length=1000, blank=True)
+    bio = QuillField(blank=True)
     imdb = models.URLField(max_length=1000, blank=True)
 
     def __str__(self):

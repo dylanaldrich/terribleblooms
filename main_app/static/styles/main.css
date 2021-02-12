@@ -441,21 +441,12 @@ hr {
     margin: 0 10%;
 }
 
-.socials {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 1.6em;
-    width: 5%;
-}
-
 .horizontal a, .creator-contacts a {
     color: var(--link-color);
 }
 
 .horizontal a:hover, .creator-contacts a:hover {
-    color: lightgoldenrodyellow;
+    color: white;
 }
 
 #featured-plays span {
@@ -471,14 +462,14 @@ hr {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
     color: var(--link-color);
     text-transform: none;
-    margin: 0 10px;
+    font-weight: bold;
 }
 
 .performers-outer-box {
     height: 78px;
 }
 
-h1#performer-headline {
+h3#performer-headline {
     font-size: 33px;
 }
 
