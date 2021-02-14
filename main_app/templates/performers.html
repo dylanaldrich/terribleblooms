@@ -10,16 +10,36 @@
             <div class="headline">
                 <h3 id="performer-headline">Meet The Performers</h3>
             </div>
-            <i class="material-icons dp48" id="expand_more">expand_more</i>
+            <i class="material-icons dp48 performer-chevron" id="expand_more">expand_more</i>
         </div>
     </div>
 
-    <section class="row performers-container">
+    <section class="performers-container">
         {% if performers.count > 0 %}
             {% for performer in performers %}
-                <div class="card performer-card" id="{{ performer.name }}" style="overflow: visible;">
+                <div class="card s12 m4 performer-card" id="{{ performer.name }}" style="overflow: visible;">
                     <div class="card-content">
-                        <span class="card-title activator white-text text-darken-4">{{ performer.name }}<i class="material-icons right">more_vert</i></span>
+                        {% if performer.bio.html|length %}
+                            <span class="card-title activator white-text text-darken-4">
+                            {{ performer.name }}
+                                <i class="material-icons right performer-icon">info_outline</i>
+                            </span>
+                            {% if performer.imdb %}
+                                
+                                <a href="{{ performer.imdb }}">
+                                    <i class="fab fa-imdb right performer-icon"></i>
+                                </a>
+                            {% endif %}
+                        {% else %}
+                            <span class="card-title white-text text-darken-4">
+                                {{ performer.name }}
+                                {% if performer.imdb %}
+                                    <a href="{{ performer.imdb }}">
+                                        <i class="fab fa-imdb right performer-icon"></i>
+                                    </a>
+                                {% endif %}
+                            </span>
+                        {% endif %}
                     </div>
 
                     <div class="card-action">
@@ -27,22 +47,16 @@
                             <span>Featured in:</span>
                             {% for play in performer.plays.all %}
                                 <p>
-                                    <a href="{% url 'play_detail' play.id %}">{{ play.name }}</a>
+                                    <a href="{% url 'play_detail' play.id %}" class="featured-play-link">{{ play.name }}</a>
                                 </p>
                             {% endfor %}
                         </div>
                     </div>
-                    {% if performer.bio.html|safe %}
-                        <div class="card-reveal" style="display: none; transform: translateY(0%);">
-                            <span class="card-title grey-text text-darken-4">Bio<i class="material-icons right">close</i></span>
-                            <p>{{ performer.bio.html|safe }}</p>
-                        </div>
-                    {% endif %}
-                    {% if performer.imdb %}
-                        <a href="{{ performer.imdb }}">
-                            <i class="fab fa-imdb"></i>
-                        </a>
-                    {% endif %}
+                    
+                    <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                        <span class="card-title grey-text text-darken-4">Bio<i class="material-icons right">close</i></span>
+                        <p>{{ performer.bio.html|safe }}</p>
+                    </div>
                 </div>
             {% endfor %}
         {% else %}
