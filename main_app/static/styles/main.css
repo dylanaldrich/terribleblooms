@@ -457,17 +457,23 @@ h3#performer-headline {
 }
 
 .performer-card {
-    min-width: 30%;
-    height: fit-content;
+    width: 49%;
+    height: revert;
 }
 
-.horizontal a:hover, .creator-contacts a:hover {
-    color: white;
+.card .card-content .card-title {
+    display: contents;
 }
 
 #featured-plays span {
     color: white;
     margin-right: 10px;
+    display: block;
+}
+
+#featured-plays div {
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 
 #nothing-performer, #nothing-play {
@@ -586,4 +592,8 @@ p.creator-bio p {
 
 .creator-contacts a {
     color: var(--link-color);
+}
+
+.creator-contacts a:hover {
+    color: white;
 }
