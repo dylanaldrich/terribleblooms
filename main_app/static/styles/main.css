@@ -109,13 +109,23 @@ nav ul li:hover {
 
 .footer-copyright {
     display: flex;
-    justify-content: space-between;
-    margin: 0 15px;
+    justify-content: center;
+    position: relative;
 }
 
 .footer-copyright span a {
     color: var(--link-color);
     font-weight: bold;
+}
+
+#admin-link {
+    position: absolute;
+    right: 15px;
+}
+
+#copyright {
+    position: absolute;
+    left: 15px;
 }
 
 .page-header {
@@ -507,7 +517,7 @@ h3#performer-headline {
 }
 
 .performer-icon-line, .imdb {
-    padding-top: 5px;
+    padding-top: 7px;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
