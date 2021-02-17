@@ -28,10 +28,9 @@
                     </a>
                 </div>
                 <div id="latest-play-info" class="col s6">
-                    <h4>
+                    <h3 id="latest-play-title">
                         <a href="{% url 'play_detail' latest_Play.id %}">{{ latest_Play.name }}</a>
-                    </h4>
-                    {% comment %} TODO add in a "read more" link if the description gets too long {% endcomment %}
+                    </h3>
                     <p id="latest-play-description">{{ latest_Play.description }}</p>
                     <section class="audio">
                         <audio controls>
@@ -60,7 +59,7 @@
                 </div>
             </div>
             {% if plays|length > 0 %}
-                <h3 class="play-heading">Past Plays</h3>
+                <h3 id="past-plays-heading">Past Plays</h3>
                 <div id="past-plays-box">
                     {% for play in plays %}
                             <div class="card hoverable">
@@ -68,7 +67,7 @@
                                     <a href="{% url 'play_detail' play.id %}">
                                         <img src="media/{{ play.image }}" />
                                     </a>
-                                    <a href="{% url 'play_detail' play.id %}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">play_arrow</i></a>
+                                    <a href="{% url 'play_detail' play.id %}" class="btn-floating halfway-fab waves-effect waves-light"><i class="material-icons">play_arrow</i></a>
                                 </div>
                                 <div class="card-content play-title">
                                     <a href="{% url 'play_detail' play.id %}">{{ play.name }}</a>

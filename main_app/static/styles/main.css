@@ -3,7 +3,8 @@
 
 :root {
     --main-bg-color: rgb(46, 44, 45);
-    --link-color: rgb(159,86,166);
+    /* --link-color: rgb(159,86,166); */
+    --link-color: rgb(159,86,216);
     --nav-height: 45px;
 }
 
@@ -12,7 +13,12 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    background-color: whitesmoke;
     display: flex;
     height: max-content;
     flex-direction: column;
@@ -94,15 +100,6 @@ nav ul li:hover {
     height: 38px;
 }
 
-.dahlia {
-    height: 45px;
-    animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-    to{ transform: rotate(360deg); }
-}
-
 .page-footer {
     background-color: var(--main-bg-color);
 }
@@ -170,14 +167,16 @@ nav ul li:hover {
     justify-content: center;
 }
 
+h3 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
 .headline {
     text-align: center;
     font-size: 30px;
     line-height: 1.3;
     letter-spacing: 1.5px;
-}
-
-h3.headline {
     margin: 0 0 5px 0;
 }
 
@@ -196,6 +195,7 @@ h3.headline {
 
 #expand_more {
     animation: bounce 2s infinite;
+    font-size: 55px;
     margin-left: 50px;
 }
 
@@ -212,20 +212,19 @@ h1 {
     margin: 5px 0 8px 0;
 }
 
-h4 {
+#latest-play-title {
     margin-top: 0;
 }
 
-h4 a {
-    color: black;
-}
-
-h4 a:hover {
+#latest-play-title a {
     color: var(--link-color);
+    font-weight: bold;
 }
 
-.horizontal, .horizontal img {
-    max-height: 300px;
+#latest-play-title a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1.5px;
 }
 
 audio {
@@ -252,10 +251,6 @@ audio:focus {
     align-items: center;
 }
 
-#latest-play h3 {
-    margin-top: 0;
-}
-
 #latest-play-info {
     margin-left: 25px;
     text-align: center;
@@ -263,6 +258,10 @@ audio:focus {
 
 #latest-play-description {
     min-height: 30%;
+}
+
+#past-plays-heading {
+    margin: 45px 0 10px 0;
 }
 
 .row .col {
@@ -468,6 +467,7 @@ h3#performer-headline {
 
 .performer-card {
     width: 49%;
+    /* width: 33%; */
     height: revert;
 }
 
@@ -536,6 +536,7 @@ h3#performer-headline {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     margin: 6vh;
 }
 
@@ -548,22 +549,29 @@ h3#performer-headline {
     line-height: 2.5;
 }
 
-#backstory {
-    margin: 3vh 6vh 15px;
-}
-
-#poem, #tagline {
+#poem {
     font-style: italic;
+    font-weight: bold;
 }
 
-#backstory h5 {
-    margin-top: 0;
+#tagline {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#backstory {
+    text-align: justify;
 }
 
 #art-credits {
     font-size: 18px;
     text-align: center;
     display: flex;
+}
+
+#art-credits div p a {
+    color: var(--link-color);
+    font-weight: bold;
 }
 
 .play-title {
@@ -575,10 +583,27 @@ h3#performer-headline {
     margin: 0 8px;
 }
 
+#art-credits {
+    display: flex;
+    align-items: center;
+}
+
+.dahlia {
+    height: 45px;
+    animation: rotate 20s linear infinite;
+    margin: 0 10px;
+}
+
+@keyframes rotate {
+    to{ transform: rotate(360deg); }
+}
+
 #creators-headline {
     display: flex;
     align-items: center;
     margin-bottom: 5vh;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 #creator-container {
@@ -618,10 +643,19 @@ p.creator-bio p {
 }
 
 .creator-contacts {
+    display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5vh;
     width: 100%;
     height: 6vh;
     border-top: 1px solid rgba(160,160,160,0.2);
+}
+
+.fa-envelope {
+    font-size: 3vh;
+    padding: 5px;
 }
 
 .creator-contacts a {
