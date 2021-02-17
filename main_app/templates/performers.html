@@ -23,21 +23,23 @@
                             <span class="card-title activator white-text text-darken-4">
                                 {{ performer.name }}
                             </span>
-                            <span class="card-title activator white-text text-darken-4">
-                                <i class="material-icons right performer-icon">info_outline</i>
-                            </span>
-                            {% if performer.imdb %}
-                                <a href="{{ performer.imdb }}" target="_blank">
-                                    <i class="fab fa-imdb right performer-icon"></i>
-                                </a>
-                            {% endif %}
+                            <div class="performer-icon-line">
+                                    <i class="far fa-user activator  text-darken-4 performer-icon"></i>
+                                {% if performer.imdb %}
+                                    <a href="{{ performer.imdb }}" target="_blank">
+                                        <i class="fab fa-imdb performer-icon imdb-icon"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
                         {% else %}
                             <span class="card-title white-text text-darken-4">
                                 {{ performer.name }}
                                 {% if performer.imdb %}
-                                    <a href="{{ performer.imdb }}" target="_blank">
-                                        <i class="fab fa-imdb right performer-icon"></i>
-                                    </a>
+                                    <p class="imdb">
+                                        <a href="{{ performer.imdb }}" target="_blank">
+                                            <i class="fab fa-imdb performer-icon"></i>
+                                        </a>
+                                    </p>
                                 {% endif %}
                             </span>
                         {% endif %}

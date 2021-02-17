@@ -483,7 +483,23 @@ h3#performer-headline {
 
 .performer-icon {
     color: var(--link-color);
-    font-size: 4vh;
+    font-size: 30px;
+}
+
+.fa-imdb {
+    font-size: 37px;
+}
+
+div.performer-icon-line {
+    display: flex;
+    align-items: center;
+    width: 72px;
+    justify-content: space-between;
+}
+
+.imdb-link {
+    display: flex;
+    align-items: center;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
