@@ -277,7 +277,7 @@ audio:focus {
 }
 
 .card .card-action {
-    padding: 16px;
+    padding: 16px 24px;
 }
 
 .card-image img {
@@ -461,6 +461,10 @@ h3#performer-headline {
     height: revert;
 }
 
+.performer-card .card-content {
+    padding-bottom: 16px;
+}
+
 .card .card-content .card-title {
     display: contents;
 }
@@ -483,23 +487,27 @@ h3#performer-headline {
 
 .performer-icon {
     color: var(--link-color);
-    font-size: 30px;
+    font-size: 32px;
 }
 
 .fa-imdb {
     font-size: 37px;
 }
 
-div.performer-icon-line {
+.fa-user {
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.performer-icon-line {
     display: flex;
     align-items: center;
     width: 72px;
     justify-content: space-between;
 }
 
-.imdb-link {
-    display: flex;
-    align-items: center;
+.performer-icon-line, .imdb {
+    padding-top: 5px;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
