@@ -309,6 +309,18 @@ audio:focus {
     color: var(--link-color);
 }
 
+.btn-floating {
+    background-color: var(--link-color);
+}
+
+.btn-floating:hover {
+    background-color: white;
+}
+
+.btn-floating:hover i {
+    color: var(--link-color);
+}
+
 .audio {
     width: 100%;
     display: flex;

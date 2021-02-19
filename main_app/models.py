@@ -21,7 +21,10 @@ class Play(models.Model):
     description = models.TextField(max_length=1000)
     audioFile = models.FileField(upload_to='audio/')
     image = models.ImageField(upload_to='images/', default='static/assets/artwork/thereordering_cassietaggart.jpg')
-    external_Link = models.URLField(max_length=1000)
+    # apple_Link = models.URLField(max_length=1000)
+    # google_Link = models.URLField(max_length=1000)
+    # spotify_Link = models.URLField(max_length=1000)
+    # stitcher_Link = models.URLField(max_length=1000)
     performers = models.ManyToManyField(Performer, related_name='plays')
     date_Added = models.DateTimeField(auto_now_add=True)
 
