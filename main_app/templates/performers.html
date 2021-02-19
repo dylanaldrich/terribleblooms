@@ -3,16 +3,16 @@
 
 {% block content %}
     <section class="page-header">
-        <img src="{% static 'assets/artwork/babyhouse_cassietaggart.jpg' %}" alt="sweet nectar by cassie taggart" id="performers-header" />
-    </section>
-    <div class="outer-box performers-outer-box">
-        <div class="inner-box">
+        <div class="headline-box">
             <div class="headline">
                 <h3 id="performer-headline">Meet The Performers</h3>
             </div>
             <i class="material-icons dp48 performer-chevron" id="expand_more">expand_more</i>
         </div>
-    </div>
+        <script>
+            $(".page-header").css({"background-image": "url({% static 'assets/artwork/babyhouse_cassietaggart.jpg' %})", "background-position": "50% 100%"});
+        </script>
+    </section>
 
     <section class="performers-container">
         {% if performers.count > 0 %}
