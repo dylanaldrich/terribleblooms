@@ -6,8 +6,14 @@
 }
 
 /* HOME PAGE */
-@media only screen and (max-width: 1160px) {
+@media only screen and (max-width: 1010px) {
+    .page-header {
+        height: 79vh;
+    }
     
+    .headline-box {
+        width: 100%;
+    }
 
 }
 

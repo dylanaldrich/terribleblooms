@@ -2,19 +2,18 @@
 {% load static %}
 
 {% block content %}
-    <section class="page-header">
-        <div class="headline-box">
-            <h3 class="headline">
-                <span>We Are Just Passing Through...</span><br>
-                Short Plays of the Weird and Surreal Set in Los Angeles
-                <span id="created-by">Created by Sharon Yablon &amp; Thomas Chan</span>
-            </h3>
-            <i class="material-icons dp48" id="expand_more">expand_more</i>
-        </div>
-        <script>
-            $(".page-header").css("background-image", "url({% static 'assets/artwork/sweetnectar_cassietaggart.jpg' %})");
-        </script>
-    </section>
+    <header class="page-header"></header>
+    <script>
+        $(".page-header").css("background-image", "url({% static 'assets/artwork/sweetnectar_cassietaggart.jpg' %})");
+    </script>
+    <div class="headline-box">
+        <h3 class="headline">
+            <span>We Are Just Passing Through...</span><br>
+            Short Plays of the Weird and Surreal Set in Los Angeles
+            <span id="created-by">Created by Sharon Yablon &amp; Thomas Chan</span>
+        </h3>
+        <i class="material-icons dp48" id="expand_more">expand_more</i>
+    </div>
     
     <section id="plays-box">
         {% if latest_Play %}

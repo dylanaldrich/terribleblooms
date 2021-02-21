@@ -2,17 +2,16 @@
 {% load static %}
 
 {% block content %}
-    <section class="page-header">
-        <div class="headline-box">
-            <div class="headline">
-                <h3 id="performer-headline">Meet The Performers</h3>
-            </div>
-            <i class="material-icons dp48 performer-chevron" id="expand_more">expand_more</i>
+    <section class="page-header"></section>
+    <script>
+        $(".page-header").css({"background-image": "url({% static 'assets/artwork/babyhouse_cassietaggart.jpg' %})", "background-position": "50% 100%"});
+    </script>
+    <div class="headline-box">
+        <div class="headline">
+            <h3 id="performer-headline">Meet The Performers</h3>
         </div>
-        <script>
-            $(".page-header").css({"background-image": "url({% static 'assets/artwork/babyhouse_cassietaggart.jpg' %})", "background-position": "50% 100%"});
-        </script>
-    </section>
+        <i class="material-icons dp48 performer-chevron" id="expand_more">expand_more</i>
+    </div>
 
     <section class="performers-container">
         {% if performers.count > 0 %}
