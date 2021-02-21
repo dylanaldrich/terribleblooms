@@ -1,7 +1,37 @@
 /* GLOBAL STYLES */
+@media only screen and (max-width: 680px) {
+    .page-footer {
+        height: 112px;
+    }
+    
+    .page-footer .footer-copyright {
+        display: block;
+        text-align: center;
+        height: 100%;
+        margin: 
+    }
+
+    .page-footer .footer-copyright>p {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #copyright, #admin-link {
+        position:initial;
+        left: initial;
+        right: initial;
+    }
+}
+
 @media only screen and (max-width: 580px) {
     #title {
         font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    #title {
+        font-size: 19px;
     }
 }
 
@@ -13,10 +43,107 @@
     
     .headline-box {
         width: 100%;
+        transform: translateY(0%);
+    }
+
+    #plays-box {
+        margin: 75px 25px 0;
     }
 
 }
 
+@media only screen and (max-width: 861px) and (min-width: 644px) {
+    .headline {
+        font-size: 2.5vw;
+    }
+
+    #created-by {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 788px) {
+    #latest-play {
+        flex-direction: column;
+    }
+
+    #latest-play-photo, #latest-play-info {
+        margin: 0 auto 20px;
+    }
+
+    #latest-play-info {
+        padding: 0 15px;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    #past-plays-heading {
+        margin-top: 15px;
+    }
+
+    .audio {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 643px) {
+    .page-header {
+        height: 80vw;
+    }
+
+    .headline {
+        font-size: 15px;
+    }
+
+    #created-by {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 586px) {
+    #expand_more {
+        display: none;
+    }
+
+    .headline {
+        margin: 8px 15px;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    .flower {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .page-header {
+        height: 37vh;
+    }
+
+    #plays-box {
+        margin-top: 65px;
+    }
+    
+    #plays-box h3 {
+        font-size: 22px;
+    }
+
+    .audio {
+        width: 95%;
+    }
+
+    #latest-play-photo {
+        width: 100%;
+    }
+
+    .card-image img {
+        height: 29vh;
+    }
+}
 /* ABOUT PAGE */
 
 
