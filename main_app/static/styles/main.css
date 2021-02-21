@@ -90,6 +90,18 @@ nav ul li:hover {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+.side-nav {
+    width: max-content;
+    height: max-content;
+    padding-bottom: 0;
+}
+
+.side-nav li>a {
+    color: var(--link-color);
+    font-weight: bold;
+    padding: 0 25px;
+}
+
 #title {
     font-family: 'Raleway', sans-serif;
     padding: 0 10px;
