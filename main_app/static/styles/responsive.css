@@ -49,7 +49,6 @@
     #plays-box {
         margin: 75px 25px 0;
     }
-
 }
 
 @media only screen and (max-width: 861px) and (min-width: 644px) {
@@ -144,11 +143,18 @@
         height: 29vh;
     }
 }
+
 /* ABOUT PAGE */
 
 
 /* PERFORMERS PAGE */
-
+@media only screen and (max-width: 1010px) {
+    .performers-container {
+        margin: 9vh auto;
+        padding: 0 20px;
+        width: 100%;
+    }
+}
 
 /* EPISODE PAGE */
 

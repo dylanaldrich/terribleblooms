@@ -10,13 +10,13 @@
         <div class="headline">
             <h3 id="performer-headline">Meet The Performers</h3>
         </div>
-        <i class="material-icons dp48 performer-chevron" id="expand_more">expand_more</i>
+        <i class="fas fa-chevron-down" id="performer-chevron"></i>
     </div>
 
     <section class="performers-container">
         {% if performers.count > 0 %}
             {% for performer in performers %}
-                <div class="card s12 m4 performer-card" id="{{ performer.name }}" style="overflow: visible;">
+                <div class="card performer-card" id="{{ performer.name }}" style="overflow: visible;">
                     <div class="card-content">
                         {% if performer.bio.html|length %}
                             <span class="card-title activator white-text text-darken-4">
