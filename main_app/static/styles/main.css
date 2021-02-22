@@ -189,7 +189,8 @@ h3 {
     font-size: 15px;
     line-height: 1;
     text-align: center;
-    margin-top: 3px;
+    padding-top: 2px;
+    margin: 3px;
 }
 
 .fa-chevron-down {
@@ -331,6 +332,7 @@ audio:focus {
 
 .play {
     text-align: center;
+    margin-top: 25px;
 }
 
 .play p {
@@ -435,7 +437,8 @@ hr {
 
 #performer-avatar-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .card .card-content.play-title {
@@ -444,18 +447,20 @@ hr {
 
 .performer-link {
     background-color: var(--main-bg-color);
-    color: white;
+    color: var(--link-color);
+    font-weight: bold;
     border-radius: 25px;
-    padding: 10px;
+    padding: 10px 13px;
+    margin: 0 5px 10px;
 }
 
 .performer-link:hover {
-    color: var(--link-color);
+    color: white;
 }
 
 /* SECTION PERFORMER BIOS PAGE */
 
-h3#performer-headline {
+#performer-headline {
     font-size: 28px;
     margin: 0;
 }

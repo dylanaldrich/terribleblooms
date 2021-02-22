@@ -8,7 +8,6 @@
         display: block;
         text-align: center;
         height: 100%;
-        margin: 
     }
 
     .page-footer .footer-copyright>p {
@@ -32,6 +31,12 @@
 @media only screen and (max-width: 380px) {
     #title {
         font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #title {
+        font-size: 18px;
     }
 }
 
@@ -150,9 +155,53 @@
 /* PERFORMERS PAGE */
 @media only screen and (max-width: 1010px) {
     .performers-container {
-        margin: 9vh auto;
+        margin: 9vh auto 1.5vh;
         padding: 0 20px;
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        width: 100%;
+    }
+
+    #performer-headline {
+        font-size: 25px;
+    }
+
+    .performer-card {
+        width: 100%;
+    }
+
+    .performers-container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    #performer-chevron {
+        display: none;
+    }
+    
+    #performer-headline {
+        font-size: 25px;
+        font-weight: normal;
+    }
+
+    .performers-container {
+        margin-top: 8vh;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #performer-headline {
+        font-size: 23px;
+    }
+
+    .performers-container {
+        margin: 11vh auto 2vh;
+
     }
 }
 
