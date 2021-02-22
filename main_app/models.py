@@ -1,5 +1,6 @@
 from django.db import models
 from django_quill.fields import QuillField
+from datetime import datetime
 
 
 # Performers
@@ -26,13 +27,13 @@ class Play(models.Model):
     # spotify_Link = models.URLField(max_length=1000)
     # stitcher_Link = models.URLField(max_length=1000)
     performers = models.ManyToManyField(Performer, related_name='plays')
-    date_Added = models.DateTimeField(auto_now_add=True)
+    release_Date = models.DateTimeField(editable=True, default=datetime.now)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        ordering = ['-date_Added']
+        ordering = ['-release_Date']
 
 
 # Creators

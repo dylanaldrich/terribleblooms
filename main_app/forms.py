@@ -9,7 +9,7 @@ class Performer_Form(ModelForm):
 class Play_Form(ModelForm):
     class Meta:
         model = Play
-        fields = ['name', 'description', 'image', 'external_link']
+        fields = ['name', 'description', 'image', 'release_Date']
 
 class Creator_Form(ModelForm):
     class Meta:

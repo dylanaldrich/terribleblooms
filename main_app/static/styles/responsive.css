@@ -152,6 +152,8 @@
 /* ABOUT PAGE */
 
 
+
+
 /* PERFORMERS PAGE */
 @media only screen and (max-width: 1010px) {
     .performers-container {
@@ -191,6 +193,10 @@
 
     .performers-container {
         margin-top: 8vh;
+    }
+
+    .performer-card .card-content .card-title {
+        font-size: 22px;
     }
 }
 
