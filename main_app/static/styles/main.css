@@ -3,6 +3,7 @@
 
 :root {
     --main-bg-color: rgb(46, 44, 45);
+    --main-bg-color-trans: rgba(46, 44, 45, 0.6);
     /* --link-color: rgb(159,86,166); */
     --link-color: rgb(159,86,216);
     --nav-height: 45px;
@@ -29,6 +30,11 @@ body {
 main {
     flex: 1 0 auto;
     max-width: 1270px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--main-bg-color-trans);
 }
 
 .page-footer {
@@ -538,6 +544,11 @@ hr {
 
 .performer-icon:hover, .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
     color: white;
+}
+
+.card ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
 }
 
 /* SECTION ABOUT PAGE */
