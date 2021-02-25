@@ -153,10 +153,6 @@ nav ul li:hover {
     object-position: bottom;
 }
 
-#about-header {
-    object-position: calc(1321/2560 * 100%) calc(812/2612 * 100%);
-}
-
 .headline-box {
     transform: translateY(-50%);
     background-color: var(--main-bg-color);
@@ -553,6 +549,16 @@ hr {
 
 /* SECTION ABOUT PAGE */
 
+.upper-about {
+    display: flex;
+}
+
+.baby-image {
+    max-width: 50%;
+    object-fit: contain;
+    height: 100%;
+}
+
 #creator-content, .about-content {
     display: flex;
     flex-direction: column;
@@ -623,7 +629,7 @@ hr {
 #creators-headline {
     display: flex;
     align-items: center;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     text-decoration: underline;
     text-underline-offset: 3px;
 }

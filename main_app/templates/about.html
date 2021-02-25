@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block content %}
-    <section class="row">
-        <img src="{% static 'assets/artwork/flycatcher_cassietaggart.jpg' %}" alt="fly catcher by cassie taggart" class="col side-image z-depth-2" />
-        <div class="col about-content">
+    <section class="upper-about">
+        <img src="{% static 'assets/artwork/flycatcher_cassietaggart.jpg' %}" alt="fly catcher by cassie taggart" class="baby-image z-depth-2" />
+        <div class="about-content">
             <p id="poem">
                 Tear open the warm belly of earth, plant a few seeds, or lay a bulb<br>
                 and let’s see what human nature spews into the day,<br>
@@ -60,4 +60,10 @@
             {% endif %}
         </section>
     </div>
+
+    <script>
+        if($(window).width() <= 1036) {
+            $('.upper-about').after($('#art-credits'));
+        }
+    </script>
 {% endblock %}
