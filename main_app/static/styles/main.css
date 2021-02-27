@@ -655,6 +655,10 @@ hr {
     text-align: justify;
 }
 
+.creator-square h5 {
+    margin: 0;
+}
+
 #creator-container h4 {
     margin-top: 2.5vh;
 }
