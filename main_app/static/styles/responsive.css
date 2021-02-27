@@ -178,7 +178,6 @@
     }
 
     .upper-about {
-        /* margin: 25px 25px 0; */
         justify-content: space-evenly;
     }
 
@@ -200,6 +199,104 @@
     }
 }
 
+@media only screen and (max-width: 785px) {
+    .baby-image {
+        width: 32vw;
+    }
+}
+
+@media only screen and (max-width: 746px) {
+    #poem {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 701px) {
+    #poem {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .baby-image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 538px) {
+    .upper-about {
+        flex-direction: column;
+    }
+    
+    .baby-image {
+        max-width: 100%;
+        width: 100%;
+        display: block;
+        margin-bottom: 18px;
+    }
+
+    .about-content  {
+        margin: 0 auto;
+    }
+    
+    #poem {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 482px) {
+    #poem {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 405px) {
+    .upper-about {
+        margin: 0;
+    }
+
+    .about-content {
+        margin: 0 15px;
+    }
+
+    #backstory {
+        margin: 15px; 
+    }
+    
+    #poem {
+        font-size: 14px;
+    }
+
+    #art-credits {
+        margin-top: 12px;
+        font-size: 16px;
+    }
+
+    #creator-content {
+        margin: 0;
+    }
+
+    #creator-content h4 {
+        font-size: 25px;
+    }
+
+    #creator-content h5 {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 337px) {
+    #art-credits, .creator-contacts {
+        font-size: 14px;
+    }
+
+    .dahlia {
+        height: 37px;
+    }
+
+    #poem {
+        font-size: 12px;
+    }
+}
 
 /* PERFORMERS PAGE */
 @media only screen and (max-width: 1010px) {
