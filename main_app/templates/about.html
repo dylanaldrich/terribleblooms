@@ -61,9 +61,13 @@
         </section>
     </div>
 
-    <script>
+    <script type="text/javascript">
         if($(window).width() <= 1036) {
             $('.upper-about').after($('#art-credits'));
+        }
+
+        if($(window).width() <= 965) {
+            $('.upper-about').after($('#backstory'));
         }
     </script>
 {% endblock %}

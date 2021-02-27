@@ -172,6 +172,34 @@
     }
 }
 
+@media only screen and (max-width: 965px) {
+    #backstory {
+        margin: 3vh 6vh 0;
+    }
+
+    .upper-about {
+        /* margin: 25px 25px 0; */
+        justify-content: space-evenly;
+    }
+
+    .baby-image {
+        width: 30vw;
+    }
+
+    #creator-container {
+        flex-direction: column;
+    }
+
+    #creator-container h4 {
+        margin-bottom: 0;
+    }
+
+    .creator-square {
+        width: 100%;
+        margin-bottom: 3vh;
+    }
+}
+
 
 /* PERFORMERS PAGE */
 @media only screen and (max-width: 1010px) {
