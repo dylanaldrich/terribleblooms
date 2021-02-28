@@ -240,6 +240,17 @@ audio:focus {
     outline: none;
 }
 
+.share {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.share span {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
 #plays-box {
     margin: 0 10% 0 10%;
     padding-bottom: 15px;

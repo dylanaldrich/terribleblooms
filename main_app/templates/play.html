@@ -19,18 +19,23 @@
                             <i class="fas fa-hand-point-right"></i>
                             <span>Subscribe</span>
                         </section>
-                        <a href="#" id="apple-podcast-logo" target="_blank" title="Apple Podcasts">
-                            <i class="fas fa-podcast"></i>
-                        </a>
-                        <a href="#" id="google-podcast-logo" target="_blank" title="Google Podcasts">
-                            <i class="fab fa-google-play"></i>
-                        </a>
-                        <a href="#" id="spotify-podcast-logo" target="_blank" title="Spotify Podcasts">
-                            <i class="fab fa-spotify"></i>
-                        </a>
-                        <a href="#" id="stitcher-podcast-logo" target="_blank" title="Stitcher Podcasts">
-                            <img src="{% static 'assets/icons/stitcher_icon.svg' %}" alt="stitcher icon" />
-                        </a>
+                        <a href={{play.apple_Link}} target="_blank" id="apple-podcast-logo" title="Apple Podcasts">
+                                <i class="fas fa-podcast"></i>
+                            </a>
+                            <a href={{play.google_Link}} target="_blank" id="google-podcast-logo" title="Google Podcasts">
+                                <i class="fab fa-google-play"></i>
+                            </a>
+                            <a href={{play.spotify_Link}} target="_blank" id="spotify-podcast-logo" title="Spotify Podcasts">
+                                <i class="fab fa-spotify"></i>
+                            </a>
+                            <a href={{play.stitcher_Link}} target="_blank" id="stitcher-podcast-logo" target="_blank" title="Stitcher Podcasts">
+                                <img src="{% static 'assets/icons/stitcher_icon.svg' %}" alt="stitcher icon" />
+                            </a>
+                        </div>
+                        <div class="share">
+                            <span>Share: </span>
+                            <div class="sharethis-inline-share-buttons"></div>
+                        </div>
                     </div>
                 </section>
                 <hr>
