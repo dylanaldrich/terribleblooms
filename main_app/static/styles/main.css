@@ -251,6 +251,15 @@ audio:focus {
     font-weight: bold;
 }
 
+/* .share-this-inline-share-buttons #st-1 .st-btn {
+    padding: 0 3px;
+} 
+.share-this-inline-share-buttons #st-1 .st-btn > img{
+    height: 26px;
+    width: 26px;
+    top: 3px;
+}  */
+
 #plays-box {
     margin: 0 10% 0 10%;
     padding-bottom: 15px;
@@ -342,12 +351,17 @@ audio:focus {
 
 /* SECTION EPISODE DETAIL PAGE */
 
-.play {
-    text-align: center;
-    margin-top: 25px;
+.play-detail-container {
+    display: flex;
 }
 
-.play p {
+#play {
+    width: 50%;
+    text-align: center;
+    margin: 25px 25px 0;
+}
+
+#play p {
     margin-bottom: .6rem;
 }
 
@@ -447,7 +461,11 @@ hr {
     height: auto;
 }
 
-#performer-avatar-container {
+.meet-the-performers {
+    margin-bottom: 15px;
+}
+
+#performer-link-container {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;

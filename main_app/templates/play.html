@@ -2,45 +2,45 @@
 {% load static %}
 
 {% block content %}
-    <section class="row">
-        <img src="{% static 'assets/artwork/thereordering_cassietaggart_lores.jpg' %}" alt="the reordering by cassie taggart" class="col side-image"  />
-        <div class="col s6">
-            <div class="container play">
-                <h4>{{ play.name }}</h4>
-                <p>Released: {{play.release_Date|date:"F j, Y"}}</p>
-                <p>{{ play.description }}</p>
-                <section class="audio">
-                    <audio controls>
-                        <source src="../../media/{{ play.audioFile }}" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="logos">
-                        <section id="logo-cover">
-                            <i class="fas fa-hand-point-right"></i>
-                            <span>Subscribe</span>
-                        </section>
-                        <a href={{play.apple_Link}} target="_blank" id="apple-podcast-logo" title="Apple Podcasts">
-                                <i class="fas fa-podcast"></i>
-                            </a>
-                            <a href={{play.google_Link}} target="_blank" id="google-podcast-logo" title="Google Podcasts">
-                                <i class="fab fa-google-play"></i>
-                            </a>
-                            <a href={{play.spotify_Link}} target="_blank" id="spotify-podcast-logo" title="Spotify Podcasts">
-                                <i class="fab fa-spotify"></i>
-                            </a>
-                            <a href={{play.stitcher_Link}} target="_blank" id="stitcher-podcast-logo" target="_blank" title="Stitcher Podcasts">
-                                <img src="{% static 'assets/icons/stitcher_icon.svg' %}" alt="stitcher icon" />
-                            </a>
-                        </div>
-                        <div class="share">
-                            <span>Share: </span>
-                            <div class="sharethis-inline-share-buttons"></div>
-                        </div>
+    <section class="play-detail-container">
+        <img src="{% static 'assets/artwork/thereordering_cassietaggart_lores.jpg' %}" alt="the reordering by cassie taggart" class="side-image"  />
+        <div id="play">
+            <h4>{{ play.name }}</h4>
+            <p>Released: {{play.release_Date|date:"F j, Y"}}</p>
+            <p>{{ play.description }}</p>
+            <section class="audio">
+                <audio controls>
+                    <source src="../../media/{{ play.audioFile }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="logos">
+                    <section id="logo-cover">
+                        <i class="fas fa-hand-point-right"></i>
+                        <span>Subscribe</span>
+                    </section>
+                    <a href={{play.apple_Link}} target="_blank" id="apple-podcast-logo" title="Apple Podcasts">
+                            <i class="fas fa-podcast"></i>
+                        </a>
+                        <a href={{play.google_Link}} target="_blank" id="google-podcast-logo" title="Google Podcasts">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                        <a href={{play.spotify_Link}} target="_blank" id="spotify-podcast-logo" title="Spotify Podcasts">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href={{play.stitcher_Link}} target="_blank" id="stitcher-podcast-logo" target="_blank" title="Stitcher Podcasts">
+                            <img src="{% static 'assets/icons/stitcher_icon.svg' %}" alt="stitcher icon" />
+                        </a>
                     </div>
-                </section>
+                    <div class="share">
+                        <span>Share: </span>
+                        <div class="sharethis-inline-share-buttons"></div>
+                    </div>
+                </div>
+            </section>
+            <div class="meet-the-performers">
                 <hr>
                 <h5>Meet The Performers:</h5>
-                <div id="performer-avatar-container">
+                <div id="performer-link-container">
                     {% for performer in play.performers.all %}
                         <a href="{% url 'performers' %}#{{ performer.name }}" class="performer-link hoverable">{{ performer.name }}</a>
                     {% endfor %}
