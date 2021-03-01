@@ -357,3 +357,76 @@
 
 /* EPISODE PAGE */
 
+@media only screen and (max-width: 840px) {
+    #play h4 {
+        font-size: 3.5vw;
+    }
+}
+
+@media only screen and (max-width: 827px) {
+    .play-detail-container {
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px;
+    }
+    
+    .side-image {
+        width: 44vw;
+        height: 100%;
+    }
+
+    #play {
+        margin: 0 0 0 20px;
+    }
+}
+
+@media only screen and (max-width: 788px) {
+    .play-detail-container {
+        flex-direction: column;
+    }
+
+    .side-image {
+        width: 100%;
+        max-width: 60%;
+    }
+
+    #play {
+        width: 100%;
+        margin: 0;
+    }
+
+    .meet-the-performers {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    #play h4 {
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 465px) {
+    .play-detail-container {
+        margin: 0;
+    }
+    
+    .side-image {
+        max-width: 100%;
+    }
+
+    #play {
+        margin-bottom: 8px;
+        padding: 0 18px;
+    }
+
+    #play h4 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .audio {
+        width: 100%;
+    }
+    
+}
