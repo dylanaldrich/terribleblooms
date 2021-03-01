@@ -223,9 +223,7 @@ h1 {
 }
 
 #latest-play-title a:hover {
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1.5px;
+    filter: opacity(70%);
 }
 
 audio {
@@ -247,18 +245,19 @@ audio:focus {
 }
 
 .share span {
-    margin-right: 5px;
-    font-weight: bold;
+    font-size: 22px;
+    line-height: 1;
 }
 
-/* .share-this-inline-share-buttons #st-1 .st-btn {
-    padding: 0 3px;
-} 
-.share-this-inline-share-buttons #st-1 .st-btn > img{
-    height: 26px;
-    width: 26px;
-    top: 3px;
-}  */
+.share a {
+    margin-left: 8px;
+    font-size: 28px;
+    line-height: 20px;
+}
+
+.share a:hover {
+    transform: scale(1.1);
+}
 
 #plays-box {
     margin: 0 10% 0 10%;
