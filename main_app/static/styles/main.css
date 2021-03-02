@@ -98,6 +98,7 @@ nav ul li:hover {
 .side-nav {
     width: max-content;
     height: max-content;
+    overflow-y: visible;
     padding-bottom: 0;
 }
 
@@ -105,6 +106,11 @@ nav ul li:hover {
     color: var(--link-color);
     font-weight: bold;
     padding: 0 25px;
+}
+
+.dropdown-content li>a {
+    color: var(--link-color);
+    height: 50px;
 }
 
 #title {
