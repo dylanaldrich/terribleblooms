@@ -28,6 +28,6 @@ def performers(request):
     return render(request, 'performers.html', context)
 
 # PLAY DETAIL PAGE
-def play_detail(request, play_id):
+def play_Detail(request, play_id):
     context = {'play': Play.objects.get(id=play_id)}
     return render(request, 'play.html', context)

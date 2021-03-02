@@ -50,7 +50,7 @@
                             <div>
                                 {% for play in performer.plays.all %}
                                     <p>
-                                        <a href="{% url 'play_detail' play.id %}" class="featured-play-link">{{ play.name }}</a>
+                                        <a href="{% url 'play_Detail' play.id %}" class="featured-play-link">{{ play.name }}</a>
                                     </p>
                                 {% endfor %}
                             </div>
