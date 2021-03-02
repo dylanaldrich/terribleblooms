@@ -108,6 +108,16 @@ nav ul li:hover {
     padding: 0 25px;
 }
 
+.sidenav-heading {
+    color: black;
+    font-weight: bold;
+    padding: 0 25px;
+}
+
+.sidenav-heading:hover {
+    background-color: white;
+}
+
 .dropdown-content li>a {
     color: var(--link-color);
     height: 50px;
