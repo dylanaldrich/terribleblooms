@@ -62,12 +62,20 @@
     </div>
 
     <script type="text/javascript">
-        if($(window).width() <= 1036) {
-            $('.upper-about').after($('#art-credits'));
-        }
+        window.addEventListener("resize", () => {
+            // moves backstory
+            if($(window).width() <= 965) {
+                $('.upper-about').after($('#backstory'));
+            } else {
+                $('#poem').after($('#backstory'));
+            }
 
-        if($(window).width() <= 965) {
-            $('.upper-about').after($('#backstory'));
-        }
+            // moves art credits
+            if($(window).width() <= 1036) {
+                $('.upper-about').after($('#art-credits'));
+            } else {
+                $('#backstory').after($('#art-credits'));
+            }
+        });
     </script>
 {% endblock %}

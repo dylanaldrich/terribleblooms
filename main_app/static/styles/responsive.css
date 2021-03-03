@@ -1,4 +1,24 @@
 /* GLOBAL STYLES */
+@media only screen and (min-width: 1280px) {
+    nav .brand-logo {
+        margin-left: 0;
+    }
+
+    .dropdown-trigger {
+        padding-right: 0;
+    }
+
+    #admin-link {
+        position: absolute;
+        right: 0;
+    }
+    
+    #copyright {
+        position: absolute;
+        left: 0;
+    }
+}
+
 @media only screen and (max-width: 680px) {
     .page-footer {
         height: 82px;
@@ -16,7 +36,7 @@
     }
 
     #copyright, #admin-link {
-        position:initial;
+        position: initial;
         left: initial;
         right: initial;
     }
@@ -356,6 +376,32 @@
 }
 
 /* EPISODE PAGE */
+@media only screen and (max-width: 1013px) {
+    #ascap {
+        text-align: center;
+    }
+
+    #ascap img {
+        display: none;
+    }
+
+    #ascap p span {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 987px) {
+    #ascap {
+        justify-content: center;
+        right: 50%;
+        transform: translateX(50%);
+        width: 100%;
+    }
+    
+    #ascap p {
+        font-size: 1.3vw;
+    }
+}
 
 @media only screen and (max-width: 840px) {
     #play h4 {
@@ -364,7 +410,7 @@
 }
 
 @media only screen and (max-width: 827px) {
-    .play-detail-container {
+    .play-detail-page {
         justify-content: space-between;
         align-items: center;
         margin: 25px;
@@ -381,7 +427,7 @@
 }
 
 @media only screen and (max-width: 788px) {
-    .play-detail-container {
+    .play-detail-page {
         flex-direction: column;
     }
 
@@ -407,7 +453,7 @@
 }
 
 @media only screen and (max-width: 465px) {
-    .play-detail-container {
+    .play-detail-page {
         margin: 0;
     }
     

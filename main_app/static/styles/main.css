@@ -5,7 +5,7 @@
     --main-bg-color: rgb(46, 44, 45);
     --main-bg-color-trans: rgba(46, 44, 45, 0.6);
     --link-color: rgb(159,86,216);
-    --nav-height: 45px;
+    --nav-height: 49px;
 }
 
 * {
@@ -15,10 +15,11 @@
 
 html {
     scroll-behavior: smooth;
+    color: var(--main-bg-color);
 }
 
 body {
-    background-color: whitesmoke;
+    background-color: var(--main-bg-color);
     display: flex;
     height: max-content;
     flex-direction: column;
@@ -26,9 +27,14 @@ body {
     align-items: center;
 }
 
+header, main, footer {
+    max-width: 1270px;
+}
+
 main {
     flex: 1 0 auto;
-    max-width: 1270px;
+    background-color: whitesmoke;
+    min-height: 90%;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -38,6 +44,11 @@ main {
 
 .page-footer {
     padding-top: 0;
+}
+
+.page-footer .footer-copyright {
+    color: white;
+    position: relative;
 }
 
 header {
@@ -366,14 +377,26 @@ audio:focus {
 
 /* SECTION EPISODE DETAIL PAGE */
 
-.play-detail-container {
+.play-detail-page {
     display: flex;
 }
 
-#play {
+.play-detail-container {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 25px;
+}
+
+#play {
+    width: 100%;
     text-align: center;
-    margin: 25px 25px 0;
+}
+
+#play h4 {
+    font-weight: bold;
+    margin-top: 0;
 }
 
 #play p {
@@ -503,6 +526,28 @@ hr {
     color: white;
 }
 
+#ascap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    width: 100%;
+}
+
+#ascap img {
+    height: 51px;
+    margin-left: 8px;
+}
+
+#ascap p {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+#ascap p span {
+    display: none;
+}
+
 /* SECTION PERFORMER BIOS PAGE */
 
 #babyhouse {
@@ -605,6 +650,7 @@ hr {
     max-width: 50%;
     object-fit: contain;
     height: 100%;
+    margin: 4vh 0 0 4vh;
 }
 
 #creator-content, .about-content {
@@ -612,7 +658,14 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    margin: 2vh 6vh;
+}
+
+.about-content {
+    margin: 4vh 4vh 0;
+}
+
+#creator-content {
+    margin: 2vh 4vh 4vh;
 }
 
 #poem {
@@ -643,11 +696,16 @@ hr {
     font-size: 18px;
     text-align: center;
     display: flex;
+    align-items: center;
 }
 
 #art-credits div p a {
     color: var(--link-color);
     font-weight: bold;
+}
+
+#art-credits div p a:hover {
+    text-decoration: underline;
 }
 
 .play-title {
@@ -657,11 +715,6 @@ hr {
 #about-content h4 {
     text-align: center;
     margin: 0 8px;
-}
-
-#art-credits {
-    display: flex;
-    align-items: center;
 }
 
 .dahlia {
@@ -686,7 +739,7 @@ hr {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .creator-square {
