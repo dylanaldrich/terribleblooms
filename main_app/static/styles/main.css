@@ -129,9 +129,21 @@ nav ul li:hover {
     background-color: white;
 }
 
+#dropdown-menu {
+    margin-top: var(--nav-height);
+}
+
 .dropdown-content li>a {
     color: var(--link-color);
     height: 50px;
+    padding: 14px 0 14px 16px;
+}
+
+.dropdown-content li>a>i {
+    height: inherit;
+    line-height: inherit;
+    float: none;
+    margin: 0 10px 0 10px;
 }
 
 #title {
@@ -297,7 +309,7 @@ audio:focus {
 }
 
 #latest-play-photo, #latest-play-photo a{
-    max-height: 350px;
+    max-height: 325px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -622,7 +634,6 @@ hr {
 }
 
 .fa-user {
-    padding-bottom: 5px;
     cursor: pointer;
 }
 
