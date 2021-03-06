@@ -296,6 +296,18 @@ audio:focus {
     align-items: center;
 }
 
+#latest-play-photo, #latest-play-photo a{
+    max-height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#latest-play-photo a img {
+    width: 100%;
+}
+
 #latest-play-info {
     margin-left: 25px;
     text-align: center;
@@ -755,6 +767,7 @@ hr {
 .creator-square p {
     padding: 15px;
     text-align: justify;
+    margin: 0;
 }
 
 .creator-square h5 {

@@ -19,9 +19,9 @@
         {% if latest_Play %}
             <h3>Latest Play</h3>
             <div id="latest-play" class="row">
-                <div class="col s10" id="latest-play-photo">
-                    <a href="{% url 'play_Detail' latest_Play.id %}" class="">
-                        <img src="media/{{ latest_Play.image }}" alt="play image" id="latest-play-image" class="col s12 z-depth-2 hoverable" />
+                <div class="col z-depth-2 hoverable" id="latest-play-photo">
+                    <a href="{% url 'play_Detail' latest_Play.id %}">
+                        <img src="media/{{ latest_Play.image }}" alt="play image" />
                     </a>
                 </div>
                 <div id="latest-play-info" class="col s12">

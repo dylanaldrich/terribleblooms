@@ -43,7 +43,7 @@
         <section id="creator-container">
             {% if creators.count > 0 %}
                 {% for creator in creators %}
-                    <div class="creator-square z-depth-2">
+                    <div class="creator-square z-depth-2 text-white">
                         <h4>{{ creator.name }}</h4>
                         <h5>{{ creator.title }}</h5>
                         {{ creator.bio.html|safe }}
@@ -77,5 +77,10 @@
                 $('#backstory').after($('#art-credits'));
             }
         });
+    </script>
+
+    <script type="text/javascript">
+        // remove auto-generated style attribute from creator bios
+        $('.creator-square').find('*').removeAttr('style');
     </script>
 {% endblock %}
