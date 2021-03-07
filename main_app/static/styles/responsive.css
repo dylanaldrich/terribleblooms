@@ -393,8 +393,6 @@
 @media only screen and (max-width: 987px) {
     #ascap {
         justify-content: center;
-        right: 50%;
-        transform: translateX(50%);
         width: 100%;
     }
     
@@ -413,7 +411,12 @@
     .play-detail-page {
         justify-content: space-between;
         align-items: center;
-        margin: 25px;
+        margin: 25px 25px 0;
+        height: fit-content;
+    }
+
+    .play-detail-container {
+        margin: 0 25px 0 0;
     }
     
     .side-image {
@@ -424,11 +427,24 @@
     #play {
         margin: 0 0 0 20px;
     }
+
+    #ascap {
+        margin: 10px auto 70px;
+    }
+
+    #ascap p {
+        font-size: 1.6vw;
+    }
 }
 
 @media only screen and (max-width: 788px) {
     .play-detail-page {
         flex-direction: column;
+    }
+
+    .play-detail-container {
+        width: 100%;
+        margin: 0;
     }
 
     .side-image {
@@ -441,8 +457,16 @@
         margin: 0;
     }
 
+    #play h4 {
+        margin-top: 20px;
+    }
+    
     .meet-the-performers {
         margin-bottom: 0;
+    }
+
+    #ascap {
+        margin: 10px auto 25px;
     }
 }
 

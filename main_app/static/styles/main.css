@@ -403,6 +403,7 @@ audio:focus {
 
 .play-detail-page {
     display: flex;
+    height: 100vh;
 }
 
 .play-detail-container {
@@ -411,6 +412,7 @@ audio:focus {
     flex-direction: column;
     justify-content: space-between;
     margin: 25px;
+    height: fit-content;
 }
 
 #play {
@@ -520,7 +522,8 @@ hr {
 
 .side-image {
     max-width: 50%;
-    height: auto;
+    max-height: 100vh;
+    height: fit-content;
 }
 
 .meet-the-performers {
