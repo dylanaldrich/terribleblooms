@@ -500,3 +500,16 @@
     }
     
 }
+
+/* ERROR PAGES */
+
+@media only screen and (max-width: 785px) {
+    .error-page, .whoops {
+        position: unset;
+    }
+
+    .whoops {
+        transform: unset;
+        background-color: unset;
+    }
+}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="error-page">
+        <h3 class="whoops">
+            <span>Whoops... Error 505</span><br>
+            Something went wrong here.<br>
+            <a href="{% url 'home' %}">Take me back home!</a>
+        </h3>
+        <img src="{% static 'assets/artwork/sweetnectar_cassietaggart.jpg' %}" alt="sweet nectar by cassie taggart" />
+    </div>
+{% endblock %}

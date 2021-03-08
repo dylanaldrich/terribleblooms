@@ -826,3 +826,38 @@ p.creator-bio p {
 .creator-contacts a:hover {
     color: white;
 }
+
+/* ERROR PAGES */
+
+.error-page {
+    position: relative;
+    text-align: center;
+    color: var(--main-bg-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.error-page img {
+    width: 100%;
+}
+
+.whoops {
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.whoops a {
+    color: var(--link-color);
+    margin-top: 100px;
+}
+
+.whoops a:hover {
+    filter: opacity(70%);
+}
