@@ -24,7 +24,7 @@ class Play(models.Model):
     image = models.ImageField(upload_to='images/', default='static/assets/artwork/thereordering_cassietaggart.jpg')
     apple_Link = models.CharField(max_length=1000, default='#')
     google_Link = models.CharField(max_length=1000, default='#')
-    spotify_Link = models.CharField(max_length=1000, default='#')
+    amazon_Link = models.CharField(max_length=1000, default='#')
     stitcher_Link = models.CharField(max_length=1000, default='#')
     performers = models.ManyToManyField(Performer, related_name='plays')
     release_Date = models.DateTimeField(editable=True, default=datetime.now)

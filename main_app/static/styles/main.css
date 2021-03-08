@@ -299,7 +299,7 @@ audio:focus {
 }
 
 #plays-box {
-    margin: 0 10% 0 10%;
+    margin: 0 10% 20px 10%;
     padding-bottom: 15px;
 }
 
@@ -480,8 +480,8 @@ hr {
     background-color: rgb(168,76,215);
 }
 
-#spotify-podcast-logo:hover {
-    background-color: rgb(76,175,80);
+#amazon-podcast-logo:hover {
+    background-color: rgb(21,170,191);
 }
 
 #google-podcast-logo:hover {
