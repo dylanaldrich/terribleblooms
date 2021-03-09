@@ -8,6 +8,11 @@
         padding-right: 0;
     }
 
+    .dropdown-content {
+        min-width: 148px;
+        margin-left: -14px
+    }
+
     #admin-link {
         position: absolute;
         right: 0;
@@ -72,7 +77,7 @@
     }
 
     #plays-box {
-        margin: 75px 25px 0;
+        margin: 75px 25px 15px;
     }
 }
 
@@ -376,6 +381,21 @@
 }
 
 /* EPISODE PAGE */
+
+@media only screen and (max-width: 1270px) {
+    .play-detail-page {
+        margin: 25px;
+    }
+    
+    .side-image {
+        width: 50vw;
+    }
+
+    .play-detail-container {
+        margin: 0 0 0 25px;
+    }
+}
+
 @media only screen and (max-width: 1013px) {
     #ascap {
         text-align: center;
@@ -397,7 +417,7 @@
     }
     
     #ascap p {
-        font-size: 1.3vw;
+        font-size: 13px;
     }
 }
 
@@ -429,11 +449,7 @@
     }
 
     #ascap {
-        margin: 10px auto 70px;
-    }
-
-    #ascap p {
-        font-size: 1.6vw;
+        margin: 20px auto 25px;
     }
 }
 

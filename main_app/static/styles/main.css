@@ -117,6 +117,13 @@ nav ul li:hover {
     color: var(--link-color);
     font-weight: bold;
     padding: 0 25px;
+    display: flex;
+    align-items: center;
+}
+
+.side-nav li>a>i {
+    color: var(--link-color);
+    margin: 0 0 0 10px;
 }
 
 .sidenav-heading {
@@ -403,7 +410,8 @@ audio:focus {
 
 .play-detail-page {
     display: flex;
-    height: 100vh;
+    height: 100%;
+    align-items: center;
 }
 
 .play-detail-container {

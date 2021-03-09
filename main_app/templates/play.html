@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <section class="play-detail-page">
+    <section class="play-detail-page inner">
         <img src="{% static 'assets/artwork/thereordering_cassietaggart_lores.jpg' %}" alt="the reordering by cassie taggart" class="side-image z-depth-2" />
         <div class="play-detail-container">
             <div id="play">
@@ -46,31 +46,29 @@
                     </div>
                 </div>
             </div>
-            <div id="ascap">
+            <section id="ascap" class='inner'>
                 <p>
                     Music &amp; Lyrics written by Thomas Chan<span>, ASCAP</span><br>
                     Music, Lyrics &amp; Sound Recordings published by<br> Magnetic Oblivion Music Company<span>, ASCAP</span>
                 </p>
                 <img src="{% static 'assets/icons/ASCAP_Logo_Primary_Black.png' %}" alt="ascap logo" >
-            </div>
+            </section>
         </div>
     </section>
 
     <script type="text/javascript">
         window.addEventListener("resize", () => {
-            // moves backstory
+            // moves ascap text && wraps elements in new container
             if($(window).width() <= 827 && $(window).width() >= 788) {
                 $('.play-detail-page').after($('#ascap'));
+                if(!$('.inner').parent().hasClass('episode-page-wrapper')) {
+                    $('.inner').wrapAll('<div class="episode-page-wrapper" />');
+                    $('.episode-page-wrapper').css('height', '100%');
+                }
             } else {
+                $('.episode-page-wrapper').replaceWith($('.episode-page-wrapper').contents());
                 $('#play').after($('#ascap'));
             }
-
-            // moves art credits
-            //if($(window).width() <= 1036) {
-            //    $('.upper-about').after($('#art-credits'));
-            //} else {
-            //    $('#backstory').after($('#art-credits'));
-            //}
         });
     </script>
 {% endblock %}
