@@ -1,5 +1,5 @@
 /* GLOBAL STYLES */
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) {    
     nav .brand-logo {
         margin-left: 0;
     }
@@ -21,6 +21,13 @@
     #copyright {
         position: absolute;
         left: 0;
+    }
+}
+
+@media only screen and (min-width: 1270px) {
+    nav {
+        -webkit-box-shadow: none;
+        box-shadow: none;
     }
 }
 
