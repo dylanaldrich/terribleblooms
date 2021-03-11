@@ -146,6 +146,10 @@
     .flower {
         display: none;
     }
+
+    .headline-box i {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 380px) {
@@ -250,6 +254,7 @@
 @media only screen and (max-width: 538px) {
     .upper-about {
         flex-direction: column;
+        margin: 0;
     }
     
     .baby-image {
@@ -260,11 +265,23 @@
     }
 
     .about-content  {
-        margin: 0 auto;
+        margin: 0 25px;
+    }
+
+    #backstory {
+        margin: 3vh 25px 0;
     }
     
     #poem {
         font-size: 14px;
+    }
+
+    #creator-content {
+        margin: 0 25px;
+    }
+
+    .creator-square h5 {
+        margin-top: 5px;
     }
 }
 
