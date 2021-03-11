@@ -21,7 +21,7 @@
             <div id="latest-play" class="row">
                 <div class="col z-depth-2 hoverable" id="latest-play-photo">
                     <a href="{% url 'play_Detail' latest_Play.id %}">
-                        <img src="{{ latest_Play.image.path }}" alt="play image" />
+                        <img src="{{ latest_Play.image }}" alt="play image" />
                     </a>
                 </div>
                 <div id="latest-play-info" class="col s12">
@@ -31,7 +31,7 @@
                     <p id="latest-play-description">{{ latest_Play.description }}</p>
                     <section class="audio">
                         <audio controls>
-                            <source src="{{ latest_Play.audioFile.path }}" type="audio/mpeg">
+                            <source src="{{ latest_Play.audioFile }}" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                         <div class="logos">
