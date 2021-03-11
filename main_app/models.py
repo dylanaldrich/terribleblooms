@@ -20,8 +20,8 @@ class Performer(models.Model):
 class Play(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField(max_length=1000)
-    audioFile = models.FileField(upload_to='audio')
-    image = models.ImageField(upload_to='images', default='static/assets/artwork/thereordering_cassietaggart_lores.jpg')
+    audioFile = models.FileField(upload_to='audio/')
+    image = models.ImageField(upload_to='images/', default='static/assets/artwork/thereordering_cassietaggart_lores.jpg')
     apple_Link = models.CharField(max_length=1000, default='#')
     google_Link = models.CharField(max_length=1000, default='#')
     amazon_Link = models.CharField(max_length=1000, default='#')
