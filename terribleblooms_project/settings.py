@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 import environ
 import django_on_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 env = environ.Env(
     DEBUG=(bool, False)
@@ -48,6 +51,8 @@ INSTALLED_APPS = [
     'main_app',
     'django_quill',
     'django-partial-content',
+    'cloudinary',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -158,5 +163,21 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+ENV_CLOUD_NAME = env('CLOUD_NAME')
+ENV_API_KEY = env('API_KEY')
+ENV_API_SECRET = env('API_SECRET')
+
+cloudinary.config(
+    cloud_name = os.getenv('CLOUD_NAME', ENV_CLOUD_NAME),
+    api_key = os.getenv('API_KEY', ENV_API_KEY),
+    api_secret = os.getenv('API_SECRET', ENV_API_SECRET),
+)
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 django_on_heroku.settings(locals())

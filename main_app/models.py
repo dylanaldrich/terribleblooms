@@ -1,6 +1,7 @@
 from django.db import models
 from django_quill.fields import QuillField
 from datetime import datetime
+from cloudinary.models import CloudinaryField
 
 
 # Performers
@@ -20,8 +21,8 @@ class Performer(models.Model):
 class Play(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField(max_length=1000)
-    audioFile = models.FileField(upload_to='audio/')
-    image = models.ImageField(upload_to='images/', default='static/assets/artwork/thereordering_cassietaggart_lores.jpg')
+    audioFile = CloudinaryField('audio', overwrite=True, resource_type='video')
+    image = CloudinaryField('image', overwrite=True, resource_type='image', default='sweetnectar_cassietaggart_default_qz039o.jpg')
     apple_Link = models.CharField(max_length=1000, default='#')
     google_Link = models.CharField(max_length=1000, default='#')
     amazon_Link = models.CharField(max_length=1000, default='#')
