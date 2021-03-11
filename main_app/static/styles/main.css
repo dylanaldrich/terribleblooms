@@ -646,6 +646,7 @@ hr {
 
 .fa-user {
     cursor: pointer;
+    margin-top: -2px;
 }
 
 .performer-icon-line {
