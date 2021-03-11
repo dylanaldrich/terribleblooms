@@ -1,1 +1,1 @@
-web: gunicorn {terribleblooms_project}.wsgi
+web: gunicorn terribleblooms_project.wsgi
