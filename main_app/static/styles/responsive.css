@@ -150,6 +150,10 @@
     .headline-box i {
         display: none;
     }
+
+    #latest-play-info {
+        margin-bottom: 0;
+    }
 }
 
 @media only screen and (max-width: 380px) {
