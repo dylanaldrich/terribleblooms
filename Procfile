@@ -1,1 +1,2 @@
-web: python3 manage.py collectstatic --no-input; gunicorn terribleblooms_project.wsgi
+
+web: python3 terribleblooms_project/manage.py collectstatic --noinput; bin/gunicorn_django --workers=4 --bind=0.0.0.0:$PORT terribleblooms_project/settings.py 
