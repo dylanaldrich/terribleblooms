@@ -24,10 +24,10 @@ urlpatterns = [
 ]
 
 # ADDED THIS:
-urlpatterns += patterns(
-    '', 
-    (r'^static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-)
+# urlpatterns += patterns(
+#     '', 
+#     (r'^static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+# )
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
