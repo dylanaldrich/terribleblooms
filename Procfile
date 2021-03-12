@@ -1,1 +1,1 @@
-web: gunicorn terribleblooms_project.wsgi
+web: python manage.py collectstatic --no-input; gunicorn terribleblooms_project.wsgi
