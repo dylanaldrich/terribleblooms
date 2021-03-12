@@ -35,9 +35,9 @@ ENV_SECRET = env('SECRET_KEY')
 SECRET_KEY = os.getenv('SECRET_KEY', ENV_SECRET)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['terribleblooms.herokuapp.com', 'terribleblooms.net']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -167,8 +167,6 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-#STATIC_ROOT = "/home/cfedeploy/webapps/cfehome_static_root/"
 
 MEDIA_URL = "/media/"
 
