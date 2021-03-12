@@ -31,7 +31,7 @@
     <header>
         <ul id="dropdown-menu" class="dropdown-content">
             <li><a href="https://ko-fi.com/terribleblooms" target="_blank">Ko-fi <i class="fas fa-hand-holding-usd"></i></a></li>
-            <li><a href="#!" target="_blank">Facebook <i class="fas fa-thumbs-up"></i></a></li>
+            <li><a href="https://www.facebook.com/A-Garden-of-Terrible-Blooms-103960825105042" target="_blank">Facebook <i class="fas fa-thumbs-up"></i></a></li>
         </ul>
         <nav>
             <div class="nav-wrapper">
@@ -62,7 +62,7 @@
                     <li class="divider"></li>
                     <li class="sidenav-heading">Support Us:</li>
                     <li><a href="https://ko-fi.com/terribleblooms" target="_blank">Ko-fi <i class="fas fa-hand-holding-usd"></i></a></li>
-                    <li><a href="#!" target="_blank">Facebook <i class="fas fa-thumbs-up"></i></a></li>
+                    <li><a href="https://www.facebook.com/A-Garden-of-Terrible-Blooms-103960825105042" target="_blank">Facebook <i class="fas fa-thumbs-up"></i></a></li>
                 </ul>
             </div>
         </nav>
@@ -115,17 +115,33 @@
         });
     </script>
 
-    {% comment %} Toggle Stitcher Icon {% endcomment %}
+    {% comment %} Toggle Podcast Icon Color {% endcomment %}
     <script type="text/javascript">
-        $('#stitcher-podcast-logo').hover(
-            function() {
-                $('#stitcher-podcast-logo').html('<img src="{% static 'assets/icons/stitcher_icon_white.png' %}" alt="stitcher icon" />');
-            },
-            function() {
-                $('#stitcher-podcast-logo').html('<img src="{% static 'assets/icons/stitcher_icon.png' %}" alt="stitcher icon" />');
-            }
-        );
+        $(document).ready(() => {
+            $(document).mousemove(() => {
+                if($('#stitcher-podcast-logo:hover').length != 0){
+                    setTimeout(() => { 
+                        $('.stitcher-icon').replaceWith('<img src="{% static 'assets/icons/stitcher_icon_white.png' %}" class="stitcher-icon" alt="stitcher icon" />');
+                    }, 200);
+                } else {
+                    setTimeout(() => {
+                        $('.stitcher-icon').replaceWith('<img src="{% static 'assets/icons/stitcher_icon.png' %}" class="stitcher-icon" alt="stitcher icon" />');
+                    }, 200);
+                }
+                
+                if($('#google-podcast-logo:hover').length != 0) {
+                    setTimeout(() => {
+                        $('.google-icon').replaceWith('<img src="{% static 'assets/icons/google_icon_white.png' %}" class="google-icon" alt="google podcasts icon" />');
+                    }, 150);
+                } else {
+                    setTimeout(() => {
+                        $('.google-icon').replaceWith('<img src="{% static 'assets/icons/google_icon.png' %}" class="google-icon" alt="google podcasts icon" />');
+                    }, 150);
+                }
+            });
+        });
     </script>
+
 
     {% comment %} Social Share Links {% endcomment %}
     <script type="text/javascript">

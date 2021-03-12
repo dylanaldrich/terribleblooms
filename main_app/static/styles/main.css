@@ -277,6 +277,7 @@ h1 {
 
 audio {
     width: 100%;
+    height: 57px;
 }
 
 audio::-webkit-media-controls-panel {
@@ -448,7 +449,7 @@ hr {
 .logos {
     font-size: 25px;
     margin-top: 10px;
-    height: 54px;
+    height: 56px;
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -466,8 +467,10 @@ hr {
 .logos a {
     flex: 1;
     background-color: #dfe6e9;
-    color:#1f1f1f;
+    height: 100%;
+    color: #1f1f1f;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transform: translate(-100%);
@@ -483,8 +486,12 @@ hr {
 }
 
 .logos a:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
     color: #f1f1f1;
+}
+
+.logos a span {
+    font-size: 10px;
 }
 
 #apple-podcast-logo:hover {
@@ -499,8 +506,18 @@ hr {
     background-color: rgb(66,133,244);
 }
 
+#google-podcast-logo img {
+    height: 27px;
+}
+
 #stitcher-podcast-logo img {
     width: 35px;
+    height: 17px;
+    margin-top: 4px;
+}
+
+#stitcher-podcast-logo span {
+    padding-top: 4px;
 }
 
 #stitcher-podcast-logo:hover {

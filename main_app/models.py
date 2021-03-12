@@ -23,10 +23,6 @@ class Play(models.Model):
     description = models.TextField(max_length=1000)
     audioFile = CloudinaryField('audio', overwrite=True, resource_type='video')
     image = CloudinaryField('image', overwrite=True, resource_type='image', default='sweetnectar_cassietaggart_default_qz039o.jpg')
-    apple_Link = models.CharField(max_length=1000, default='#')
-    google_Link = models.CharField(max_length=1000, default='#')
-    amazon_Link = models.CharField(max_length=1000, default='#')
-    stitcher_Link = models.CharField(max_length=1000, default='#')
     performers = models.ManyToManyField(Performer, related_name='plays')
     release_Date = models.DateTimeField(editable=True, default=datetime.now)
 
