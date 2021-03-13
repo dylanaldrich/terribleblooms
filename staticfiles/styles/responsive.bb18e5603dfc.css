@@ -1,0 +1,559 @@
+/* GLOBAL STYLES */
+@media only screen and (min-width: 1280px) {    
+    nav .brand-logo {
+        margin-left: 0;
+    }
+
+    .dropdown-trigger {
+        padding-right: 0;
+    }
+
+    .dropdown-content {
+        min-width: 148px;
+        margin-left: -14px
+    }
+
+    #admin-link {
+        position: absolute;
+        right: 0;
+    }
+    
+    #copyright {
+        position: absolute;
+        left: 0;
+    }
+}
+
+@media only screen and (min-width: 1270px) {
+    nav {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .page-footer {
+        height: 82px;
+    }
+    
+    .page-footer .footer-copyright {
+        display: block;
+        text-align: center;
+        height: 100%;
+    }
+
+    .page-footer .footer-copyright>p {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #copyright, #admin-link {
+        position: initial;
+        left: initial;
+        right: initial;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    #title {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    #title {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #title {
+        font-size: 18px;
+    }
+}
+
+/* HOME PAGE */
+@media only screen and (max-width: 1010px) {
+    .page-header {
+        height: 79vh;
+    }
+    
+    .headline-box {
+        width: 100%;
+        transform: translateY(0%);
+    }
+
+    #plays-box {
+        margin: 75px 25px 15px;
+    }
+}
+
+@media only screen and (max-width: 861px) and (min-width: 644px) {
+    .headline {
+        font-size: 2.5vw;
+    }
+
+    #created-by {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 788px) {
+    #latest-play {
+        flex-direction: column;
+    }
+
+    #latest-play-photo, #latest-play-info {
+        margin: 0 auto 20px;
+    }
+
+    #latest-play-info {
+        padding: 0 15px;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    #past-plays-heading {
+        margin-top: 15px;
+    }
+
+    .audio {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 643px) {
+    .page-header {
+        height: 80vw;
+    }
+
+    .headline {
+        font-size: 15px;
+    }
+
+    #created-by {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 586px) {
+    #expand_more {
+        display: none;
+    }
+
+    .headline {
+        margin: 8px 15px;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    .flower {
+        display: none;
+    }
+
+    .headline-box i {
+        display: none;
+    }
+
+    #latest-play-info {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .page-header {
+        height: 37vh;
+    }
+
+    #plays-box {
+        margin-top: 65px;
+    }
+    
+    #plays-box h3 {
+        font-size: 22px;
+    }
+
+    .audio {
+        width: 95%;
+    }
+
+    #latest-play-photo {
+        width: 100%;
+    }
+
+    .card-image img {
+        height: 29vh;
+    }
+}
+
+/* ABOUT PAGE */
+@media only screen and (max-width: 1080px) {
+    .upper-about {
+        margin: 25px 25px 0;
+        justify-content: space-between;
+    }
+
+    .about-content {
+        margin: 0 0 0 25px;
+    }
+}
+
+@media only screen and (max-width: 1036px) {
+    #art-credits {
+        justify-content: center;
+        margin-top: 2.5vh;
+    }
+
+    #creator-content {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 965px) {
+    #backstory {
+        margin: 3vh 6vh 0;
+    }
+
+    .upper-about {
+        justify-content: space-evenly;
+    }
+
+    .baby-image {
+        width: 30vw;
+    }
+
+    #creator-container {
+        flex-direction: column;
+    }
+
+    #creator-container h4 {
+        margin-bottom: 0;
+    }
+
+    .creator-square {
+        width: 100%;
+        margin-bottom: 3vh;
+    }
+}
+
+@media only screen and (max-width: 785px) {
+    .baby-image {
+        width: 32vw;
+    }
+}
+
+@media only screen and (max-width: 746px) {
+    #poem {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 701px) {
+    #poem {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .baby-image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 538px) {
+    .upper-about {
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    .baby-image {
+        max-width: 100%;
+        width: 100%;
+        display: block;
+        margin: 0 0 18px;
+    }
+
+    .about-content  {
+        margin: 0 25px;
+    }
+
+    #backstory {
+        margin: 3vh 25px 0;
+    }
+    
+    #poem {
+        font-size: 14px;
+    }
+
+    #creator-content {
+        margin: 0 25px;
+    }
+
+    .creator-square h5 {
+        margin-top: 5px;
+    }
+}
+
+@media only screen and (max-width: 482px) {
+    #poem {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 405px) {
+    .upper-about {
+        margin: 0;
+    }
+
+    .about-content {
+        margin: 0 15px;
+    }
+
+    #backstory {
+        margin: 15px; 
+    }
+    
+    #poem {
+        font-size: 14px;
+    }
+
+    #art-credits {
+        margin-top: 12px;
+        font-size: 16px;
+    }
+
+    #creator-content {
+        margin: 0;
+    }
+
+    #creator-content h4 {
+        font-size: 25px;
+    }
+
+    #creator-content h5 {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 337px) {
+    #art-credits, .creator-contacts {
+        font-size: 14px;
+    }
+
+    .dahlia {
+        height: 37px;
+    }
+
+    #poem {
+        font-size: 12px;
+    }
+}
+
+/* PERFORMERS PAGE */
+@media only screen and (max-width: 1010px) {
+    .performers-container {
+        margin: 9vh auto 1.5vh;
+        padding: 0 20px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        width: 100%;
+    }
+
+    #performer-headline {
+        font-size: 25px;
+    }
+
+    .performer-card {
+        width: 100%;
+    }
+
+    .performers-container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    #performer-chevron {
+        display: none;
+    }
+    
+    #performer-headline {
+        font-size: 25px;
+        font-weight: normal;
+    }
+
+    .performers-container {
+        margin-top: 8vh;
+    }
+
+    .performer-card .card-content .card-title {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #performer-headline {
+        font-size: 23px;
+    }
+
+    .performers-container {
+        margin: 11vh auto 2vh;
+
+    }
+}
+
+/* EPISODE PAGE */
+
+@media only screen and (max-width: 1270px) {
+    .play-detail-page {
+        margin: 25px;
+    }
+    
+    .side-image {
+        width: 50vw;
+    }
+
+    .play-detail-container {
+        margin: 0 0 0 25px;
+    }
+}
+
+@media only screen and (max-width: 1013px) {
+    #ascap {
+        text-align: center;
+    }
+
+    #ascap img {
+        display: none;
+    }
+
+    #ascap p span {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 987px) {
+    #ascap {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    #ascap p {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    #play h4 {
+        font-size: 3.5vw;
+    }
+}
+
+@media only screen and (max-width: 827px) {
+    .play-detail-page {
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px 25px 0;
+        height: fit-content;
+    }
+
+    .play-detail-container {
+        margin: 0 25px 0 0;
+    }
+    
+    .side-image {
+        width: 44vw;
+        height: 100%;
+    }
+
+    #play {
+        margin: 0 0 0 20px;
+    }
+
+    #ascap {
+        margin: 20px auto 25px;
+    }
+}
+
+@media only screen and (max-width: 788px) {
+    .play-detail-page {
+        flex-direction: column;
+    }
+
+    .play-detail-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .side-image {
+        width: 100%;
+        max-width: 60%;
+    }
+
+    #play {
+        width: 100%;
+        margin: 0;
+    }
+
+    #play h4 {
+        margin-top: 20px;
+    }
+    
+    .meet-the-performers {
+        margin-bottom: 0;
+    }
+
+    #ascap {
+        margin: 10px auto 25px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    #play h4 {
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 465px) {
+    .play-detail-page {
+        margin: 0;
+    }
+    
+    .side-image {
+        max-width: 100%;
+    }
+
+    #play {
+        margin-bottom: 8px;
+        padding: 0 18px;
+    }
+
+    #play h4 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .audio {
+        width: 100%;
+    }
+    
+}
+
+/* ERROR PAGES */
+
+@media only screen and (max-width: 785px) {
+    .error-page, .whoops {
+        position: unset;
+    }
+
+    .whoops {
+        transform: unset;
+        background-color: unset;
+    }
+}

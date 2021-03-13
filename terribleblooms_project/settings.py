@@ -35,7 +35,7 @@ ENV_SECRET = env('SECRET_KEY')
 SECRET_KEY = os.getenv('SECRET_KEY', ENV_SECRET)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django-partial-content',
     'cloudinary',
     'corsheaders',
+    'whitenoise.runserver_nostatic', # allows whitenoise to run on dev server
 ]
 
 MIDDLEWARE = [
