@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_app.urls')),
+    path(r'^googlee27c9928656efc72\.html$', lambda r: HttpResponse('google-site-verification: googlee27c9928656efc72.html', mimetype='text/plain')),
 ]
 
 if settings.DEBUG:
