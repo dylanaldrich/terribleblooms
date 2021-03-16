@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'corsheaders',
     'whitenoise.runserver_nostatic', # allows whitenoise to run on dev server
+    'webmaster_verification',
 ]
 
 MIDDLEWARE = [
@@ -157,6 +158,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+# WEBMASTER CONFIG
+
+WEBMASTER_VERIFICATION = {
+    'google': 'googlee27c9928656efc72',
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
