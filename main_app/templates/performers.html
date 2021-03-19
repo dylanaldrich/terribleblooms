@@ -25,7 +25,7 @@
                             <div class="performer-icon-line">
                                     <i class="far fa-user activator  text-darken-4 performer-icon"></i>
                                 {% if performer.imdb %}
-                                    <a href="{{ performer.imdb }}" target="_blank">
+                                    <a href="{{ performer.imdb }}" rel="noopener" target="_blank">
                                         <i class="fab fa-imdb performer-icon"></i>
                                     </a>
                                 {% endif %}
@@ -35,7 +35,7 @@
                                 {{ performer.name }}
                                 {% if performer.imdb %}
                                     <p class="imdb">
-                                        <a href="{{ performer.imdb }}" target="_blank">
+                                        <a href="{{ performer.imdb }}" rel="noopener" target="_blank">
                                             <i class="fab fa-imdb performer-icon"></i>
                                         </a>
                                     </p>

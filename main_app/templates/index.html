@@ -33,8 +33,8 @@
 <body>
     <header>
         <ul id="dropdown-menu" class="dropdown-content">
-            <li><a href="https://ko-fi.com/terribleblooms" target="_blank">Ko-fi <i class="fas fa-hand-holding-usd"></i></a></li>
-            <li><a href="https://www.facebook.com/A-Garden-of-Terrible-Blooms-103960825105042" target="_blank">Facebook <i class="fas fa-thumbs-up"></i></a></li>
+            <li><a href="https://ko-fi.com/terribleblooms" rel="noopener" target="_blank">Ko-fi <i class="fas fa-hand-holding-usd"></i></a></li>
+            <li><a href="https://www.facebook.com/A-Garden-of-Terrible-Blooms-103960825105042" rel="noopener" target="_blank">Facebook <i class="fas fa-thumbs-up"></i></a></li>
         </ul>
         <nav>
             <div class="nav-wrapper">
@@ -65,8 +65,8 @@
                     <li><a href="{% url 'about' %}">About</a></li>
                     <li class="divider"></li>
                     <li class="sidenav-heading">Support Us:</li>
-                    <li><a href="https://ko-fi.com/terribleblooms" target="_blank">Ko-fi <i class="fas fa-hand-holding-usd"></i></a></li>
-                    <li><a href="https://www.facebook.com/A-Garden-of-Terrible-Blooms-103960825105042" target="_blank">Facebook <i class="fas fa-thumbs-up"></i></a></li>
+                    <li><a href="https://ko-fi.com/terribleblooms" rel="noopener" target="_blank">Ko-fi <i class="fas fa-hand-holding-usd"></i></a></li>
+                    <li><a href="https://www.facebook.com/A-Garden-of-Terrible-Blooms-103960825105042" rel="noopener" target="_blank">Facebook <i class="fas fa-thumbs-up"></i></a></li>
                 </ul>
             </div>
         </nav>
@@ -83,7 +83,7 @@
                 &copy; <span id='year'></span> A Garden of Terrible Blooms
             </p>
             <p>
-                Web Design by <a href="https://dylanaldrich.com" target="_blank">Dylan Aldrich</a>
+                Web Design by <a href="https://dylanaldrich.com" rel="noopener" target="_blank">Dylan Aldrich</a>
             </p>
             <p id="admin-link">
                 <a href="{% url 'admin:index' %}">Admin</a>
@@ -151,9 +151,9 @@
     <script type="text/javascript">
         const currentURL = window.location.href;
         $('.share').append(
-            `<a href="https://www.facebook.com/sharer/sharer.php?u=${currentURL}" target="_blank"><i class="fab fa-facebook-square" style="color: rgb(66,103,178);"></i></a>`,
-            `<a href="https://twitter.com/intent/tweet?url=${currentURL}&text=" target="_blank"><i class="fab fa-twitter-square" style="color: rgb(85,172,238);"></i></a>`,
-            `<a href="https://www.linkedin.com/shareArticle?mini=true&url=${currentURL}" target="_blank"><i class="fab fa-linkedin" style="color: rgb(0,119,181);"></i></a>`
+            `<a href="https://www.facebook.com/sharer/sharer.php?u=${currentURL}" rel="noopener" target="_blank"><i class="fab fa-facebook-square" style="color: rgb(66,103,178);"></i></a>`,
+            `<a href="https://twitter.com/intent/tweet?url=${currentURL}&text=" rel="noopener" target="_blank"><i class="fab fa-twitter-square" style="color: rgb(85,172,238);"></i></a>`,
+            `<a href="https://www.linkedin.com/shareArticle?mini=true&url=${currentURL}" rel="noopener" target="_blank"><i class="fab fa-linkedin" style="color: rgb(0,119,181);"></i></a>`
         );
     </script>
 </body>
