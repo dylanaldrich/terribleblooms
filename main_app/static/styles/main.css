@@ -667,6 +667,12 @@ hr {
     font-size: 32px;
 }
 
+span.performer-icon {
+    cursor: pointer;
+    line-height: 1;
+    font-size: 24px;
+}
+
 .fa-imdb {
     font-size: 37px;
 }
@@ -679,7 +685,7 @@ hr {
 .performer-icon-line {
     display: flex;
     align-items: center;
-    width: 72px;
+    width: 77px;
     justify-content: space-between;
 }
 
