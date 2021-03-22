@@ -23,10 +23,11 @@
                                 {{ performer.name }}
                             </span>
                             <div class="performer-icon-line">
-                                    <i class="far fa-user activator  text-darken-4 performer-icon"></i>
+                                    <span class="performer-icon text-darken-4 activator">BIO</span>
+                                    {% comment %} <i class="far fa-user   text-darken-4 performer-icon"></i> {% endcomment %}
                                 {% if performer.imdb %}
                                     <a href="{{ performer.imdb }}" rel="noopener" target="_blank">
-                                        <span class="performer-icon">BIO</span>
+                                        <i class="fab fa-imdb performer-icon"></i>
                                     </a>
                                 {% endif %}
                             </div>
