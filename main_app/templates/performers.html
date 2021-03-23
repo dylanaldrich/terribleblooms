@@ -23,12 +23,12 @@
                                 {{ performer.name }}
                             </span>
                             <div class="performer-icon-line">
+                                <span class="performer-icon text-darken-4 activator">Bio</span>
                                 {% if performer.imdb %}
                                     <a href="{{ performer.imdb }}" rel="noopener" target="_blank">
-                                        <i class="fab fa-imdb performer-icon"></i>
+                                        <span class="performer-icon text-darken-4">IMDb</span>
                                     </a>
                                 {% endif %}
-                                <span class="performer-icon text-darken-4 activator">Bio</span>
                             </div>
                         {% else %}
                             <span class="card-title white-text text-darken-4">
@@ -36,7 +36,7 @@
                                 {% if performer.imdb %}
                                     <p class="imdb">
                                         <a href="{{ performer.imdb }}" rel="noopener" target="_blank">
-                                            <i class="fab fa-imdb performer-icon"></i>
+                                            <span class="performer-icon text-darken-4">IMDb</span>
                                         </a>
                                     </p>
                                 {% endif %}
