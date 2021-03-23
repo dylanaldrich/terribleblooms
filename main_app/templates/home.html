@@ -30,6 +30,7 @@
                         <a href="{% url 'play_Detail' latest_Play.id %}">{{ latest_Play.name }}</a>
                     </h3>
                     <p id="latest-play-description">{{ latest_Play.description }}</p>
+                    <p class="byline">Written and Directed by Sharon Yablon</p>
                     <section class="audio">
                         <audio controls>
                             <source src="{{ latest_Play.audioFile.url }}" type="audio/mpeg">

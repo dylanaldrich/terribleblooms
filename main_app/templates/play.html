@@ -10,6 +10,7 @@
                 <h4>{{ play.name }}</h4>
                 <p>Released: {{play.release_Date|date:"F j, Y"}}</p>
                 <p>{{ play.description }}</p>
+                <p class="byline">Written and Directed by Sharon Yablon</p>
                 <section class="audio">
                     <audio controls>
                         <source src="{{ play.audioFile.url }}" type="audio/mpeg">
