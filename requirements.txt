@@ -9,8 +9,9 @@ django-cors-headers==3.7.0
 django-environ==0.4.5
 django-on-heroku==1.1.2
 django-partial-content==0.9.4
-django-quill-editor==0.1.21
+django-quill-editor==0.1.22
 django-ranged-response==0.2.0
+django-summernote==0.8.11.6
 gunicorn==20.0.4
 idna==2.10
 Pillow==8.1.0
