@@ -669,11 +669,13 @@ hr {
 
 span.performer-icon {
     background-color: var(--link-color);
+    color: var(--main-bg-color);
     border-radius: 3px;
     padding: 4px;
     cursor: pointer;
     line-height: 1;
     font-size: 24px;
+    margin-bottom: 1px;
 }
 
 .fa-imdb {
@@ -702,6 +704,7 @@ span.performer-icon {
 }
 
 span.performer-icon:hover {
+    color: var(--main-bg-color);
     background-color: white;
 }
 
