@@ -348,6 +348,8 @@ audio:focus {
 
 .byline {
     text-align: center;
+    font-style: italic;
+    font-weight: bold;
 }
 
 #latest-play-info .byline {
