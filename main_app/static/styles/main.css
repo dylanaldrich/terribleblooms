@@ -665,16 +665,29 @@ hr {
 .performer-icon {
     color: var(--link-color);
     font-size: 32px;
+}
+
+span.performer-icon {
+    background-color: var(--link-color);
+    border-radius: 3px;
+    padding: 4px;
     cursor: pointer;
     line-height: 1;
     font-size: 24px;
 }
 
+.fa-imdb {
+    font-size: 37px;
+}
+
 .performer-icon-line {
     display: flex;
     align-items: center;
-    width: 77px;
+    width: 83px;
     justify-content: space-between;
+}
+
+.performer-icon-line, .imdb {
     padding-top: 7px;
 }
 
@@ -686,6 +699,10 @@ hr {
 
 .performer-icon:hover, .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
     color: white;
+}
+
+span.performer-icon:hover {
+    background-color: white;
 }
 
 .card ::-webkit-scrollbar {
