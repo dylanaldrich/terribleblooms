@@ -667,6 +667,11 @@ hr {
     flex-wrap: wrap;
 }
 
+.coming-soon {
+    color: white;
+    font-style: italic;
+}
+
 #nothing-performer, #nothing-play {
     text-align: center;
     margin-bottom: 10vh;
