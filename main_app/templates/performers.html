@@ -48,11 +48,15 @@
                         <div id="featured-plays">
                             <span>Featured in:</span>
                             <div>
-                                {% for play in performer.plays.all %}
-                                    <p>
-                                        <a href="{% url 'play_Detail' play.id %}" class="featured-play-link">{{ play.name }}</a>
-                                    </p>
-                                {% endfor %}
+                                {% if performer.plays.count > 0 %}
+                                    {% for play in performer.plays.all %}
+                                        <p>
+                                            <a href="{% url 'play_Detail' play.id %}" class="featured-play-link">{{ play.name }}</a>
+                                        </p>
+                                    {% endfor %}
+                                {% else %}
+                                    <p>Coming soon! Stay tuned.</p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
