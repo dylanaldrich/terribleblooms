@@ -413,6 +413,11 @@ audio:focus {
     background-color: white;
 }
 
+.btn-floating i {
+    font-size: 1.2rem;
+    padding-left: 3px;
+}
+
 .btn-floating:hover i {
     color: var(--link-color);
 }
