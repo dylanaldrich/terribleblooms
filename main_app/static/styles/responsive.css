@@ -406,16 +406,12 @@
 /* EPISODE PAGE */
 
 @media only screen and (max-width: 1270px) {
-    .play-detail-page {
-        margin: 25px;
-    }
-    
     .side-image {
         width: 50vw;
     }
 
     .play-detail-container {
-        margin: 0 0 0 25px;
+        margin: 25px;
     }
 }
 
