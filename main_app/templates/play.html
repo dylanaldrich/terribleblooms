@@ -91,7 +91,10 @@
     </script>
 
     <script type="text/javascript">
-        let $width = $('nav').width();
-        $(".play-detail-page").css('width', $width + "px");
+        // keeps play detail page the same width as the navbar
+        window.addEventListener("resize", () => {
+            let $width = $('nav').width();
+            $(".play-detail-page").css('width', $width + "px");
+        });
     </script>
 {% endblock %}
