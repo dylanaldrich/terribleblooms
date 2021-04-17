@@ -534,6 +534,7 @@ hr {
 
 #google-podcast-logo img {
     height: 27px;
+    margin-top: -2px;
 }
 
 #stitcher-podcast-logo img {
