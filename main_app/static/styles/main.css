@@ -436,6 +436,7 @@ audio:focus {
     display: flex;
     height: 100%;
     align-items: center;
+    justify-content: space-around;
 }
 
 .play-detail-container {
