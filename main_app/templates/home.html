@@ -5,7 +5,12 @@
 {% block content %}
     <header class="page-header"></header>
     <script type="text/javascript">
-        $(".page-header").css("background-image", "url({% static 'assets/artwork/sweetnectar_cassietaggart.jpg' %})");
+        // load mobile/full resolution artwork
+        if($(window).width() <= 450) {
+            $(".page-header").css("background-image", "url({% static 'assets/artwork/sweetnectar_cassietaggart_mobile.jpg' %})");
+        } else {
+            $(".page-header").css("background-image", "url({% static 'assets/artwork/sweetnectar_cassietaggart.jpg' %})");
+        }
     </script>
     <div class="headline-box">
         <h3 class="headline">
@@ -52,6 +57,10 @@
                             <a href="https://music.amazon.com/podcasts/02724c25-1982-4c2e-88dc-a16a8eb1943b/A-Garden-of-Terrible-Blooms" rel="noopener" target="_blank" id="amazon-podcast-logo" title="Amazon Podcasts">
                                 <i class="fab fa-amazon"></i>
                                 <span>Amazon</span>
+                            </a>
+                            <a href="https://open.spotify.com/show/41nmCkJwskM4O5j8KXwFnm" rel="noopener" target="_blank" id="spotify-podcast-logo" title="Spotify Podcasts">
+                                <i class="fab fa-spotify"></i>
+                                <span>Spotify</span>
                             </a>
                             <a href="https://www.stitcher.com/podcast/a-garden-of-terrible-blooms" rel="noopener" target="_blank" id="stitcher-podcast-logo" rel="noopener" target="_blank" title="Stitcher Podcasts">
                                 <img src="{% static 'assets/icons/stitcher_icon.png' %}" class="stitcher-icon" alt="stitcher icon" />

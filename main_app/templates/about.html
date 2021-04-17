@@ -3,6 +3,14 @@
 
 {% block content %}
     <section class="upper-about">
+        <script type="text/javascript">
+            // load mobile/full resolution artwork
+            if($(window).width() <= 450) {
+                $(".baby-image").attr("src", "{% static 'assets/artwork/flycatcher_cassietaggart_mobile.jpg' %}");
+            } else {
+                $(".baby-image").attr("src", "{% static 'assets/artwork/flycatcher_cassietaggart.jpg' %}");
+            }
+        </script>
         <img src="{% static 'assets/artwork/flycatcher_cassietaggart.jpg' %}" alt="fly catcher by cassie taggart" class="baby-image z-depth-2" />
         <div class="about-content">
             <p id="poem">

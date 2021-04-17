@@ -528,6 +528,10 @@ hr {
     background-color: rgb(66,133,244);
 }
 
+#spotify-podcast-logo:hover {
+    background-color: rgb(29,185,84);
+}
+
 #google-podcast-logo img {
     height: 27px;
 }

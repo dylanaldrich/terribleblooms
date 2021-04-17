@@ -4,7 +4,13 @@
 {% block content %}
     <section class="page-header" id="babyhouse"></section>
     <script type="text/javascript">
-        $(".page-header").css({"background-image": "url({% static 'assets/artwork/babyhouse_cassietaggart.jpg' %})", "background-position": "50% 100%"});
+        // load mobile/full resolution artwork
+        if($(window).width() <= 450) {
+            $(".page-header").css({"background-image": "url({% static 'assets/artwork/babyhouse_cassietaggart_mobile.jpg' %})", "background-position": "50% 100%"});
+        } else {
+            $(".page-header").css({"background-image": "url({% static 'assets/artwork/babyhouse_cassietaggart.jpg' %})", "background-position": "50% 100%"});
+        }
+        
     </script>
     <div class="headline-box">
         <div class="headline">
