@@ -64,13 +64,6 @@
                     </div>
                 </div>
             </div>
-            <section id="ascap" class="inner">
-                <p>
-                    Music &amp; Lyrics written by Thomas Chan<span>, ASCAP</span><br>
-                    Music, Lyrics &amp; Sound Recordings published by<br> Magnetic Oblivion Music Company<span>, ASCAP</span>
-                </p>
-                <img src="{% static 'assets/icons/ASCAP_Logo_Primary_Black.png' %}" alt="ascap logo" >
-            </section>
         </div>
     </section>
 
@@ -85,7 +78,6 @@
                 }
             } else {
                 $(".episode-page-wrapper").replaceWith($(".episode-page-wrapper").contents());
-                $("#play").after($("#ascap"));
             }
         });
     </script>
