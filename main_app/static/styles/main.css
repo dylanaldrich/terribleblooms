@@ -829,9 +829,11 @@ span.performer-icon:hover {
 #creators-headline {
     display: flex;
     align-items: center;
-    margin-bottom: 2vh;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+}
+
+#quotes li {
+    padding: 5px 0;
+    text-align: center;
 }
 
 #creator-container {
@@ -839,26 +841,6 @@ span.performer-icon:hover {
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
-}
-
-.creator-square {
-    background-color: var(--main-bg-color);
-    width: 48%;
-    height: revert;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.creator-square p {
-    padding: 15px;
-    text-align: justify;
-    margin: 0;
-}
-
-.creator-square h5 {
-    margin: 0;
 }
 
 #creator-container h4 {
