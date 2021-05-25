@@ -59,7 +59,7 @@
                     <h5>Meet The Performers:</h5>
                     <div id="performer-link-container">
                         {% for performer in play.performers.all %}
-                            <a href="{% url 'performers' %}#{{ performer.name }}" class="performer-link hoverable">{{ performer.name }}</a>
+                            <a href="{% url 'artists' %}#{{ performer.name }}" class="performer-link hoverable">{{ performer.name }}</a>
                         {% endfor %}
                     </div>
                 </div>

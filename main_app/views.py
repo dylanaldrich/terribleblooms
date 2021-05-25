@@ -19,8 +19,8 @@ def home(request):
 
 # ABOUT PAGE
 def about(request):
-    context = {"creators" : Creator.objects.all()}
-    return render(request, 'about.html', context)
+    # context = {"creators" : Creator.objects.all()}
+    return render(request, 'about.html')
 
 # PERFORMERS PAGE
 def performers(request):

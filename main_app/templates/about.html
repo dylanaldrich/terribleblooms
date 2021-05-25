@@ -28,9 +28,7 @@
                 and yields some Terrible Blooms.
             </p>
             <div id="backstory">
-                <p>
-                    <span id="tagline">A Garden of Terrible Blooms</span> is a passion project created by Sharon Yablon and Thomas Chan. Thomas has provided sound design and live music for two of Sharon’s themed, one-act productions: <span class="play-title">Stomach Contents</span> (Zombie Joe’s Underground Theater, 2018), which was set in the desert, and <span class="play-title">24 Hours On Sunset</span> (indoor and outdoor locations, 2011), which was an evening of one-acts centered around the iconic Sunset Boulevard. They have also worked together on individual plays and performances over the years in a variety of locations.
-                </p>
+                <p>Welcome to a midnight tour of LA. Prepare for a sonic journey of words and music through dark alleys, siren-soaked Hollywood nights, the skies, coyote outskirts and dive bars. You could find yourself lost in the desert or the South Bay with a murdered Jane Doe, a middle-aged single, a police helicopter pilot, the wife of a mass murderer, or a cult escapee. These dark tales that border the dream and the waking worlds are all cast with talented actors from the vibrant Los Angeles theater community.</p>
             </div>
             <div id="art-credits">
                 <img src="{% static 'assets/artwork/bluedahlia.png' %}" alt="dahlia" class="dahlia" />
@@ -45,28 +43,22 @@
 
     <div id="creator-content">
         <div id="creators-headline">
-            <h4>The Creators</h4>
+            <h4>What Our Listeners Are Saying</h4>
         </div>
         
-        <section id="creator-container">
-            {% if creators.count > 0 %}
-                {% for creator in creators %}
-                    <div class="creator-square z-depth-2 text-white">
-                        <h4>{{ creator.name }}</h4>
-                        <h5>{{ creator.title }}</h5>
-                        {{ creator.bio.html|safe }}
-                        {% if creator.email %}
-                            <div class="creator-contacts">
-                                <i class="far fa-envelope"></i> 
-                                <a href="mailto:{{ creator.email }}">{{creator.email }}</a>
-                            </div>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            {% else %}
-                <h5>Nothing to see here! Creator information coming soon.</h5>
-            {% endif %}
-        </section>
+        <div id="quotes">
+            <ul>
+                <li>“I feel like I’m cruising along on a dark funhouse ride.”</li>
+                <li>“These plays form a portrait of alienation in contemporary LA that would be very sad if it wasn’t kind of funny at the same time.”</li>
+                <li>“All three plays blew my mind last night, and again this morning. Your work is such a turn on poetically, you really speak to the dark shadows of my television day dreams. Erotic, horrific humanity entertained by our own cannibalism.”</li>
+                <li>“Love the worlds you created. Reminds me of one of my all time heroes, the late great Joe Frank.”</li>
+                <li>"Grimy richness."</li>
+                <li>“This is terrific! I insist you do many more.”</li>
+                <li>“This has really stayed with me. The soundscape of the playwright’s soul and the soul of Los Angeles is woven together throughout.”</li>
+                <li>"It’s wonderful to just bathe in the words.”</li>
+                <li>“Boy, do I need a Thorazine after your incredibly wild ride that you took me on. You manage to play with the listener’s subconscious in such a way as to bring us deep inside the minds of the characters, which makes it even more unsettling and so wonderfully creepy. Thank you so much for this wild ride.”</li>
+            </ul>
+        </div>
     </div>
 
     <script type="text/javascript">
@@ -85,10 +77,5 @@
                 $('#backstory').after($('#art-credits'));
             }
         });
-    </script>
-
-    <script type="text/javascript">
-        // remove auto-generated style attribute from creator bios
-        $('.creator-square').find('*').removeAttr('style');
     </script>
 {% endblock %}
