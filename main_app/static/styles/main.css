@@ -870,7 +870,7 @@ p.creator-bio p {
 }
 
 .fa-envelope {
-    font-size: 3vh;
+    font-size: 2vh;
     padding: 5px;
 }
 
@@ -879,7 +879,7 @@ p.creator-bio p {
 }
 
 .creator-contacts a:hover {
-    color: white;
+    filter: opacity(70%);
 }
 
 /* ERROR PAGES */
