@@ -787,7 +787,13 @@ span.performer-icon:hover {
 }
 
 #backstory {
-    text-align: justify;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    border-radius: 6px;
+    border: 3px solid rgb(120,49,124);
+    padding: 10px;
+    background-color: rgba(120,49,124,0.8);
     margin: 13px auto;
 }
 
