@@ -844,11 +844,16 @@ span.performer-icon:hover {
 #creators-headline {
     display: flex;
     align-items: center;
+    text-align: center;
 }
 
 #quotes li {
     padding: 5px 0;
     text-align: center;
+}
+
+#touch {
+    margin-top: 30px;
 }
 
 #creator-container {
