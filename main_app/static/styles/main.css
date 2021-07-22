@@ -797,6 +797,15 @@ span.performer-icon:hover {
     margin: 13px auto;
 }
 
+#backstory a {
+    color: var(--main-bg-color);
+    font-weight: bold;
+}
+
+#backstory a:hover {
+    text-decoration: underline;
+}
+
 #art-credits {
     font-size: 18px;
     text-align: center;
