@@ -74,7 +74,7 @@ nav a.button-collapse, nav a.button-collapse i {
 }
 
 nav .brand-logo {
-    width: fit-content;
+    width: max-content;
     height: 100%;
     margin-left: 10px;;
     display: flex;
