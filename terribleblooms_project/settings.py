@@ -22,10 +22,11 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 
-environ.Env.read_env()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Read environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -35,7 +36,7 @@ ENV_SECRET = env('SECRET_KEY')
 SECRET_KEY = os.getenv('SECRET_KEY', ENV_SECRET)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.terribleblooms.net', 'terribleblooms.net', 'localhost']
 
@@ -50,7 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_app',
     'django_quill',
-    'django-partial-content',
     'cloudinary',
     'corsheaders',
     'whitenoise.runserver_nostatic',
@@ -70,9 +70,9 @@ MIDDLEWARE = [
 
 # SECURITY SETTINGS
 SECURE_HSTS_SECONDS = 20
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
@@ -157,6 +157,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+# File Upload Settings
+DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600  # 100MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 104857600  # 100MB
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 2000
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -180,6 +184,8 @@ cloudinary.config(
     api_key = os.getenv('API_KEY', ENV_API_KEY),
     api_secret = os.getenv('API_SECRET', ENV_API_SECRET),
     secure = True,
+    chunk_size = 10485760,  # Set chunk size to 10MB
+    timeout = 600  # Set timeout to 10 minutes
 )
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
