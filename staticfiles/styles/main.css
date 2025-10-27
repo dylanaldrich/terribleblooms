@@ -488,10 +488,6 @@ hr {
   border-radius: 30px;
 }
 
-.logos:hover {
-  transform: scale(1.1);
-}
-
 .logos a {
   flex: 1;
   background-color: #dfe6e9;
@@ -513,11 +509,6 @@ hr {
   opacity: 1;
 }
 
-.logos a:hover {
-  transform: scale(1.2);
-  color: #f1f1f1;
-}
-
 .logos a span {
   font-size: 10px;
   line-height: 1;
@@ -534,20 +525,6 @@ hr {
 
 #spotify-podcast-logo:hover {
   background-color: rgb(29, 185, 84);
-}
-
-#stitcher-podcast-logo img {
-  width: 35px;
-  height: 17px;
-  margin-top: 4px;
-}
-
-#stitcher-podcast-logo span {
-  padding-top: 7px;
-}
-
-#stitcher-podcast-logo:hover {
-  background-color: rgb(243, 192, 23);
 }
 
 #logo-cover {

@@ -536,20 +536,6 @@ hr {
   background-color: rgb(29, 185, 84);
 }
 
-#stitcher-podcast-logo img {
-  width: 35px;
-  height: 17px;
-  margin-top: 4px;
-}
-
-#stitcher-podcast-logo span {
-  padding-top: 7px;
-}
-
-#stitcher-podcast-logo:hover {
-  background-color: rgb(243, 192, 23);
-}
-
 #logo-cover {
   position: absolute;
   z-index: 2;
