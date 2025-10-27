@@ -27,7 +27,7 @@
     <div id="play">
       <h4>{{ play.name }}</h4>
       <p>Released: {{play.release_Date|date:"F j, Y"}}</p>
-      <div class="play-description">{{ play.description.html|safe }}</div>
+      <div class="play-description">{{ play.description|safe }}</div>
       <p class="byline">Written and Directed by Sharon Yablon</p>
       <section class="audio">
         <audio controls>
