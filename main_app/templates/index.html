@@ -55,11 +55,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $(".dropdown-trigger").dropdown();
-      });
-    </script>
+    <script src="{% static 'js/common.js' %}"></script>
+    <script src="{% static 'js/responsive-images.js' %}"></script>
 
     <title>A Garden of Terrible Blooms</title>
   </head>
@@ -153,44 +150,5 @@
       </div>
     </footer>
 
-    {% comment %} Current year {% endcomment %}
-    <script type="text/javascript">
-      $("#year").text(new Date().getFullYear());
-    </script>
-
-    {% comment %} Hamburger Menu {% endcomment %}
-    <script type="text/javascript">
-      $(".button-collapse").sideNav();
-    </script>
-
-    {% comment %} Active Class Toggle for Navbar {% endcomment %}
-    <script type="text/javascript">
-      const currentPage = $(location)
-        .attr("pathname")
-        .replace(/^\/|\/$/g, "");
-
-      $(".navlink").each(function () {
-        const linkText = $(this).text().toLowerCase().replace(/\s+/g, "");
-
-        if (currentPage === "") {
-          $("li").removeClass("active");
-          return $("li.default").addClass("active");
-        }
-
-        if (linkText.includes(currentPage)) {
-          return $(this).addClass("active");
-        }
-      });
-    </script>
-
-    {% comment %} Social Share Links {% endcomment %}
-    <script type="text/javascript">
-      const currentURL = window.location.href;
-      $(".share").append(
-        `<a href="https://www.facebook.com/sharer/sharer.php?u=${currentURL}" rel="noopener" target="_blank"><i class="fab fa-facebook-square" style="color: rgb(66,103,178);"></i></a>`,
-        `<a href="https://x.com/intent/tweet?url=${currentURL}&text=" rel="noopener" target="_blank"><i class="fa-brands fa-x-twitter" style="color: #000000;"></i></a>`,
-        `<a href="https://www.linkedin.com/shareArticle?mini=true&url=${currentURL}" rel="noopener" target="_blank"><i class="fab fa-linkedin" style="color: rgb(0,119,181);"></i></a>`
-      );
-    </script>
   </body>
 </html>

@@ -4,18 +4,8 @@
 {% block content %}
 <header class="page-header"></header>
 <script type="text/javascript">
-  // load mobile/full resolution artwork
-  if ($(window).width() <= 450) {
-    $(".page-header").css(
-      "background-image",
-      "url({% static 'assets/artwork/sweetnectar_cassietaggart_mobile.jpg' %})"
-    );
-  } else {
-    $(".page-header").css(
-      "background-image",
-      "url({% static 'assets/artwork/sweetnectar_cassietaggart.jpg' %})"
-    );
-  }
+    var mobileImageUrl = "{% static 'assets/artwork/sweetnectar_cassietaggart_mobile.jpg' %}";
+    var desktopImageUrl = "{% static 'assets/artwork/sweetnectar_cassietaggart.jpg' %}";
 </script>
 <div class="headline-box">
   <h3 class="headline">

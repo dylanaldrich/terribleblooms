@@ -1,9 +1,12 @@
-from datetime import datetime, timezone
-from .models import Play
+from django.utils import timezone
+from django.db.models import Prefetch
+from .models import Play, Performer
 
 def check_Release_Date():
-    plays = list(Play.objects.all())
-    present = datetime.now(timezone.utc)
-
-    # Filter out plays that haven't been released yet
-    return [play for play in plays if play.release_Date <= present]
+    present = timezone.now()
+    return (Play.objects
+            .filter(release_Date__lte=present)
+            .prefetch_related(
+                Prefetch('performers', queryset=Performer.objects.only('name', 'id'))
+            )
+            .order_by('-release_Date'))
