@@ -1,19 +1,24 @@
 {% extends "index.html" %}
 {% load static %}
 {% load cloudinary %}
+{% load quill_filters %}
 {% block content %}
 <section class="play-detail-page inner">
+  <script type="text/javascript">
+    var mobileImageUrl = "{% static 'assets/artwork/thereordering_cassietaggart_mobile.jpg' %}";
+    var desktopImageUrl = "{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}";
+  </script>
   <script type="text/javascript">
     // load mobile/full resolution artwork
     if ($(window).width() <= 450) {
       $("#reordering").attr(
         "src",
-        "{% static 'assets/artwork/thereordering_cassietaggart_mobile.jpg' %}"
+        mobileImageUrl
       );
     } else {
       $("#reordering").attr(
         "src",
-        "{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}"
+        desktopImageUrl
       );
     }
   </script>
@@ -27,7 +32,7 @@
     <div id="play">
       <h4>{{ play.name }}</h4>
       <p>Released: {{play.release_Date|date:"F j, Y"}}</p>
-      <div class="play-description">{{ play.description|safe }}</div>
+      <div class="play-description">{{ play.description|quill_html }}</div>
       <p class="byline">Written and Directed by Sharon Yablon</p>
       <section class="audio">
         <audio controls>
