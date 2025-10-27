@@ -1,3 +1,10 @@
 {
-    "git.ignoreLimitWarning": true
+  "files.associations": {
+    "**/*.html": "html"
+  },
+  "editor.formatOnSave": false,
+  "html.format.enable": false,
+  "editor.wordWrap": "off",
+  "editor.wrappingIndent": "none",
+  "editor.defaultFormatter": null
 }

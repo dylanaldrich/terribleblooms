@@ -81,7 +81,7 @@ ROOT_URLCONF = 'terribleblooms_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'main_app/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -107,7 +107,9 @@ QUILL_CONFIGS = {
                 ['code-block', 'link'],
                 ['clean'],
             ]
-        }
+        },
+        'placeholder': 'Write your content here...',
+        'height': '300px',
     }
 }
 

@@ -29,11 +29,11 @@ source venv/bin/activate
 
 ### Step 3: Install Dependencies
 ```bash
-# Upgrade pip first
-python -m pip install --upgrade pip
+# Upgrade pip first (use the venv's Python)
+venv/bin/python -m pip install --upgrade pip
 
 # Install project dependencies
-pip install -r requirements.txt
+venv/bin/python -m pip install -r requirements.txt
 ```
 
 ### Step 4: Set Up Environment Variables
@@ -48,7 +48,7 @@ API_SECRET="your-cloudinary-api-secret"
 
 To generate a new secret key:
 ```bash
-python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+venv/bin/python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
 
 ### Step 5: Set Up PostgreSQL Database
@@ -57,19 +57,19 @@ python -c "from django.core.management.utils import get_random_secret_key; print
 createdb terribleblooms
 
 # Run migrations
-python manage.py migrate
+venv/bin/python manage.py migrate
 ```
 
 ### Step 6: Run the Development Server
 ```bash
-python manage.py runserver
+venv/bin/python manage.py runserver
 ```
 The site will be available at http://localhost:8000
 
 ### Step 7: Create Superuser (Optional)
 To access the admin interface:
 ```bash
-python manage.py createsuperuser
+venv/bin/python manage.py createsuperuser
 ```
 
 ## File Upload Limits

@@ -1,95 +1,137 @@
 {% extends "index.html" %}
 {% load static %}
 {% load cloudinary %}
-
 {% block content %}
-    <section class="play-detail-page inner">
-        <script type="text/javascript">
-            // load mobile/full resolution artwork
-            if($(window).width() <= 450) {
-                $("#reordering").attr("src", "{% static 'assets/artwork/thereordering_cassietaggart_mobile.jpg' %}");
-            } else {
-                $("#reordering").attr("src", "{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}");
-            }
-        </script>
-        <img src="{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}" alt="the reordering by cassie taggart" class="side-image z-depth-2" id="reordering" />
-        <div class="play-detail-container">
-            <div id="play">
-                <h4>{{ play.name }}</h4>
-                <p>Released: {{play.release_Date|date:"F j, Y"}}</p>
-                <p>{{ play.description }}</p>
-                <p class="byline">Written and Directed by Sharon Yablon</p>
-                <section class="audio">
-                    <audio controls>
-                        <source src="{{ play.audioFile.url }}" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="logos">
-                        <section id="logo-cover">
-                            <i class="fas fa-hand-point-right"></i>
-                            <span>Subscribe</span>
-                        </section>
-                        <a href="https://apple.co/38uRiUn" rel="noopener" target="_blank" id="apple-podcast-logo" title="Apple Podcasts">
-                            <i class="fas fa-podcast"></i>
-                            <span>Apple</span>
-                        </a>
-                        <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkLnBvZGJlYW4uY29tL3RlcnJpYmxlYmxvb21zL2ZlZWQueG1s" rel="noopener" target="_blank" id="google-podcast-logo" title="Google Podcasts">
-                            <img src="{% static 'assets/icons/google_icon.png' %}" class="google-icon" alt="google podcasts icon" />
-                            <span>Google</span>
-                        </a>
-                        <a href="https://music.amazon.com/podcasts/02724c25-1982-4c2e-88dc-a16a8eb1943b/A-Garden-of-Terrible-Blooms" rel="noopener" target="_blank" id="amazon-podcast-logo" title="Amazon Podcasts">
-                            <i class="fab fa-amazon"></i>
-                            <span>Amazon</span>
-                        </a>
-                        <a href="https://open.spotify.com/show/41nmCkJwskM4O5j8KXwFnm" rel="noopener" target="_blank" id="spotify-podcast-logo" title="Spotify Podcasts">
-                            <i class="fab fa-spotify"></i>
-                            <span>Spotify</span>
-                        </a>
-                        <a href="https://www.stitcher.com/podcast/a-garden-of-terrible-blooms" rel="noopener" target="_blank" id="stitcher-podcast-logo" rel="noopener" target="_blank" title="Stitcher Podcasts">
-                            <img src="{% static 'assets/icons/stitcher_icon.png' %}" class="stitcher-icon" alt="stitcher icon" />
-                            <span>Stitcher</span>
-                        </a>
-                    </div>
-                    <div class="share">
-                        <span>Share:</span>
-                    </div>
-                </section>
-                <div class="meet-the-performers">
-                    <hr>
-                    <h5>Meet The Performers:</h5>
-                    <div id="performer-link-container">
-                        {% for performer in play.performers.all %}
-                            <a href="{% url 'artists' %}#{{ performer.name }}" class="performer-link hoverable">{{ performer.name }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
+<section class="play-detail-page inner">
+  <script type="text/javascript">
+    // load mobile/full resolution artwork
+    if ($(window).width() <= 450) {
+      $("#reordering").attr(
+        "src",
+        "{% static 'assets/artwork/thereordering_cassietaggart_mobile.jpg' %}"
+      );
+    } else {
+      $("#reordering").attr(
+        "src",
+        "{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}"
+      );
+    }
+  </script>
+  <img
+    src="{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}"
+    alt="the reordering by cassie taggart"
+    class="side-image z-depth-2"
+    id="reordering"
+  />
+  <div class="play-detail-container">
+    <div id="play">
+      <h4>{{ play.name }}</h4>
+      <p>Released: {{play.release_Date|date:"F j, Y"}}</p>
+      <div class="play-description">{{ play.description.html|safe }}</div>
+      <p class="byline">Written and Directed by Sharon Yablon</p>
+      <section class="audio">
+        <audio controls>
+          <source src="{{ play.audioFile.url }}" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <div class="logos">
+          <section id="logo-cover">
+            <i class="fas fa-hand-point-right"></i>
+            <span>Subscribe</span>
+          </section>
+          <a
+            href="https://apple.co/38uRiUn"
+            rel="noopener"
+            target="_blank"
+            id="apple-podcast-logo"
+            title="Apple Podcasts"
+          >
+            <i class="fas fa-podcast"></i>
+            <span>Apple</span>
+          </a>
+          <a
+            href="https://music.amazon.com/podcasts/02724c25-1982-4c2e-88dc-a16a8eb1943b/A-Garden-of-Terrible-Blooms"
+            rel="noopener"
+            target="_blank"
+            id="amazon-podcast-logo"
+            title="Amazon Podcasts"
+          >
+            <i class="fab fa-amazon"></i>
+            <span>Amazon</span>
+          </a>
+          <a
+            href="https://open.spotify.com/show/41nmCkJwskM4O5j8KXwFnm"
+            rel="noopener"
+            target="_blank"
+            id="spotify-podcast-logo"
+            title="Spotify Podcasts"
+          >
+            <i class="fab fa-spotify"></i>
+            <span>Spotify</span>
+          </a>
+          <a
+            href="https://www.stitcher.com/podcast/a-garden-of-terrible-blooms"
+            rel="noopener"
+            target="_blank"
+            id="stitcher-podcast-logo"
+            rel="noopener"
+            target="_blank"
+            title="Stitcher Podcasts"
+          >
+            <img
+              src="{% static 'assets/icons/stitcher_icon.png' %}"
+              class="stitcher-icon"
+              alt="stitcher icon"
+            />
+            <span>Stitcher</span>
+          </a>
         </div>
-    </section>
+        <div class="share">
+          <span>Share:</span>
+        </div>
+      </section>
+      <div class="meet-the-performers">
+        <hr />
+        <h5>Meet The Performers:</h5>
+        <div id="performer-link-container">
+          {% for performer in play.performers.all %}
+          <a
+            href="{% url 'artists' %}#{{ performer.name }}"
+            class="performer-link hoverable"
+            >{{ performer.name }}</a
+          >
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script type="text/javascript">
-        window.addEventListener("resize", () => {
-            // moves ascap text && wraps elements in new container
-            if($(window).width() <= 827 && $(window).width() >= 788) {
-                $(".play-detail-page").after($("#ascap"));
-                if(!$(".inner").parent().hasClass("episode-page-wrapper")) {
-                    $(".inner").wrapAll('<div class="episode-page-wrapper" />');
-                    $(".episode-page-wrapper").css("height", "100%");
-                }
-            } else {
-                $(".episode-page-wrapper").replaceWith($(".episode-page-wrapper").contents());
-            }
-        });
-    </script>
+<script type="text/javascript">
+  window.addEventListener("resize", () => {
+    // moves ascap text && wraps elements in new container
+    if ($(window).width() <= 827 && $(window).width() >= 788) {
+      $(".play-detail-page").after($("#ascap"));
+      if (!$(".inner").parent().hasClass("episode-page-wrapper")) {
+        $(".inner").wrapAll('<div class="episode-page-wrapper" />');
+        $(".episode-page-wrapper").css("height", "100%");
+      }
+    } else {
+      $(".episode-page-wrapper").replaceWith(
+        $(".episode-page-wrapper").contents()
+      );
+    }
+  });
+</script>
 
-    <script type="text/javascript">
-        // keeps play detail page the same width as the navbar
-        let $width = $('nav').width();
-        $(".play-detail-page").css('width', $width + "px");
+<script type="text/javascript">
+  // keeps play detail page the same width as the navbar
+  let $width = $("nav").width();
+  $(".play-detail-page").css("width", $width + "px");
 
-        window.addEventListener("resize", () => {
-            $width = $('nav').width();
-            $(".play-detail-page").css('width', $width + "px");
-        });
-    </script>
+  window.addEventListener("resize", () => {
+    $width = $("nav").width();
+    $(".play-detail-page").css("width", $width + "px");
+  });
+</script>
 {% endblock %}

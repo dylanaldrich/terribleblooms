@@ -20,7 +20,7 @@ class Performer(models.Model):
 # Plays
 class Play(models.Model):
     name = models.CharField(max_length=150)
-    description = models.TextField(max_length=1000)
+    description = QuillField(blank=True)
     audioFile = CloudinaryField('audio', overwrite=True, resource_type='video')
     image = CloudinaryField('image', overwrite=True, resource_type='image', default='sweetnectar_cassietaggart_default_qz039o.jpg')
     performers = models.ManyToManyField(Performer, related_name='plays')

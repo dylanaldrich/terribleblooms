@@ -6,14 +6,15 @@ from .utils import check_Release_Date
 # HOME PAGE
 def home(request):
     plays = check_Release_Date()
-    latest_Play = {}
+    latest_Play = None
 
-    if len(plays) > 0:
-        latest_Play = plays.pop(0)
+    if plays:
+        latest_Play = plays[0]
+        plays = plays[1:]  # Get remaining plays
 
     context = {
-        "plays" : plays, 
-        "latest_Play" : latest_Play,
+        "plays": plays,
+        "latest_Play": latest_Play,
     }
     return render(request, 'home.html', context)
 
