@@ -118,6 +118,7 @@ celerybeat.pid
 
 # Environments
 .env
+.env.local
 .venv
 env/
 venv/
@@ -125,6 +126,12 @@ ENV/
 env.bak/
 venv.bak/
 pythonenv*
+
+# Development markers
+.development
+
+# Django logs
+django.log
 
 # Spyder project settings
 .spyderproject

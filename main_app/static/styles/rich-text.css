@@ -1,0 +1,53 @@
+/* Rich text content styling */
+.play-description {
+  margin: 1em 0;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.play-description p {
+  margin-bottom: 1em;
+}
+
+.play-description p:last-child {
+  margin-bottom: 0;
+}
+
+.play-description a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.play-description a:hover {
+  text-decoration: underline;
+}
+
+.play-description strong {
+  font-weight: bold;
+}
+
+.play-description em {
+  font-style: italic;
+}
+
+.play-description ul,
+.play-description ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.play-description blockquote {
+  border-left: 3px solid var(--main-bg-color);
+  margin: 1em 0;
+  padding-left: 1em;
+  font-style: italic;
+}
+
+.play-description pre,
+.play-description code {
+  background-color: #f5f5f5;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: monospace;
+}

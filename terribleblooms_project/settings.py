@@ -22,10 +22,14 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 
-environ.Env.read_env()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Read environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+# Use BigAutoField as the default primary key
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -35,9 +39,9 @@ ENV_SECRET = env('SECRET_KEY')
 SECRET_KEY = os.getenv('SECRET_KEY', ENV_SECRET)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEVELOPMENT') == 'true' or os.path.exists(os.path.join(BASE_DIR, '.development'))
 
-ALLOWED_HOSTS = ['www.terribleblooms.net', 'terribleblooms.net', 'localhost']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1'] if DEBUG else env.list('ALLOWED_HOSTS', default=['www.terribleblooms.net', 'terribleblooms.net'])
 
 # Application definition
 
@@ -50,38 +54,59 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_app',
     'django_quill',
-    'django-partial-content',
     'cloudinary',
     'corsheaders',
     'whitenoise.runserver_nostatic',
 ]
 
+# Base middleware for all environments
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
-# SECURITY SETTINGS
-SECURE_HSTS_SECONDS = 20
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+if DEBUG:
+    # Development middleware - minimal configuration
+    MIDDLEWARE.extend([
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    ])
+else:
+    # Production middleware - full security and optimization
+    MIDDLEWARE.extend([
+        'django.middleware.security.SecurityMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django.middleware.cache.UpdateCacheMiddleware',
+        'django.middleware.gzip.GZipMiddleware',
+        'django.middleware.http.ConditionalGetMiddleware',
+        'main_app.middleware.RateLimitMiddleware',
+        'django.middleware.cache.FetchFromCacheMiddleware',
+        'main_app.views.CustomExceptionMiddleware',  # Custom error handling
+    ])
+
+# Cache settings for middleware
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_SECONDS = 300
+CACHE_MIDDLEWARE_KEY_PREFIX = 'terribleblooms'
+
+# Browser cache settings
+STATIC_FILE_MAX_AGE = 60 * 60 * 24 * 365  # 1 year
+
+# Security settings moved to production.py
+# Development has no SSL settings
+
+X_FRAME_OPTIONS = 'DENY'
 
 ROOT_URLCONF = 'terribleblooms_project.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'main_app/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -107,7 +132,9 @@ QUILL_CONFIGS = {
                 ['code-block', 'link'],
                 ['clean'],
             ]
-        }
+        },
+        'placeholder': 'Write your content here...',
+        'height': '300px',
     }
 }
 
@@ -117,12 +144,29 @@ WSGI_APPLICATION = 'terribleblooms_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'terribleblooms',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'terribleblooms',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': env.str('DB_NAME', default='terribleblooms'),
+            'USER': env.str('DB_USER', default=''),
+            'PASSWORD': env.str('DB_PASSWORD', default=''),
+            'HOST': env.str('DB_HOST', default=''),
+            'PORT': env.str('DB_PORT', default='5432'),
+            'OPTIONS': {
+                'sslmode': 'require',
+            },
+        }
+    }
 
 
 # Password validation
@@ -157,6 +201,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+# File Upload Settings
+DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600  # 100MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 104857600  # 100MB
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 2000
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -164,12 +212,52 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = 'whitenoise.django.CompressedManifestStaticFilesStorage'
+# Static files configuration
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'main_app/static'),
+]
+
+# Static files storage is configured above with whitenoise settings
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+# Cache settings
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+        'TIMEOUT': 300,  # 5 minutes
+    }
+}
+
+# Browser caching settings
+CACHE_MIDDLEWARE_SECONDS = 300  # 5 minutes
+CACHE_MIDDLEWARE_KEY_PREFIX = 'terribleblooms'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-CORS_ORIGIN_ALLOW_ALL = True
+# Configure whitenoise for production only
+if DEBUG:
+    MIDDLEWARE = [m for m in MIDDLEWARE if not m.startswith('whitenoise')]
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+else:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# CORS settings
+if DEBUG:
+    CORS_ORIGIN_ALLOW_ALL = True
+else:
+    # Production - restrict to specific origins
+    CORS_ORIGIN_ALLOW_ALL = False
+    CORS_ALLOWED_ORIGINS = [
+        'https://www.terribleblooms.net',
+        'https://terribleblooms.net',
+    ]
+    CORS_ALLOW_CREDENTIALS = True
 
 ENV_CLOUD_NAME = env('CLOUD_NAME')
 ENV_API_KEY = env('API_KEY')
@@ -180,8 +268,101 @@ cloudinary.config(
     api_key = os.getenv('API_KEY', ENV_API_KEY),
     api_secret = os.getenv('API_SECRET', ENV_API_SECRET),
     secure = True,
+    chunk_size = 10485760,  # Set chunk size to 10MB
+    timeout = 600  # Set timeout to 10 minutes
 )
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-django_on_heroku.settings(locals())
+# Logging Configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'django.log'),
+            'formatter': 'verbose',
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console'],
+            'level': env.str('DJANGO_LOG_LEVEL', default='INFO'),
+            'propagate': True,
+        },
+        'main_app': {
+            'handlers': ['file', 'console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
+# Environment-specific settings
+if DEBUG:
+    # Development settings - explicitly disable all SSL/HTTPS settings
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+    # Explicitly disable all HTTPS/SSL settings
+    SECURE_SSL_REDIRECT = False
+    SECURE_PROXY_SSL_HEADER = None
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    SECURE_HSTS_SECONDS = None
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+    SECURE_HSTS_PRELOAD = False
+    SECURE_SSL_HOST = None
+    SECURE_REDIRECT_EXEMPT = ['*']
+
+    # Additional security settings that should be disabled in development
+    SECURE_BROWSER_XSS_FILTER = False
+    SECURE_CONTENT_TYPE_NOSNIFF = False
+    HOST_SCHEME = "http://"
+else:
+    # Production settings
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000  # 1 year
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    HOST_SCHEME = "https://"
+
+    # Configure Heroku for production
+    django_on_heroku.settings(locals())
+
+    # Override database settings for production
+    DATABASES['default'].update({
+        'CONN_MAX_AGE': 600,  # 10 minutes
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
+    })
+
+# Development mode flags
+if DEBUG:
+    USE_SSL = False
+    SSL_ENABLED = False
+    os.environ['HTTPS'] = 'off'
+    os.environ['wsgi.url_scheme'] = 'http'
