@@ -24,24 +24,24 @@
   </script>
   <img
     src="{% static 'assets/artwork/thereordering_cassietaggart.jpg' %}"
-    alt="the reordering by cassie taggart"
+    alt="Background artwork: The Reordering by Cassie Taggart"
     class="side-image z-depth-2"
     id="reordering"
   />
   <div class="play-detail-container">
     <div id="play">
-      <h4>{{ play.name }}</h4>
+      <h2>{{ play.name }}</h2>
       <p>Released: {{play.release_Date|date:"F j, Y"}}</p>
       <div class="play-description">{{ play.description|quill_html }}</div>
       <p class="byline">Written and Directed by Sharon Yablon</p>
       <section class="audio">
-        <audio controls>
+        <audio controls aria-label="Audio player for {{ play.name }}">
           <source src="{{ play.audioFile.url }}" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
         <div class="logos">
           <section id="logo-cover">
-            <i class="fas fa-hand-point-right"></i>
+            <i class="fas fa-hand-point-right" aria-hidden="true"></i>
             <span>Subscribe</span>
           </section>
           <a
@@ -50,8 +50,9 @@
             target="_blank"
             id="apple-podcast-logo"
             title="Apple Podcasts"
+            aria-label="Subscribe on Apple Podcasts"
           >
-            <i class="fas fa-podcast"></i>
+            <i class="fas fa-podcast" aria-hidden="true"></i>
             <span>Apple</span>
           </a>
           <a
@@ -60,8 +61,9 @@
             target="_blank"
             id="amazon-podcast-logo"
             title="Amazon Podcasts"
+            aria-label="Subscribe on Amazon Podcasts"
           >
-            <i class="fab fa-amazon"></i>
+            <i class="fab fa-amazon" aria-hidden="true"></i>
             <span>Amazon</span>
           </a>
           <a
@@ -70,8 +72,9 @@
             target="_blank"
             id="spotify-podcast-logo"
             title="Spotify Podcasts"
+            aria-label="Subscribe on Spotify"
           >
-            <i class="fab fa-spotify"></i>
+            <i class="fab fa-spotify" aria-hidden="true"></i>
             <span>Spotify</span>
           </a>
         </div>
@@ -81,7 +84,7 @@
       </section>
       <div class="meet-the-performers">
         <hr />
-        <h5>Meet The Performers:</h5>
+        <h3>Meet The Performers:</h3>
         <div id="performer-link-container">
           {% for performer in play.performers.all %}
           <a

@@ -3,7 +3,7 @@
 :root {
   --main-bg-color: rgb(46, 44, 45);
   --main-bg-color-trans: rgba(46, 44, 45, 0.6);
-  --link-color: rgb(159, 86, 216);
+  --link-color: rgb(138, 63, 195); /* Darkened for better contrast (WCAG AA compliant) */
   --nav-height: 49px;
 }
 
@@ -24,6 +24,24 @@ body {
   flex-direction: column;
   font-family: "Raleway", sans-serif;
   align-items: center;
+}
+
+/* Skip to main content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--link-color);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 header,
@@ -689,6 +707,19 @@ span.performer-icon {
   margin-bottom: 1px;
 }
 
+button.performer-icon {
+  background-color: var(--link-color);
+  color: var(--main-bg-color);
+  border-radius: 3px;
+  padding: 4px;
+  cursor: pointer;
+  line-height: 1;
+  font-size: 24px;
+  margin-bottom: 1px;
+  border: none;
+  font-family: inherit;
+}
+
 .fa-imdb {
   font-size: 37px;
 }
@@ -725,9 +756,23 @@ span.performer-icon:hover {
   background-color: white;
 }
 
+button.performer-icon:hover {
+  color: var(--main-bg-color);
+  background-color: white;
+}
+
 .card ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 7px;
+}
+
+.card-reveal button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
 }
 
 /* SECTION ABOUT PAGE */

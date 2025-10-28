@@ -9,14 +9,14 @@
     var desktopImageUrl = "{% static 'assets/artwork/sweetnectar_cassietaggart.jpg' %}";
 </script>
 <div class="headline-box">
-  <h3 class="headline">
+  <h2 class="headline">
     <span>We Are Just Passing Through...</span><br />
     Short Plays of the Weird and Surreal Set in Los Angeles
     <span id="created-by"
       >To keep you company through the dark and sleepless night</span
     >
-  </h3>
-  <i class="fas fa-chevron-down"></i>
+  </h2>
+  <i class="fas fa-chevron-down" aria-hidden="true"></i>
 </div>
 
 <section id="plays-box">
@@ -24,28 +24,28 @@
   <h3>Latest Play</h3>
   <div id="latest-play" class="row">
     <div class="col z-depth-2 hoverable" id="latest-play-photo">
-      <a href="{% url 'play_Detail' latest_Play.id %}">
-        <img src="{{ latest_Play.image.url }}" alt="play image" />
+      <a href="{% url 'play_Detail' latest_Play.id %}" aria-label="Listen to {{ latest_Play.name }}">
+        <img src="{{ latest_Play.image.url }}" alt="Cover art for {{ latest_Play.name }}" />
       </a>
     </div>
     <div id="latest-play-info" class="col s12">
-      <h3 id="latest-play-title">
+      <h4 id="latest-play-title">
         <a href="{% url 'play_Detail' latest_Play.id %}"
           >{{ latest_Play.name }}</a
         >
-      </h3>
+      </h4>
       <div id="latest-play-description" class="play-description">
         {{ latest_Play.description|quill_html }}
       </div>
       <p class="byline">Written and Directed by Sharon Yablon</p>
       <section class="audio">
-        <audio controls>
+        <audio controls aria-label="Audio player for {{ latest_Play.name }}">
           <source src="{{ latest_Play.audioFile.url }}" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
         <div class="logos">
           <section id="logo-cover">
-            <i class="fas fa-hand-point-right"></i>
+            <i class="fas fa-hand-point-right" aria-hidden="true"></i>
             <span>Subscribe</span>
           </section>
           <a
@@ -54,8 +54,9 @@
             target="_blank"
             id="apple-podcast-logo"
             title="Apple Podcasts"
+            aria-label="Subscribe on Apple Podcasts"
           >
-            <i class="fas fa-podcast"></i>
+            <i class="fas fa-podcast" aria-hidden="true"></i>
             <span>Apple</span>
           </a>
           <a
@@ -64,8 +65,9 @@
             target="_blank"
             id="amazon-podcast-logo"
             title="Amazon Podcasts"
+            aria-label="Subscribe on Amazon Podcasts"
           >
-            <i class="fab fa-amazon"></i>
+            <i class="fab fa-amazon" aria-hidden="true"></i>
             <span>Amazon</span>
           </a>
           <a
@@ -74,8 +76,9 @@
             target="_blank"
             id="spotify-podcast-logo"
             title="Spotify Podcasts"
+            aria-label="Subscribe on Spotify"
           >
-            <i class="fab fa-spotify"></i>
+            <i class="fab fa-spotify" aria-hidden="true"></i>
             <span>Spotify</span>
           </a>
         </div>
@@ -91,13 +94,14 @@
     {% for play in plays %}
     <div class="card hoverable">
       <div class="card-image">
-        <a href="{% url 'play_Detail' play.id %}">
-          <img src="{{ play.image.url }}" />
+        <a href="{% url 'play_Detail' play.id %}" aria-label="View details for {{ play.name }}">
+          <img src="{{ play.image.url }}" alt="Cover art for {{ play.name }}" />
         </a>
         <a
           href="{% url 'play_Detail' play.id %}"
           class="btn-floating halfway-fab waves-effect waves-light"
-          ><i class="fas fa-play"></i
+          aria-label="Play {{ play.name }}"
+          ><i class="fas fa-play" aria-hidden="true"></i
         ></a>
       </div>
       <div class="card-content play-title">

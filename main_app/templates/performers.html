@@ -14,9 +14,9 @@
     </script>
     <div class="headline-box">
         <div class="headline">
-            <h3 id="performer-headline">Meet The Artists</h3>
+            <h2 id="performer-headline">Meet The Artists</h2>
         </div>
-        <i class="fas fa-chevron-down" id="performer-chevron"></i>
+        <i class="fas fa-chevron-down" id="performer-chevron" aria-hidden="true"></i>
     </div>
 
     <section class="performers-container">
@@ -29,10 +29,10 @@
                                 {{ performer.name }}
                             </span>
                             <div class="performer-icon-line">
-                                <span class="performer-icon text-darken-4 activator">Bio</span>
+                                <button class="performer-icon text-darken-4 activator" aria-label="Show bio for {{ performer.name }}">Bio</button>
                                 {% if performer.imdb %}
-                                    <a href="{{ performer.imdb }}" rel="noopener" target="_blank">
-                                        <i class="fab fa-imdb performer-icon"></i>
+                                    <a href="{{ performer.imdb }}" rel="noopener" target="_blank" aria-label="View {{ performer.name }}'s IMDb profile">
+                                        <i class="fab fa-imdb performer-icon" aria-hidden="true"></i>
                                     </a>
                                 {% endif %}
                             </div>
@@ -41,8 +41,8 @@
                                 {{ performer.name }}
                                 {% if performer.imdb %}
                                     <p class="imdb">
-                                        <a href="{{ performer.imdb }}" rel="noopener" target="_blank">
-                                            <i class="fab fa-imdb performer-icon"></i>
+                                        <a href="{{ performer.imdb }}" rel="noopener" target="_blank" aria-label="View {{ performer.name }}'s IMDb profile">
+                                            <i class="fab fa-imdb performer-icon" aria-hidden="true"></i>
                                         </a>
                                     </p>
                                 {% endif %}
@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="card-reveal" style="display: none; transform: translateY(0%);">
-                        <span class="card-title grey-text text-darken-4">Bio<i class="fas fa-times right"></i></span>
+                        <span class="card-title grey-text text-darken-4">Bio<button class="right" aria-label="Close bio"><i class="fas fa-times" aria-hidden="true"></i></button></span>
                         <p>{{ performer.bio.html|safe }}</p>
                     </div>
                 </div>
