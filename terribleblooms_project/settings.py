@@ -213,9 +213,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Static files configuration
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'main_app/static'),
-]
+# Note: We don't need STATICFILES_DIRS pointing to main_app/static because
+# AppDirectoriesFinder automatically finds static/ folders in installed apps
+STATICFILES_DIRS = []
 
 # Static files storage is configured above with whitenoise settings
 
