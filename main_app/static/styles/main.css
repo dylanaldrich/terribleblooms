@@ -29,19 +29,33 @@ body {
 /* Skip to main content link for accessibility */
 .skip-link {
   position: absolute;
-  left: -9999px;
-  z-index: 999;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link:focus {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
   padding: 8px 16px;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
   background: var(--link-color);
   color: white;
   text-decoration: none;
   border-radius: 0 0 4px 0;
   font-weight: 600;
-}
-
-.skip-link:focus {
-  left: 0;
-  top: 0;
+  z-index: 999;
 }
 
 header,
